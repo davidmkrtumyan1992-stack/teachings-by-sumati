@@ -1,0 +1,65 @@
+import { ArrowRight } from "lucide-react";
+import { AnimatedSection } from "@/components/AnimatedSection";
+import { useLanguage } from "@/components/layout/LanguageContext";
+import coursesData from "@assets/courses_1775506217848.json";
+
+export default function ProjectsPage() {
+  const { lang } = useLanguage();
+
+  return (
+    <div className="min-h-screen bg-white pt-10 pb-24 px-6">
+      <div className="max-w-[1200px] mx-auto">
+        <AnimatedSection className="text-center mb-16">
+          <h1 className="font-playfair text-3xl md:text-[42px] mb-4">Projects</h1>
+          <p className="font-inter text-[#6B6B6B] text-base max-w-2xl mx-auto">
+            Tools and resources supporting the study of the Dharma
+          </p>
+        </AnimatedSection>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {coursesData.projects.map((project, idx) => {
+            const gradients = [
+              'linear-gradient(135deg, #7A1B2E 0%, #C4973B 100%)',
+              'linear-gradient(135deg, #1A1A1A 0%, #7A1B2E 100%)',
+              'linear-gradient(135deg, #5C0E1F 0%, #1A1A1A 100%)'
+            ];
+            const bgGradient = gradients[idx % gradients.length];
+            
+            const title = lang === 'en' ? project.title_en : (project.title_ru || project.title_en);
+            const desc = lang === 'en' ? project.description_en : (project.description_ru || project.description_en);
+
+            const CardContent = (
+              <div className="bg-white border border-[#E5E2DF] rounded-2xl overflow-hidden group cursor-pointer hover:-translate-y-1 hover:shadow-lg transition-all duration-300 h-full flex flex-col">
+                <div className="w-full aspect-[16/9] relative p-6 flex flex-col justify-end" style={{ background: bgGradient }}>
+                  <h3 className="font-playfair text-2xl text-white drop-shadow-md">{title}</h3>
+                </div>
+                <div className="p-6 flex flex-col flex-1">
+                  <p className="font-inter text-sm text-[#6B6B6B] leading-relaxed mb-6 flex-1">
+                    {desc}
+                  </p>
+                  <div className="font-inter text-sm font-medium text-[#7A1B2E] flex items-center gap-1 group-hover:gap-2 transition-all">
+                    Visit Site <ArrowRight className="w-4 h-4" />
+                  </div>
+                </div>
+              </div>
+            );
+
+            return (
+              <AnimatedSection key={project.id} delay={idx * 0.1}>
+                {project.url ? (
+                  <a href={project.url} target="_blank" rel="noopener noreferrer" className="block h-full" data-testid={`project-page-link-${project.id}`}>
+                    {CardContent}
+                  </a>
+                ) : (
+                  <div className="block h-full" data-testid={`project-page-link-${project.id}`}>
+                    {CardContent}
+                  </div>
+                )}
+              </AnimatedSection>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+}
