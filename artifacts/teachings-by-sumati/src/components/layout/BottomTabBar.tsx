@@ -33,14 +33,16 @@ export function BottomTabBar({ onMenuClick }: BottomTabBarProps) {
         );
       })}
       
-      <div 
-        className="flex flex-col items-center justify-center w-16 h-full gap-1 cursor-pointer text-[#9A9A9A]"
+      <button
+        type="button"
+        className="flex flex-col items-center justify-center w-16 h-full gap-1 text-[#9A9A9A]"
         onClick={onMenuClick}
         data-testid="tabbar-link-more"
+        aria-label="Open menu"
       >
         <Menu className="w-6 h-6" />
         <span className="text-[11px] font-medium font-inter">More</span>
-      </div>
+      </button>
     </div>
   );
 }

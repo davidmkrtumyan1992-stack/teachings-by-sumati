@@ -5,7 +5,6 @@ import { AnimatedSection } from "@/components/AnimatedSection";
 import { useLanguage } from "@/components/layout/LanguageContext";
 import type { Course, Project, CoursesData } from "@/data/types";
 import coursesRaw from "@/data/courses.json";
-import { Button } from "@/components/ui/button";
 import videoPoster from "@assets/hero-bg-poster_1775505916646.jpg";
 import video1080p from "@assets/hero-bg-1080p_1775505916647.mp4";
 import video720p from "@assets/hero-bg-720p_1775505916647.mp4";

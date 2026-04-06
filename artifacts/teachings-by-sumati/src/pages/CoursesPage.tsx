@@ -20,7 +20,7 @@ export default function CoursesPage() {
         </AnimatedSection>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {coursesData.courses.map((course, idx) => {
+          {coursesData.courses.filter(c => c.number > 0).map((course, idx) => {
             const title = lang === 'en' ? course.title_en : (course.title_ru || course.title_en);
             const badgeText = course.number > 0 ? `ACI ${course.number}` : "Special";
             

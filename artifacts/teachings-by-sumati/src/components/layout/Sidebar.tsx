@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { Link, useLocation } from "wouter";
 import { X, Home, BookOpen, Flower2, Mountain, Calendar, Link as LinkIcon, Globe } from "lucide-react";
 import { Language } from "./LanguageContext";
@@ -20,6 +21,17 @@ const NAV_LINKS = [
 
 export function Sidebar({ isOpen, onClose, currentLanguage, onLanguageChange }: SidebarProps) {
   const [location] = useLocation();
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    closeButtonRef.current?.focus();
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [isOpen, onClose]);
 
   return (
     <>
@@ -42,6 +54,7 @@ export function Sidebar({ isOpen, onClose, currentLanguage, onLanguageChange }: 
             TEACHINGS BY SUMATI
           </div>
           <button 
+            ref={closeButtonRef}
             onClick={onClose}
             className="p-2 rounded-full hover:bg-gray-100 transition-colors"
             data-testid="button-close-sidebar"
