@@ -2,7 +2,10 @@ import { useParams, Link } from "wouter";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { useLanguage } from "@/components/layout/LanguageContext";
-import coursesData from "@assets/courses_1775506217848.json";
+import type { CoursesData } from "@/data/types";
+import coursesRaw from "@/data/courses.json";
+
+const coursesData = coursesRaw as CoursesData;
 
 export default function CourseDetailPage() {
   const { courseId } = useParams();

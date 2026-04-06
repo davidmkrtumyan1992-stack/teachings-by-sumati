@@ -1,7 +1,10 @@
 import { ArrowRight } from "lucide-react";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { useLanguage } from "@/components/layout/LanguageContext";
-import coursesData from "@assets/courses_1775506217848.json";
+import type { CoursesData } from "@/data/types";
+import coursesRaw from "@/data/courses.json";
+
+const coursesData = coursesRaw as CoursesData;
 
 export default function ProjectsPage() {
   const { lang } = useLanguage();
@@ -17,7 +20,7 @@ export default function ProjectsPage() {
         </AnimatedSection>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {coursesData.projects.map((project, idx) => {
+          {(coursesData.projects ?? []).map((project, idx) => {
             const gradients = [
               'linear-gradient(135deg, #7A1B2E 0%, #C4973B 100%)',
               'linear-gradient(135deg, #1A1A1A 0%, #7A1B2E 100%)',

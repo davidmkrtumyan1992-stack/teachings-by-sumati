@@ -3,13 +3,14 @@ import { Link } from "wouter";
 import { ChevronDown, ArrowRight } from "lucide-react";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { useLanguage } from "@/components/layout/LanguageContext";
-import coursesData from "@assets/courses_1775506217848.json";
+import type { Course, Project, CoursesData } from "@/data/types";
+import coursesRaw from "@/data/courses.json";
 import { Button } from "@/components/ui/button";
-
-// Assume these imports work based on vite config alias @assets
 import videoPoster from "@assets/hero-bg-poster_1775505916646.jpg";
 import video1080p from "@assets/hero-bg-1080p_1775505916647.mp4";
 import video720p from "@assets/hero-bg-720p_1775505916647.mp4";
+
+const coursesData = coursesRaw as CoursesData;
 
 export default function HomePage() {
   const { lang } = useLanguage();
@@ -44,7 +45,7 @@ export default function HomePage() {
       }
       
       const randomCourse = validCourses[Math.floor(Math.random() * validCourses.length)];
-      const validClasses = randomCourse.classes.filter(cl => cl.video_en);
+      const validClasses = (randomCourse.classes ?? []).filter(cl => cl.video_en);
       const randomClass = validClasses[Math.floor(Math.random() * validClasses.length)];
       
       // Convert youtube short link to embed
@@ -112,7 +113,9 @@ export default function HomePage() {
               <p className="font-inter text-sm text-[#9A9A9A] tracking-wide uppercase">Certified ACI Teacher · Diamond Mountain</p>
             </div>
             <div className="font-inter text-base text-[#4A4A4A] leading-[1.8] space-y-4 whitespace-pre-wrap">
-              {lang === 'ru' && coursesData.biography.ru ? coursesData.biography.ru : coursesData.biography.en}
+              {lang === 'ru' && coursesData.biography?.ru
+                ? coursesData.biography.ru
+                : coursesData.biography?.en}
             </div>
           </AnimatedSection>
         </div>
@@ -179,7 +182,7 @@ export default function HomePage() {
           </AnimatedSection>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {coursesData.projects.map((project, idx) => {
+            {(coursesData.projects ?? []).map((project, idx) => {
               const gradients = [
                 'linear-gradient(135deg, #7A1B2E 0%, #C4973B 100%)',
                 'linear-gradient(135deg, #1A1A1A 0%, #7A1B2E 100%)',

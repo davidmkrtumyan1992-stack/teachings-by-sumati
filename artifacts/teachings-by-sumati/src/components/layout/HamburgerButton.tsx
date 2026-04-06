@@ -5,9 +5,6 @@ interface HamburgerButtonProps {
 }
 
 export function HamburgerButton({ isOpen, onClick, isOnHero = false }: HamburgerButtonProps) {
-  // If open, we typically want to style it differently or hide it since the sidebar has an X.
-  // But we'll keep it simple: just show a hamburger that turns into a subtle X if open and not handled elsewhere
-  
   const linesColor = isOnHero ? "bg-white" : "bg-[#1A1A1A]";
   const bgColor = isOnHero ? "bg-transparent" : "bg-white shadow-md";
 
