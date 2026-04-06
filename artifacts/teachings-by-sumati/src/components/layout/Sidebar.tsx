@@ -38,7 +38,7 @@ export function Sidebar({ isOpen, onClose, currentLanguage, onLanguageChange }: 
       {/* Overlay */}
       {isOpen && (
         <div 
-          className="fixed inset-0 z-40 bg-black/40 backdrop-blur-[4px] transition-opacity duration-300"
+          className="fixed inset-0 z-40 bg-black/40 transition-opacity duration-300"
           onClick={onClose}
           data-testid="sidebar-overlay"
         />
@@ -50,7 +50,7 @@ export function Sidebar({ isOpen, onClose, currentLanguage, onLanguageChange }: 
         data-testid="sidebar-container"
       >
         <div className="flex items-center justify-between px-6 h-20 shrink-0 border-b border-border">
-          <div className="font-playfair text-[18px] tracking-wide" style={{ color: '#7A1B2E' }}>
+          <div className="font-playfair text-[17px] font-semibold tracking-widest text-[#1A1A1A]">
             TEACHINGS BY SUMATI
           </div>
           <button 
