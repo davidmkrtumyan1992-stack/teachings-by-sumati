@@ -5,11 +5,12 @@ import { AnimatedSection } from "@/components/AnimatedSection";
 import { useLanguage } from "@/components/layout/LanguageContext";
 import type { Course, Project, CoursesData } from "@/data/types";
 import coursesRaw from "@/data/courses.json";
-import videoPoster from "@assets/hero-bg-poster_1775505916646.jpg";
-import video1080p from "@assets/hero-bg-1080p_1775505916647.mp4";
-import video720p from "@assets/hero-bg-720p_1775505916647.mp4";
 
 const coursesData = coursesRaw as CoursesData;
+const BASE = import.meta.env.BASE_URL.replace(/\/$/, "");
+const videoPoster = `${BASE}/hero-bg-poster.jpg`;
+const video1080p = `${BASE}/hero-bg-1080p.mp4`;
+const video720p = `${BASE}/hero-bg-720p.mp4`;
 
 export default function HomePage() {
   const { lang } = useLanguage();
