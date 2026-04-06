@@ -103,8 +103,12 @@ export default function HomePage() {
       <section className="min-h-screen py-20 px-6 bg-white flex items-center justify-center">
         <div className="max-w-[1000px] w-full mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
           <AnimatedSection className="md:col-span-5 flex justify-center md:justify-end">
-            <div className="w-full max-w-[400px] aspect-[4/5] bg-gray-100 rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.1)] flex items-center justify-center border border-gray-200">
-              <div className="w-16 h-16 rounded-full border-2 border-[#7A1B2E] opacity-20" />
+            <div className="w-full max-w-[400px] aspect-[4/5] rounded-3xl overflow-hidden shadow-[0_24px_64px_rgba(0,0,0,0.15)] ring-1 ring-black/5">
+              <img
+                src={`${BASE}/lama-sumati.png`}
+                alt="Lama Sumati"
+                className="w-full h-full object-cover object-top"
+              />
             </div>
           </AnimatedSection>
           <AnimatedSection className="md:col-span-7 space-y-6" delay={0.2}>
