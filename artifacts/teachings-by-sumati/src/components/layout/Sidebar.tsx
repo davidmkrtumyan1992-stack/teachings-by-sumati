@@ -71,19 +71,24 @@ export function Sidebar({ isOpen, onClose, currentLanguage, onLanguageChange }: 
               
               return (
                 <Link key={link.href} href={link.href}>
-                  <div 
-                    onClick={onClose}
-                    className={`flex items-center gap-4 px-4 h-[52px] rounded-lg cursor-pointer transition-colors font-inter text-[16px]
-                      ${isActive 
-                        ? "bg-[#F8F6F4] text-[#7A1B2E]" 
-                        : "text-gray-700 hover:bg-[#F8F6F4] hover:text-gray-900"
+                  <div
+                    className={`flex items-center gap-4 px-4 h-[52px] rounded-xl cursor-pointer transition-all duration-200 font-inter text-[16px]
+                      ${isActive
+                        ? "text-[#7A1B2E] font-medium"
+                        : "text-gray-700 hover:bg-gray-50 hover:text-gray-900"
                       }
                     `}
-                    style={{ borderLeft: isActive ? '3px solid #7A1B2E' : '3px solid transparent' }}
+                    style={isActive ? {
+                      background: 'rgba(122, 27, 46, 0.07)',
+                      boxShadow: '0 2px 8px rgba(122, 27, 46, 0.10), inset 0 0 0 1px rgba(122, 27, 46, 0.20)',
+                    } : undefined}
                     data-testid={`link-sidebar-${link.label.toLowerCase().replace(/\s+/g, '-')}`}
                   >
-                    <link.icon className="w-5 h-5" />
+                    <link.icon className={`w-5 h-5 shrink-0 ${isActive ? 'text-[#7A1B2E]' : 'text-gray-400'}`} />
                     <span>{link.label}</span>
+                    {isActive && (
+                      <div className="ml-auto w-1.5 h-1.5 rounded-full bg-[#7A1B2E]" />
+                    )}
                   </div>
                 </Link>
               );
