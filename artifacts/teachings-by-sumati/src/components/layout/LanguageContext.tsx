@@ -2,17 +2,6 @@ import { createContext, useContext, useState, ReactNode } from 'react';
 
 export type Language = 'en' | 'ru';
 
-const STORAGE_KEY = 'lang';
-
-function readStoredLang(): Language {
-  try {
-    const stored = localStorage.getItem(STORAGE_KEY);
-    if (stored === 'en' || stored === 'ru') return stored;
-  } catch {
-  }
-  return 'en';
-}
-
 export const LanguageContext = createContext<{
   lang: Language;
   setLang: (l: Language) => void;
@@ -22,13 +11,9 @@ export const LanguageContext = createContext<{
 });
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [lang, setLangState] = useState<Language>(readStoredLang);
+  const [lang, setLangState] = useState<Language>('en');
 
   const setLang = (l: Language) => {
-    try {
-      localStorage.setItem(STORAGE_KEY, l);
-    } catch {
-    }
     setLangState(l);
   };
 
