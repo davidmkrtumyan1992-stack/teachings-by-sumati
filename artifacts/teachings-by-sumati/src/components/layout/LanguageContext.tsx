@@ -2,7 +2,7 @@ import { createContext, useContext, useState, ReactNode } from 'react';
 
 export type Language = 'en' | 'ru';
 
-const STORAGE_KEY = 'tbs_lang';
+const STORAGE_KEY = 'lang';
 
 function readStoredLang(): Language {
   try {
