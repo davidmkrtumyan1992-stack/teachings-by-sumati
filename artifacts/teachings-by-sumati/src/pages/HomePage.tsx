@@ -105,11 +105,11 @@ export default function HomePage() {
       <section className="min-h-screen py-20 px-6 bg-white flex items-center justify-center">
         <div className="max-w-[1000px] w-full mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
           <AnimatedSection className="md:col-span-5 flex justify-center md:justify-end">
-            <div className="w-full max-w-[400px] aspect-[4/5] rounded-3xl overflow-hidden shadow-[0_24px_64px_rgba(0,0,0,0.15)] ring-1 ring-black/5">
+            <div className="w-full max-w-[400px] aspect-[4/5] rounded-2xl overflow-hidden shadow-[0_24px_64px_rgba(0,0,0,0.15)] ring-1 ring-black/5">
               <img
-                src={`${BASE}/lama-sumati.png`}
+                src={`${BASE}/lama-sumati-bio.png`}
                 alt="Lama Sumati"
-                className="w-full h-full object-cover object-top"
+                className="w-full h-full object-cover object-center"
               />
             </div>
           </AnimatedSection>
