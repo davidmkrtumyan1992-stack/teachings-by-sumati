@@ -30,7 +30,7 @@ export default function CourseDetailPage() {
 
   const title = lang === 'en' ? course.title_en : (course.title_ru || course.title_en);
   const subtitle = lang === 'en' ? course.title_ru : course.title_en;
-  const badgeText = course.number > 0 ? `ACI ${course.number}` : "Special";
+  const badgeText = course.number > 0 ? `ACI ${course.number}` : t.badge.special;
 
   const sortedClasses = [...(course.classes || [])].sort((a, b) => {
     if (a.class_number === 'review') return 1;

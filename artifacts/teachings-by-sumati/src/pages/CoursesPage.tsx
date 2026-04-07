@@ -24,7 +24,7 @@ export default function CoursesPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {coursesData.courses.filter(c => c.number > 0).map((course, idx) => {
             const title = lang === 'en' ? course.title_en : (course.title_ru || course.title_en);
-            const badgeText = course.number > 0 ? `ACI ${course.number}` : "Special";
+            const badgeText = course.number > 0 ? `ACI ${course.number}` : t.badge.special;
             
             return (
               <AnimatedSection key={course.id} delay={(idx % 6) * 0.05}>

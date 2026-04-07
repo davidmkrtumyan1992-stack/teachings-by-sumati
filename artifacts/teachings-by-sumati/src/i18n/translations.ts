@@ -86,11 +86,18 @@ const translations = {
       menu: 'Menu',
       prevClass: 'Previous class',
       nextClass: 'Next class',
-      switchLang: (current: string) => `Language: ${current}. Click to switch.`,
+      switchLang: () => 'Click to switch language.',
     },
     notFound: {
       title: '404 Page Not Found',
       desc: 'Did you forget to add the page to the router?',
+    },
+    langLabels: {
+      en: 'English',
+      ru: 'Russian',
+    },
+    badge: {
+      special: 'Special',
     },
   },
   ru: {
@@ -178,11 +185,18 @@ const translations = {
       menu: 'Меню',
       prevClass: 'Предыдущий урок',
       nextClass: 'Следующий урок',
-      switchLang: (current: string) => `Язык: ${current}. Нажмите для переключения.`,
+      switchLang: () => 'Нажмите для переключения языка.',
     },
     notFound: {
       title: '404 Страница не найдена',
       desc: 'Возможно, страница была удалена или вы перешли по неверной ссылке.',
+    },
+    langLabels: {
+      en: 'Английский',
+      ru: 'Русский',
+    },
+    badge: {
+      special: 'Особый',
     },
   },
 } as const;

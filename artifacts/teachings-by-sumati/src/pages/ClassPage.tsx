@@ -129,13 +129,13 @@ export default function ClassPage() {
                 onClick={() => setLang('en')}
                 className={`px-6 py-2 rounded-lg font-inter text-sm font-medium transition-all ${lang === 'en' ? 'bg-[#7A1B2E] text-white shadow-sm' : 'text-[#6B6B6B] hover:text-[#1A1A1A]'}`}
               >
-                🇬🇧 English
+                🇬🇧 {t.langLabels.en}
               </button>
               <button 
                 onClick={() => setLang('ru')}
                 className={`px-6 py-2 rounded-lg font-inter text-sm font-medium transition-all ${lang === 'ru' ? 'bg-[#7A1B2E] text-white shadow-sm' : 'text-[#6B6B6B] hover:text-[#1A1A1A]'}`}
               >
-                🇷🇺 Русский
+                🇷🇺 {t.langLabels.ru}
               </button>
             </div>
           </div>
