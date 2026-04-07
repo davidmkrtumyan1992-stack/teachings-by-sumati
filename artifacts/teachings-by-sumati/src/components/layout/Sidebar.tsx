@@ -60,7 +60,7 @@ export function Sidebar({ isOpen, onClose, currentLanguage, onLanguageChange }: 
             onClick={onClose}
             className="p-2 rounded-full hover:bg-gray-100 transition-colors"
             data-testid="button-close-sidebar"
-            aria-label="Close sidebar"
+            aria-label={t.aria.closeMenu}
           >
             <X className="w-6 h-6 text-gray-500" />
           </button>
@@ -108,7 +108,7 @@ export function Sidebar({ isOpen, onClose, currentLanguage, onLanguageChange }: 
             type="button"
             role="switch"
             aria-checked={currentLanguage === 'ru'}
-            aria-label={`Language: ${currentLanguage === 'en' ? 'English' : 'Russian'}. Click to switch.`}
+            aria-label={t.aria.switchLang(currentLanguage === 'en' ? 'English' : 'Russian')}
             className="flex bg-gray-100 p-1 rounded-full w-[72px] h-[32px] relative cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7A1B2E] focus-visible:ring-offset-2"
             onClick={() => onLanguageChange(currentLanguage === 'en' ? 'ru' : 'en')}
             data-testid="toggle-language-sidebar"

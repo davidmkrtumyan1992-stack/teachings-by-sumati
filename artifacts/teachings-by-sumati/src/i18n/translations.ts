@@ -80,6 +80,18 @@ const translations = {
       contactDesc: 'For inquiries regarding teachings, retreats, or general questions.',
       allRightsReserved: 'All rights reserved.',
     },
+    aria: {
+      openMenu: 'Open menu',
+      closeMenu: 'Close menu',
+      menu: 'Menu',
+      prevClass: 'Previous class',
+      nextClass: 'Next class',
+      switchLang: (current: string) => `Language: ${current}. Click to switch.`,
+    },
+    notFound: {
+      title: '404 Page Not Found',
+      desc: 'Did you forget to add the page to the router?',
+    },
   },
   ru: {
     nav: {
@@ -159,6 +171,18 @@ const translations = {
       contact: 'Контакты',
       contactDesc: 'По вопросам учений, ретритов или общим вопросам.',
       allRightsReserved: 'Все права защищены.',
+    },
+    aria: {
+      openMenu: 'Открыть меню',
+      closeMenu: 'Закрыть меню',
+      menu: 'Меню',
+      prevClass: 'Предыдущий урок',
+      nextClass: 'Следующий урок',
+      switchLang: (current: string) => `Язык: ${current}. Нажмите для переключения.`,
+    },
+    notFound: {
+      title: '404 Страница не найдена',
+      desc: 'Возможно, страница была удалена или вы перешли по неверной ссылке.',
     },
   },
 } as const;

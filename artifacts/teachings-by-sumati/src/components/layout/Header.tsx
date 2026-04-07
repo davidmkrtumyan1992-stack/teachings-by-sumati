@@ -1,4 +1,5 @@
 import { Language } from "./LanguageContext";
+import { useT } from "@/i18n/translations";
 
 interface HeaderProps {
   currentLanguage: Language;
@@ -6,6 +7,7 @@ interface HeaderProps {
 }
 
 export function Header({ currentLanguage, onLanguageChange }: HeaderProps) {
+  const t = useT();
   return (
     <header className="sticky top-0 z-30 w-full h-14 md:h-16 bg-white/95 backdrop-blur-md border-b border-border flex items-center justify-between px-6">
       <div className="w-11" />
@@ -18,7 +20,7 @@ export function Header({ currentLanguage, onLanguageChange }: HeaderProps) {
         type="button"
         role="switch"
         aria-checked={currentLanguage === 'ru'}
-        aria-label={`Language: ${currentLanguage === 'en' ? 'English' : 'Russian'}. Click to switch.`}
+        aria-label={t.aria.switchLang(currentLanguage === 'en' ? 'English' : 'Russian')}
         className="flex bg-gray-100 p-1 rounded-full w-[72px] h-[32px] relative cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7A1B2E] focus-visible:ring-offset-2"
         onClick={() => onLanguageChange(currentLanguage === 'en' ? 'ru' : 'en')}
         data-testid="toggle-language-header"

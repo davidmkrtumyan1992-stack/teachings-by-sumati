@@ -40,7 +40,7 @@ export function BottomTabBar({ onMenuClick }: BottomTabBarProps) {
         className="flex flex-col items-center justify-center w-16 h-full gap-1 text-[#9A9A9A]"
         onClick={onMenuClick}
         data-testid="tabbar-link-more"
-        aria-label="Open menu"
+        aria-label={t.aria.openMenu}
       >
         <Menu className="w-6 h-6" />
         <span className="text-[11px] font-medium font-inter">{t.nav.more}</span>

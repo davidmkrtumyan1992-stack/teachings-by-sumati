@@ -95,7 +95,7 @@ export default function ClassPage() {
               onClick={() => prevClass && navigateToClass(prevClass.class_number)}
               disabled={!prevClass}
               className={`p-2 rounded-lg border border-[#E5E2DF] transition-colors ${prevClass ? 'hover:bg-[#F0EDEA] text-[#1A1A1A]' : 'opacity-50 cursor-not-allowed text-[#9A9A9A]'}`}
-              aria-label="Previous class"
+              aria-label={t.aria.prevClass}
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
@@ -106,7 +106,7 @@ export default function ClassPage() {
               onClick={() => nextClass && navigateToClass(nextClass.class_number)}
               disabled={!nextClass}
               className={`p-2 rounded-lg border border-[#E5E2DF] transition-colors ${nextClass ? 'hover:bg-[#F0EDEA] text-[#1A1A1A]' : 'opacity-50 cursor-not-allowed text-[#9A9A9A]'}`}
-              aria-label="Next class"
+              aria-label={t.aria.nextClass}
             >
               <ChevronRight className="w-5 h-5" />
             </button>
