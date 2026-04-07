@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { useLanguage } from "@/components/layout/LanguageContext";
+import { useT } from "@/i18n/translations";
 import type { CoursesData } from "@/data/types";
 import coursesRaw from "@/data/courses.json";
 
@@ -8,14 +9,15 @@ const coursesData = coursesRaw as CoursesData;
 
 export default function CoursesPage() {
   const { lang } = useLanguage();
+  const t = useT();
 
   return (
     <div className="min-h-screen bg-white pt-10 pb-24 px-6">
       <div className="max-w-[1200px] mx-auto">
         <AnimatedSection className="text-center mb-16">
-          <h1 className="font-playfair text-3xl md:text-[42px] mb-4">18 ACI Foundation Courses</h1>
+          <h1 className="font-playfair text-3xl md:text-[42px] mb-4">{t.courses.heading}</h1>
           <p className="font-inter text-[#6B6B6B] text-base max-w-2xl mx-auto">
-            Foundation Courses of the Asian Classics Institute
+            {t.courses.subheading}
           </p>
         </AnimatedSection>
 
@@ -55,7 +57,7 @@ export default function CoursesPage() {
                           ))}
                         </div>
                         <div className="font-inter text-sm text-[#7A1B2E] font-medium group-hover:underline">
-                          Learn more &rarr;
+                          {t.common.learnMore} &rarr;
                         </div>
                       </div>
                     </div>

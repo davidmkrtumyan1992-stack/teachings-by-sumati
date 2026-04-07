@@ -1,13 +1,16 @@
 import { AnimatedSection } from "@/components/AnimatedSection";
+import { useT } from "@/i18n/translations";
 
 export default function PracticeModulesPage() {
+  const t = useT();
+
   return (
     <div className="min-h-screen bg-white pt-10 pb-24 px-6">
       <div className="max-w-[1200px] mx-auto">
         <AnimatedSection className="text-center mb-16">
-          <h1 className="font-playfair text-3xl md:text-[42px] mb-4">Practice Modules</h1>
+          <h1 className="font-playfair text-3xl md:text-[42px] mb-4">{t.practiceModules.heading}</h1>
           <p className="font-inter text-[#6B6B6B] text-base max-w-2xl mx-auto">
-            Deepen your practice with structured modules
+            {t.practiceModules.subheading}
           </p>
         </AnimatedSection>
 
@@ -20,7 +23,7 @@ export default function PracticeModulesPage() {
                   style={{ background: 'linear-gradient(135deg, #5C0E1F 0%, #7A1B2E 100%)' }}
                 >
                   <div className="font-playfair text-2xl text-white/50 tracking-wider">
-                    Coming Soon
+                    {t.practiceModules.comingSoon}
                   </div>
                 </div>
                 <div className="p-6">

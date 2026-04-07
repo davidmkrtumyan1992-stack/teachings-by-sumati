@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { Link, useLocation } from "wouter";
 import { X, Home, BookOpen, Flower2, Mountain, Calendar, Link as LinkIcon, Globe } from "lucide-react";
 import { Language } from "./LanguageContext";
+import { useT } from "@/i18n/translations";
 
 interface SidebarProps {
   isOpen: boolean;
@@ -10,18 +11,19 @@ interface SidebarProps {
   onLanguageChange: (lang: Language) => void;
 }
 
-const NAV_LINKS = [
-  { href: "/", label: "Home", icon: Home },
-  { href: "/aci-courses", label: "ACI Courses", icon: BookOpen },
-  { href: "/practice-modules", label: "Practice Modules", icon: Flower2 },
-  { href: "/retreats", label: "Retreats", icon: Mountain },
-  { href: "/events", label: "Events", icon: Calendar },
-  { href: "/projects", label: "Projects", icon: LinkIcon },
-];
-
 export function Sidebar({ isOpen, onClose, currentLanguage, onLanguageChange }: SidebarProps) {
   const [location] = useLocation();
   const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const t = useT();
+
+  const NAV_LINKS = [
+    { href: "/", label: t.nav.home, icon: Home },
+    { href: "/aci-courses", label: t.nav.aciCourses, icon: BookOpen },
+    { href: "/practice-modules", label: t.nav.practiceModules, icon: Flower2 },
+    { href: "/retreats", label: t.nav.retreats, icon: Mountain },
+    { href: "/events", label: t.nav.events, icon: Calendar },
+    { href: "/projects", label: t.nav.projects, icon: LinkIcon },
+  ];
 
   useEffect(() => {
     if (!isOpen) return;
@@ -82,7 +84,7 @@ export function Sidebar({ isOpen, onClose, currentLanguage, onLanguageChange }: 
                       background: 'rgba(122, 27, 46, 0.07)',
                       boxShadow: '0 2px 8px rgba(122, 27, 46, 0.10), inset 0 0 0 1px rgba(122, 27, 46, 0.20)',
                     } : undefined}
-                    data-testid={`link-sidebar-${link.label.toLowerCase().replace(/\s+/g, '-')}`}
+                    data-testid={`link-sidebar-${link.href.replace('/', '') || 'home'}`}
                   >
                     <link.icon className={`w-5 h-5 shrink-0 ${isActive ? 'text-[#7A1B2E]' : 'text-gray-400'}`} />
                     <span>{link.label}</span>
@@ -99,7 +101,7 @@ export function Sidebar({ isOpen, onClose, currentLanguage, onLanguageChange }: 
         <div className="p-6 border-t border-border mt-auto flex items-center justify-between">
           <div className="flex items-center gap-2 text-gray-500 text-sm font-medium">
             <Globe className="w-5 h-5" />
-            <span>Language</span>
+            <span>{t.nav.language}</span>
           </div>
           
           <button

@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { ChevronDown, ArrowRight } from "lucide-react";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { useLanguage } from "@/components/layout/LanguageContext";
+import { useT } from "@/i18n/translations";
 import type { Course, Project, CoursesData } from "@/data/types";
 import coursesRaw from "@/data/courses.json";
 
@@ -14,6 +15,7 @@ const video720p = `${BASE}/hero-bg-720p.mp4`;
 
 export default function HomePage() {
   const { lang } = useLanguage();
+  const t = useT();
   const [scrollY, setScrollY] = useState(0);
   const [windowHeight, setWindowHeight] = useState(1000);
   const [randomVideo, setRandomVideo] = useState<{ url: string, courseTitle: string } | null>(null);
@@ -90,7 +92,7 @@ export default function HomePage() {
             Teachings By Sumati
           </h1>
           <p className="font-inter text-[18px] font-light text-white/80 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-            Buddhist Teachings in the Mahayana Tradition
+            {t.home.heroSubtitle}
           </p>
         </div>
 
@@ -114,7 +116,7 @@ export default function HomePage() {
           <AnimatedSection className="md:col-span-7 space-y-6" delay={0.2}>
             <div>
               <h2 className="font-playfair text-3xl md:text-4xl text-[#1A1A1A] mb-2">Lama Sumati</h2>
-              <p className="font-inter text-sm text-[#9A9A9A] tracking-wide uppercase">Certified ACI Teacher · Diamond Mountain</p>
+              <p className="font-inter text-sm text-[#9A9A9A] tracking-wide uppercase">{t.home.teacherSubtitle}</p>
             </div>
             <div className="font-inter text-base text-[#4A4A4A] leading-[1.8] space-y-4 whitespace-pre-wrap">
               {lang === 'ru' && coursesData.biography?.ru
@@ -129,9 +131,9 @@ export default function HomePage() {
       <section className="min-h-[60vh] py-24 px-6 bg-[#F8F6F4] flex items-center justify-center text-center">
         <div className="max-w-2xl mx-auto w-full">
           <AnimatedSection>
-            <h2 className="font-playfair text-3xl md:text-4xl mb-4">Find a Teaching</h2>
+            <h2 className="font-playfair text-3xl md:text-4xl mb-4">{t.home.findATeaching}</h2>
             <p className="font-inter text-base text-[#6B6B6B] max-w-[480px] mx-auto mb-10">
-              Click the button and we'll find a random teaching for you from the foundation courses.
+              {t.home.findDescription}
             </p>
 
             {!randomVideo && (
@@ -144,7 +146,7 @@ export default function HomePage() {
                 {isFinding ? (
                   <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                 ) : (
-                  "Find for me"
+                  t.common.findForMe
                 )}
               </button>
             )}
@@ -169,7 +171,7 @@ export default function HomePage() {
                   {isFinding ? (
                     <div className="w-4 h-4 border-2 border-[#1A1A1A]/30 border-t-[#1A1A1A] rounded-full animate-spin" />
                   ) : (
-                    "Another one"
+                    t.common.anotherOne
                   )}
                 </button>
               </div>
@@ -182,7 +184,7 @@ export default function HomePage() {
       <section className="py-24 px-6 bg-white">
         <div className="max-w-[1200px] mx-auto">
           <AnimatedSection className="text-center mb-16">
-            <h2 className="font-playfair text-3xl md:text-4xl">Projects</h2>
+            <h2 className="font-playfair text-3xl md:text-4xl">{t.home.projects}</h2>
           </AnimatedSection>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -207,7 +209,7 @@ export default function HomePage() {
                       {desc}
                     </p>
                     <div className="font-inter text-sm font-medium text-[#7A1B2E] flex items-center gap-1 group-hover:gap-2 transition-all">
-                      Go <ArrowRight className="w-4 h-4" />
+                      {t.common.go} <ArrowRight className="w-4 h-4" />
                     </div>
                   </div>
                 </div>

@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { useLanguage } from "@/components/layout/LanguageContext";
+import { useT } from "@/i18n/translations";
 import type { CoursesData } from "@/data/types";
 import coursesRaw from "@/data/courses.json";
 
@@ -8,14 +9,15 @@ const coursesData = coursesRaw as CoursesData;
 
 export default function ProjectsPage() {
   const { lang } = useLanguage();
+  const t = useT();
 
   return (
     <div className="min-h-screen bg-white pt-10 pb-24 px-6">
       <div className="max-w-[1200px] mx-auto">
         <AnimatedSection className="text-center mb-16">
-          <h1 className="font-playfair text-3xl md:text-[42px] mb-4">Projects</h1>
+          <h1 className="font-playfair text-3xl md:text-[42px] mb-4">{t.projects.heading}</h1>
           <p className="font-inter text-[#6B6B6B] text-base max-w-2xl mx-auto">
-            Tools and resources supporting the study of the Dharma
+            {t.projects.subheading}
           </p>
         </AnimatedSection>
 
@@ -41,7 +43,7 @@ export default function ProjectsPage() {
                     {desc}
                   </p>
                   <div className="font-inter text-sm font-medium text-[#7A1B2E] flex items-center gap-1 group-hover:gap-2 transition-all">
-                    Visit Site <ArrowRight className="w-4 h-4" />
+                    {t.projects.visitSite} <ArrowRight className="w-4 h-4" />
                   </div>
                 </div>
               </div>

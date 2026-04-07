@@ -1,0 +1,171 @@
+import { useLanguage } from '@/components/layout/LanguageContext';
+
+const translations = {
+  en: {
+    nav: {
+      home: 'Home',
+      aciCourses: 'ACI Courses',
+      practiceModules: 'Practice Modules',
+      retreats: 'Retreats',
+      events: 'Events',
+      projects: 'Projects',
+      more: 'More',
+      language: 'Language',
+    },
+    common: {
+      learnMore: 'Learn more',
+      backToCourses: 'Back to courses',
+      backTo: (title: string) => `Back to ${title}`,
+      viewDetails: 'View Details',
+      findForMe: 'Find for me',
+      anotherOne: 'Another one',
+      start: 'Start',
+      go: 'Go',
+      contactUs: 'Contact Us',
+    },
+    courses: {
+      heading: '18 ACI Foundation Courses',
+      subheading: 'Foundation Courses of the Asian Classics Institute',
+      classLabel: (n: string | number) => `Class ${n}`,
+      reviewClass: 'Review Class',
+      classesComingSoon: 'Classes coming soon',
+      materialsBeingPrepared: 'Materials are currently being prepared.',
+      classNotFound: 'Class not found',
+      courseNotFound: 'Course not found',
+      classesCount: (n: number, hasReview: boolean) => `${n} classes${hasReview ? ' + review' : ''}`,
+      noClasses: 'No classes',
+    },
+    classPage: {
+      classMaterials: 'Class Materials',
+      studentNotes: 'Student Notes',
+      reading: 'Reading',
+      homework: 'Homework',
+      transcript: 'Transcript',
+      noVideo: 'No video available for this language.',
+      backTo: (title: string) => `Back to ${title}`,
+    },
+    home: {
+      heroSubtitle: 'Buddhist Teachings in the Mahayana Tradition',
+      teacherSubtitle: 'Certified ACI Teacher · Diamond Mountain',
+      findATeaching: 'Find a Teaching',
+      findDescription: "Click the button and we'll find a random teaching for you from the foundation courses.",
+      projects: 'Projects',
+    },
+    retreats: {
+      heading: 'Retreats',
+      subheading: 'Immersive study and practice environments',
+      viewDetails: 'View Details',
+    },
+    events: {
+      heading: 'Upcoming Events',
+      subheading: 'Live teachings, Q&A sessions, and study groups',
+      noEvents: 'No upcoming events',
+      noEventsDesc: 'There are no live events scheduled at this moment. Stay tuned for future announcements.',
+    },
+    practiceModules: {
+      heading: 'Practice Modules',
+      subheading: 'Deepen your practice with structured modules',
+      comingSoon: 'Coming Soon',
+    },
+    projects: {
+      heading: 'Projects',
+      subheading: 'Tools and resources supporting the study of the Dharma',
+      visitSite: 'Visit Site',
+    },
+    footer: {
+      description: 'Buddhist teachings in the Mahayana tradition. Dedicated to the study and practice of the Dharma.',
+      navigation: 'Navigation',
+      resources: 'Resources',
+      contact: 'Contact',
+      contactDesc: 'For inquiries regarding teachings, retreats, or general questions.',
+      allRightsReserved: 'All rights reserved.',
+    },
+  },
+  ru: {
+    nav: {
+      home: 'Главная',
+      aciCourses: 'Курсы ACI',
+      practiceModules: 'Практические модули',
+      retreats: 'Ретриты',
+      events: 'События',
+      projects: 'Проекты',
+      more: 'Ещё',
+      language: 'Язык',
+    },
+    common: {
+      learnMore: 'Подробнее',
+      backToCourses: 'Назад к курсам',
+      backTo: (title: string) => `Назад: ${title}`,
+      viewDetails: 'Подробнее',
+      findForMe: 'Найти',
+      anotherOne: 'Ещё один',
+      start: 'Начать',
+      go: 'Перейти',
+      contactUs: 'Связаться',
+    },
+    courses: {
+      heading: '18 Базовых Курсов ACI',
+      subheading: 'Базовые курсы Института Азиатской Классики',
+      classLabel: (n: string | number) => `Урок ${n}`,
+      reviewClass: 'Обзорный урок',
+      classesComingSoon: 'Уроки скоро появятся',
+      materialsBeingPrepared: 'Материалы готовятся.',
+      classNotFound: 'Урок не найден',
+      courseNotFound: 'Курс не найден',
+      classesCount: (n: number, hasReview: boolean) => `${n} уроков${hasReview ? ' + обзор' : ''}`,
+      noClasses: 'Нет уроков',
+    },
+    classPage: {
+      classMaterials: 'Материалы урока',
+      studentNotes: 'Конспекты',
+      reading: 'Чтение',
+      homework: 'Домашнее задание',
+      transcript: 'Транскрипт',
+      noVideo: 'Видео на этом языке недоступно.',
+      backTo: (title: string) => `Назад: ${title}`,
+    },
+    home: {
+      heroSubtitle: 'Буддийские учения в традиции Махаяны',
+      teacherSubtitle: 'Сертифицированный учитель ACI · Diamond Mountain',
+      findATeaching: 'Найти учение',
+      findDescription: 'Нажмите кнопку и мы подберём случайное учение из базовых курсов.',
+      projects: 'Проекты',
+    },
+    retreats: {
+      heading: 'Ретриты',
+      subheading: 'Среды глубокого изучения и практики',
+      viewDetails: 'Подробнее',
+    },
+    events: {
+      heading: 'Предстоящие события',
+      subheading: 'Живые учения, сессии вопросов и ответов, учебные группы',
+      noEvents: 'Нет предстоящих событий',
+      noEventsDesc: 'В данный момент не запланировано живых событий. Следите за обновлениями.',
+    },
+    practiceModules: {
+      heading: 'Практические модули',
+      subheading: 'Углубите свою практику с помощью структурированных модулей',
+      comingSoon: 'Скоро',
+    },
+    projects: {
+      heading: 'Проекты',
+      subheading: 'Инструменты и ресурсы для изучения Дхармы',
+      visitSite: 'Перейти',
+    },
+    footer: {
+      description: 'Буддийские учения в традиции Махаяны. Посвящено изучению и практике Дхармы.',
+      navigation: 'Навигация',
+      resources: 'Ресурсы',
+      contact: 'Контакты',
+      contactDesc: 'По вопросам учений, ретритов или общим вопросам.',
+      allRightsReserved: 'Все права защищены.',
+    },
+  },
+} as const;
+
+export type Translations = typeof translations.en;
+
+export function useT() {
+  const { lang } = useLanguage();
+  return translations[lang] as Translations;
+}

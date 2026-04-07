@@ -2,6 +2,7 @@ import { useParams, Link } from "wouter";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { useLanguage } from "@/components/layout/LanguageContext";
+import { useT } from "@/i18n/translations";
 import type { CoursesData } from "@/data/types";
 import coursesRaw from "@/data/courses.json";
 
@@ -10,6 +11,7 @@ const coursesData = coursesRaw as CoursesData;
 export default function CourseDetailPage() {
   const { courseId } = useParams();
   const { lang } = useLanguage();
+  const t = useT();
   
   const course = coursesData.courses.find(c => c.id === courseId);
 
@@ -17,9 +19,9 @@ export default function CourseDetailPage() {
     return (
       <div className="min-h-screen flex items-center justify-center text-center px-6">
         <div>
-          <h1 className="font-playfair text-3xl mb-4">Course not found</h1>
+          <h1 className="font-playfair text-3xl mb-4">{t.courses.courseNotFound}</h1>
           <Link href="/aci-courses" className="text-[#7A1B2E] hover:underline font-inter">
-            &larr; Back to courses
+            &larr; {t.common.backToCourses}
           </Link>
         </div>
       </div>
@@ -30,7 +32,6 @@ export default function CourseDetailPage() {
   const subtitle = lang === 'en' ? course.title_ru : course.title_en;
   const badgeText = course.number > 0 ? `ACI ${course.number}` : "Special";
 
-  // Reorder classes so review is at the end
   const sortedClasses = [...(course.classes || [])].sort((a, b) => {
     if (a.class_number === 'review') return 1;
     if (b.class_number === 'review') return -1;
@@ -43,7 +44,7 @@ export default function CourseDetailPage() {
       <div className="bg-[#F8F6F4] pt-8 pb-12 px-6 rounded-b-[24px] mb-12">
         <div className="max-w-[800px] mx-auto">
           <Link href="/aci-courses" className="inline-flex items-center gap-2 text-[#6B6B6B] hover:text-[#1A1A1A] font-inter text-sm mb-8 transition-colors">
-            <ArrowLeft className="w-4 h-4" /> Back to courses
+            <ArrowLeft className="w-4 h-4" /> {t.common.backToCourses}
           </Link>
           
           <div className="space-y-4">
@@ -61,7 +62,7 @@ export default function CourseDetailPage() {
             
             <div className="flex flex-wrap gap-4 pt-4 border-t border-[#E5E2DF] mt-6">
               <div className="font-inter text-sm text-[#1A1A1A] font-medium py-2">
-                {course.total_classes} classes {course.has_review ? '+ review' : ''}
+                {t.courses.classesCount(course.total_classes ?? 0, !!course.has_review)}
               </div>
               
               <div className="flex gap-3 ml-auto">
@@ -97,7 +98,7 @@ export default function CourseDetailPage() {
           <div className="space-y-3">
             {sortedClasses.map((cls, idx) => {
               const isReview = cls.class_number === 'review';
-              const classLabel = isReview ? 'Review Class' : `Class ${cls.class_number}`;
+              const classLabel = isReview ? t.courses.reviewClass : t.courses.classLabel(cls.class_number);
               
               return (
                 <AnimatedSection key={cls.class_number} delay={idx * 0.05}>
@@ -112,7 +113,7 @@ export default function CourseDetailPage() {
                         </div>
                       </div>
                       <div className="font-inter text-sm font-medium text-[#7A1B2E] group-hover:translate-x-1 transition-transform">
-                        Start &rarr;
+                        {t.common.start} &rarr;
                       </div>
                     </div>
                   </Link>
@@ -122,8 +123,8 @@ export default function CourseDetailPage() {
           </div>
         ) : (
           <div className="text-center py-20 bg-[#F8F6F4] rounded-2xl border border-[#E5E2DF] border-dashed">
-            <div className="font-playfair text-xl text-[#6B6B6B] mb-2">Classes coming soon</div>
-            <p className="font-inter text-sm text-[#9A9A9A]">Materials are currently being prepared.</p>
+            <div className="font-playfair text-xl text-[#6B6B6B] mb-2">{t.courses.classesComingSoon}</div>
+            <p className="font-inter text-sm text-[#9A9A9A]">{t.courses.materialsBeingPrepared}</p>
           </div>
         )}
       </div>

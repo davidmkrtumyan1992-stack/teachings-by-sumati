@@ -3,6 +3,7 @@ import { useParams, Link, useLocation } from "wouter";
 import { ArrowLeft, ChevronLeft, ChevronRight, ExternalLink, ChevronDown, ChevronUp } from "lucide-react";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { useLanguage } from "@/components/layout/LanguageContext";
+import { useT } from "@/i18n/translations";
 import type { CoursesData } from "@/data/types";
 import coursesRaw from "@/data/courses.json";
 
@@ -11,25 +12,24 @@ const coursesData = coursesRaw as CoursesData;
 export default function ClassPage() {
   const { courseId, classId } = useParams();
   const { lang, setLang } = useLanguage();
+  const t = useT();
   const [, setLocation] = useLocation();
   const [isTranscriptOpen, setIsTranscriptOpen] = useState(false);
   
-  // classId is like "class-1" or "class-review"; extract the classNumber
   const classNumber = classId?.startsWith('class-') ? classId.slice(6) : classId;
   
   const course = coursesData.courses.find(c => c.id === courseId);
   const classData = course?.classes?.find(c => String(c.class_number) === classNumber);
 
-  // Swipe handling
   const touchStartX = useRef<number | null>(null);
 
   if (!course || !classData) {
     return (
       <div className="min-h-screen flex items-center justify-center text-center px-6">
         <div>
-          <h1 className="font-playfair text-3xl mb-4">Class not found</h1>
+          <h1 className="font-playfair text-3xl mb-4">{t.courses.classNotFound}</h1>
           <Link href={`/aci-courses/${courseId}`} className="text-[#7A1B2E] hover:underline font-inter">
-            &larr; Back to course
+            &larr; {t.common.backToCourses}
           </Link>
         </div>
       </div>
@@ -37,10 +37,9 @@ export default function ClassPage() {
   }
 
   const isReview = classNumber === 'review';
-  const classLabel = isReview ? 'Review Class' : `Class ${classNumber}`;
+  const classLabel = isReview ? t.courses.reviewClass : t.courses.classLabel(classNumber ?? '');
   const courseTitle = lang === 'en' ? course.title_en : (course.title_ru || course.title_en);
 
-  // Navigation logic
   const sortedClasses = [...(course.classes || [])].sort((a, b) => {
     if (a.class_number === 'review') return 1;
     if (b.class_number === 'review') return -1;
@@ -64,15 +63,14 @@ export default function ClassPage() {
     const touchEndX = e.changedTouches[0].clientX;
     const diff = touchStartX.current - touchEndX;
 
-    if (diff > 50 && nextClass) { // Swipe left -> Next
+    if (diff > 50 && nextClass) {
       navigateToClass(nextClass.class_number);
-    } else if (diff < -50 && prevClass) { // Swipe right -> Prev
+    } else if (diff < -50 && prevClass) {
       navigateToClass(prevClass.class_number);
     }
     touchStartX.current = null;
   };
 
-  // Video embed URL
   const videoUrl = lang === 'en' ? classData.video_en : classData.video_ru;
   const videoEmbedUrl = videoUrl ? videoUrl.replace('youtu.be/', 'youtube.com/embed/') : null;
 
@@ -89,7 +87,7 @@ export default function ClassPage() {
             <ArrowLeft className="w-5 h-5" />
           </Link>
           <Link href={`/aci-courses/${course.id}`} className="hidden md:flex items-center gap-2 text-[#6B6B6B] hover:text-[#1A1A1A] font-inter text-sm transition-colors">
-            <ArrowLeft className="w-4 h-4" /> Back to {courseTitle}
+            <ArrowLeft className="w-4 h-4" /> {t.classPage.backTo(courseTitle)}
           </Link>
           
           <div className="flex items-center gap-2">
@@ -102,7 +100,7 @@ export default function ClassPage() {
               <ChevronLeft className="w-5 h-5" />
             </button>
             <div className="font-inter text-sm text-[#6B6B6B] px-2 whitespace-nowrap">
-              {currentIndex + 1} of {sortedClasses.length}
+              {currentIndex + 1} / {sortedClasses.length}
             </div>
             <button 
               onClick={() => nextClass && navigateToClass(nextClass.class_number)}
@@ -137,7 +135,7 @@ export default function ClassPage() {
                 onClick={() => setLang('ru')}
                 className={`px-6 py-2 rounded-lg font-inter text-sm font-medium transition-all ${lang === 'ru' ? 'bg-[#7A1B2E] text-white shadow-sm' : 'text-[#6B6B6B] hover:text-[#1A1A1A]'}`}
               >
-                🇷🇺 Russian
+                🇷🇺 Русский
               </button>
             </div>
           </div>
@@ -152,7 +150,7 @@ export default function ClassPage() {
               />
             ) : (
               <div className="w-full h-full flex flex-col items-center justify-center text-[#9A9A9A] bg-[#F8F6F4]">
-                <p className="font-inter">No video available for this language.</p>
+                <p className="font-inter">{t.classPage.noVideo}</p>
               </div>
             )}
           </div>
@@ -160,16 +158,16 @@ export default function ClassPage() {
 
         {/* Materials */}
         <AnimatedSection delay={0.2} className="space-y-6">
-          <h2 className="font-inter text-xl font-medium text-[#1A1A1A]">Class Materials</h2>
+          <h2 className="font-inter text-xl font-medium text-[#1A1A1A]">{t.classPage.classMaterials}</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {['Student Notes', 'Reading', 'Homework'].map((type, i) => (
-              <div key={type} className="bg-white border border-[#E5E2DF] rounded-xl p-4 flex gap-4 items-center">
+            {[t.classPage.studentNotes, t.classPage.reading, t.classPage.homework].map((label) => (
+              <div key={label} className="bg-white border border-[#E5E2DF] rounded-xl p-4 flex gap-4 items-center">
                 <div className="w-11 h-[52px] bg-[#F8F6F4] rounded-md flex flex-col items-center justify-center text-[#7A1B2E] font-bold text-[10px] shrink-0 border border-[#E5E2DF]">
                   PDF
                 </div>
                 <div className="flex-1 min-w-0">
-                  <div className="font-inter text-sm font-medium text-[#1A1A1A] truncate">{type}</div>
+                  <div className="font-inter text-sm font-medium text-[#1A1A1A] truncate">{label}</div>
                   <div className="font-inter text-[11px] text-[#9A9A9A]">200 KB</div>
                 </div>
                 <button className="shrink-0 p-2 text-[#7A1B2E] hover:bg-[#F8F6F4] rounded-lg transition-colors">
@@ -187,7 +185,7 @@ export default function ClassPage() {
               onClick={() => setIsTranscriptOpen(!isTranscriptOpen)}
               className="w-full px-6 py-5 flex items-center justify-between bg-[#F8F6F4] hover:bg-[#F0EDEA] transition-colors"
             >
-              <span className="font-inter text-base font-medium text-[#1A1A1A]">Transcript</span>
+              <span className="font-inter text-base font-medium text-[#1A1A1A]">{t.classPage.transcript}</span>
               {isTranscriptOpen ? <ChevronUp className="w-5 h-5 text-[#6B6B6B]" /> : <ChevronDown className="w-5 h-5 text-[#6B6B6B]" />}
             </button>
             
@@ -198,9 +196,6 @@ export default function ClassPage() {
                 </p>
                 <p>
                   Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-                <p>
-                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
                 </p>
               </div>
             )}
