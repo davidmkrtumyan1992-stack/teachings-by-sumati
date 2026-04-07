@@ -99,6 +99,10 @@ const translations = {
     badge: {
       special: 'Special',
     },
+    platform: {
+      eng: 'ACI Platform EN',
+      rus: 'ACI Platform RU',
+    },
   },
   ru: {
     nav: {
@@ -197,6 +201,10 @@ const translations = {
     },
     badge: {
       special: 'Особый',
+    },
+    platform: {
+      eng: 'Платформа ACI EN',
+      rus: 'Платформа ACI RU',
     },
   },
 } as const;

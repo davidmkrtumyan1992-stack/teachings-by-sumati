@@ -73,7 +73,7 @@ export default function CourseDetailPage() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 text-sm font-inter text-[#7A1B2E] hover:text-[#5C0E1F] bg-white border border-[#7A1B2E]/20 px-4 py-2 rounded-lg transition-colors"
                   >
-                    ACI Platform ENG <ExternalLink className="w-3.5 h-3.5" />
+                    {t.platform.eng} <ExternalLink className="w-3.5 h-3.5" />
                   </a>
                 )}
                 {course.platform_ru && (
@@ -83,7 +83,7 @@ export default function CourseDetailPage() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 text-sm font-inter text-[#7A1B2E] hover:text-[#5C0E1F] bg-white border border-[#7A1B2E]/20 px-4 py-2 rounded-lg transition-colors"
                   >
-                    ACI Platform RUS <ExternalLink className="w-3.5 h-3.5" />
+                    {t.platform.rus} <ExternalLink className="w-3.5 h-3.5" />
                   </a>
                 )}
               </div>
