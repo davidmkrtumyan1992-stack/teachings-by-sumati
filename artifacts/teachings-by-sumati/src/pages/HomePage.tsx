@@ -113,7 +113,7 @@ export default function HomePage() {
               />
             </div>
           </AnimatedSection>
-          <AnimatedSection className="space-y-6 self-start pt-6 md:pt-8 lg:pt-0 lg:pl-2" delay={0.2}>
+          <AnimatedSection className="space-y-6 self-start pt-6 md:pt-8 lg:pt-0 lg:pl-12" delay={0.2}>
             <div>
               <h2 className="font-playfair text-3xl md:text-4xl text-[#1A1A1A] mb-2">Lama Sumati</h2>
               <p className="font-inter text-sm text-[#9A9A9A] tracking-wide uppercase">{t.home.teacherSubtitle}</p>
