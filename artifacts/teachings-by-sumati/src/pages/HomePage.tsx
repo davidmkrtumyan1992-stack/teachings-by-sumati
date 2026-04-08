@@ -102,18 +102,18 @@ export default function HomePage() {
       </section>
 
       {/* SECTION 2 - BIOGRAPHY */}
-      <section className="min-h-screen py-20 px-6 bg-white flex items-center justify-center">
-        <div className="max-w-[1000px] w-full mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
-          <AnimatedSection className="md:col-span-5 flex justify-center md:justify-end">
-            <div className="w-full max-w-[400px] aspect-[4/5] rounded-2xl overflow-hidden shadow-[0_24px_64px_rgba(0,0,0,0.15)] ring-1 ring-black/5">
+      <section className="py-20 px-6 bg-white">
+        <div className="max-w-[1100px] w-full mx-auto grid grid-cols-1 lg:grid-cols-[55%_45%] gap-0 lg:gap-12 items-start">
+          <AnimatedSection>
+            <div className="w-full overflow-hidden rounded-2xl shadow-[0_24px_64px_rgba(0,0,0,0.12)] ring-1 ring-black/5">
               <img
-                src={`${BASE}/lama-sumati-bio.png`}
+                src={`${BASE}/lama-sumati-bio.jpg`}
                 alt="Lama Sumati"
-                className="w-full h-full object-cover object-center"
+                className="w-full h-auto md:max-h-[400px] lg:max-h-none object-contain object-center"
               />
             </div>
           </AnimatedSection>
-          <AnimatedSection className="md:col-span-7 space-y-6" delay={0.2}>
+          <AnimatedSection className="space-y-6 self-start pt-6 md:pt-8 lg:pt-0 lg:pl-2" delay={0.2}>
             <div>
               <h2 className="font-playfair text-3xl md:text-4xl text-[#1A1A1A] mb-2">Lama Sumati</h2>
               <p className="font-inter text-sm text-[#9A9A9A] tracking-wide uppercase">{t.home.teacherSubtitle}</p>
