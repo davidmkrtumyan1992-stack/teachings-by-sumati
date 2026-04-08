@@ -103,7 +103,7 @@ export default function HomePage() {
 
       {/* SECTION 2 - BIOGRAPHY */}
       <section className="py-20 px-6 bg-white">
-        <div className="max-w-[1100px] w-full mx-auto grid grid-cols-1 lg:grid-cols-[55%_45%] gap-0 lg:gap-12 items-start">
+        <div className="max-w-[1100px] w-full mx-auto grid grid-cols-1 lg:grid-cols-[55%_45%] gap-0 lg:gap-12 items-center">
           <AnimatedSection>
             <div className="w-full overflow-hidden rounded-2xl shadow-[0_24px_64px_rgba(0,0,0,0.12)] ring-1 ring-black/5">
               <img
