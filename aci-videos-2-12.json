@@ -10,8 +10,8 @@
       {
         "classNumber": 1,
         "isReview": false,
-        "videoEN": "https://youtu.be/OMoK11SOHQE",
-        "videoRU": null,
+        "videoEN": null,
+        "videoRU": "https://youtu.be/OMoK11SOHQE",
         "status": "ready"
       },
       {
@@ -473,8 +473,8 @@
       {
         "classNumber": 5,
         "isReview": false,
-        "videoEN": "https://youtu.be/diSqNonmQZ8",
-        "videoRU": null,
+        "videoEN": null,
+        "videoRU": "https://youtu.be/diSqNonmQZ8",
         "status": "ready"
       },
       {
