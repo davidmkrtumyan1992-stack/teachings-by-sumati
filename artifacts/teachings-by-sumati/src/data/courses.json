@@ -53,7 +53,7 @@
       "platform_en": null,
       "platform_ru": null,
       "classes": [
-        { "class_number": 1, "video_en": "https://youtu.be/OMoK11SOHQE", "video_ru": null },
+        { "class_number": 1, "video_en": null, "video_ru": "https://youtu.be/OMoK11SOHQE" },
         { "class_number": 2, "video_en": "https://youtu.be/Hhf3MwCgPvU", "video_ru": "https://youtu.be/qYuI-Sq1S-U" },
         { "class_number": 3, "video_en": "https://youtu.be/8r-CRKmO_t8", "video_ru": "https://youtu.be/sOB6PVarolk" },
         { "class_number": 4, "video_en": "https://youtu.be/opfiFs0HNnw", "video_ru": "https://youtu.be/qMLqKkv43KU" },
@@ -177,7 +177,7 @@
         { "class_number": 2, "video_en": "https://youtu.be/3eK2tBSDgpY", "video_ru": "https://youtu.be/rlFKt_IJCX4" },
         { "class_number": 3, "video_en": "https://youtu.be/o6Zf5iip6y8", "video_ru": "https://youtu.be/FTamffWSveo" },
         { "class_number": 4, "video_en": "https://youtu.be/YAz1DmgDNfw", "video_ru": "https://youtu.be/Gz-Jyg8UFfc" },
-        { "class_number": 5, "video_en": "https://youtu.be/diSqNonmQZ8", "video_ru": null },
+        { "class_number": 5, "video_en": null, "video_ru": "https://youtu.be/diSqNonmQZ8" },
         { "class_number": 6, "video_en": "https://youtu.be/vV_H_ePe_cU", "video_ru": "https://youtu.be/N7vHu-i1TuA" },
         { "class_number": 7, "video_en": "https://youtu.be/d85jeoxZ56g", "video_ru": "https://youtu.be/H5d8XCm_InY" },
         { "class_number": 8, "video_en": "https://youtu.be/UZ_qQv_3jwQ", "video_ru": "https://youtu.be/iDuuuujNdLk" },
