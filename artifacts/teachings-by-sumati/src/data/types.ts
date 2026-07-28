@@ -5,6 +5,7 @@ export interface ClassEntry {
   transcript_en?: string | null;
   transcript_ru?: string | null;
   materials?: string[] | null;
+  status?: 'ready' | 'not_recorded_yet' | null;
 }
 
 export interface Course {
