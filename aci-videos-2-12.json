@@ -1,0 +1,966 @@
+[
+  {
+    "course": "aci-2",
+    "courseNumber": 2,
+    "title": "ACI 2 - Buddhist Refuge (Aug 28 - Oct 5, 2023)",
+    "recordingFolder": "https://drive.google.com/drive/folders/1nlqRESebQ2nV0W-hwc8-AxaHi5FAWzkt?usp=sharing",
+    "playlistEN": "https://www.youtube.com/playlist?list=PLTqjBtjd9j8f19YLJZSshUkpY9YpAeHPp",
+    "playlistRU": "https://www.youtube.com/playlist?list=PLTqjBtjd9j8ctYmFOYn_qClpEjbsb2YQe",
+    "classes": [
+      {
+        "classNumber": 1,
+        "isReview": false,
+        "videoEN": "https://youtu.be/OMoK11SOHQE",
+        "videoRU": null,
+        "status": "ready"
+      },
+      {
+        "classNumber": 2,
+        "isReview": false,
+        "videoEN": "https://youtu.be/Hhf3MwCgPvU",
+        "videoRU": "https://youtu.be/qYuI-Sq1S-U",
+        "status": "ready"
+      },
+      {
+        "classNumber": 3,
+        "isReview": false,
+        "videoEN": "https://youtu.be/8r-CRKmO_t8",
+        "videoRU": "https://youtu.be/sOB6PVarolk",
+        "status": "ready"
+      },
+      {
+        "classNumber": 4,
+        "isReview": false,
+        "videoEN": "https://youtu.be/opfiFs0HNnw",
+        "videoRU": "https://youtu.be/qMLqKkv43KU",
+        "status": "ready"
+      },
+      {
+        "classNumber": 5,
+        "isReview": false,
+        "videoEN": "https://youtu.be/k36tqC7YU5Q",
+        "videoRU": "https://youtu.be/Fiyn_SRxBH0",
+        "status": "ready"
+      },
+      {
+        "classNumber": 6,
+        "isReview": false,
+        "videoEN": "https://youtu.be/Wy9ppUQreH0",
+        "videoRU": "https://youtu.be/kgk5Zv2tiSw",
+        "status": "ready"
+      },
+      {
+        "classNumber": 7,
+        "isReview": false,
+        "videoEN": "https://youtu.be/Frbx79P5K7c",
+        "videoRU": "https://youtu.be/DkqidoiFX0s",
+        "status": "ready"
+      },
+      {
+        "classNumber": 8,
+        "isReview": false,
+        "videoEN": "https://youtu.be/0MqvOAAJ218",
+        "videoRU": "https://youtu.be/yNBrn_CBWzk",
+        "status": "ready"
+      },
+      {
+        "classNumber": 9,
+        "isReview": false,
+        "videoEN": "https://youtu.be/COMk1yGFlOw",
+        "videoRU": "https://youtu.be/Lstj2F5NKaw",
+        "status": "ready"
+      },
+      {
+        "classNumber": 10,
+        "isReview": false,
+        "videoEN": null,
+        "videoRU": null,
+        "status": "not_recorded_yet"
+      },
+      {
+        "classNumber": null,
+        "isReview": true,
+        "videoEN": "https://youtu.be/Xq49bozCcFE",
+        "videoRU": "https://youtu.be/l-HbYmdyQB8",
+        "status": "ready"
+      }
+    ]
+  },
+  {
+    "course": "aci-3",
+    "courseNumber": 3,
+    "title": "ACI 3 - Applied Meditation ( Jan 4 - Feb 13, 2024)",
+    "recordingFolder": "https://drive.google.com/drive/folders/1GgcV-w5ZDoUxYxuVFX0IoQNlKIaVXqFJ?usp=drive_link",
+    "playlistEN": "https://www.youtube.com/playlist?list=PLTqjBtjd9j8f1QzGrLYHY-2EbJxMppMPq",
+    "playlistRU": "https://www.youtube.com/playlist?list=PLTqjBtjd9j8c59Hhg49f24FeXY5NhB3aP",
+    "classes": [
+      {
+        "classNumber": 1,
+        "isReview": false,
+        "videoEN": "https://youtu.be/vkEYnwprrbM",
+        "videoRU": "https://youtu.be/7mhxKPp84AU",
+        "status": "ready"
+      },
+      {
+        "classNumber": 2,
+        "isReview": false,
+        "videoEN": "https://youtu.be/qg3zc6XRki4",
+        "videoRU": "https://youtu.be/QgJPHj_9WTA",
+        "status": "ready"
+      },
+      {
+        "classNumber": 3,
+        "isReview": false,
+        "videoEN": "https://youtu.be/EEsaKuDjuIw",
+        "videoRU": "https://youtu.be/T4z0rUjH8Og",
+        "status": "ready"
+      },
+      {
+        "classNumber": 4,
+        "isReview": false,
+        "videoEN": "https://youtu.be/YGy3rkwQegI",
+        "videoRU": "https://youtu.be/9P2-MjQaZzk",
+        "status": "ready"
+      },
+      {
+        "classNumber": 5,
+        "isReview": false,
+        "videoEN": "https://youtu.be/Vjuj0ERtbiU",
+        "videoRU": "https://youtu.be/vVTUWFfXps8",
+        "status": "ready"
+      },
+      {
+        "classNumber": 6,
+        "isReview": false,
+        "videoEN": "https://youtu.be/4ooYC6RfnMw",
+        "videoRU": "https://youtu.be/x01L6W7rZmo",
+        "status": "ready"
+      },
+      {
+        "classNumber": 7,
+        "isReview": false,
+        "videoEN": "https://youtu.be/D2Lf5On1WeA",
+        "videoRU": "https://youtu.be/cTHik7SbYFE",
+        "status": "ready"
+      },
+      {
+        "classNumber": 8,
+        "isReview": false,
+        "videoEN": "https://youtu.be/NFpe3aWI07g",
+        "videoRU": "https://youtu.be/prRBA6OgokM",
+        "status": "ready"
+      },
+      {
+        "classNumber": 9,
+        "isReview": false,
+        "videoEN": "https://youtu.be/YjuYYfO1pwQ",
+        "videoRU": "https://youtu.be/2zYeIVbLGyw",
+        "status": "ready"
+      },
+      {
+        "classNumber": 10,
+        "isReview": false,
+        "videoEN": "https://youtu.be/Vc6oTkniVpQ",
+        "videoRU": "https://youtu.be/VqX4g2IOwKo",
+        "status": "ready"
+      },
+      {
+        "classNumber": null,
+        "isReview": true,
+        "videoEN": "https://youtu.be/nlP3uamLdHA",
+        "videoRU": "https://youtu.be/8kpElfG3q6Q",
+        "status": "ready"
+      }
+    ]
+  },
+  {
+    "course": "aci-4",
+    "courseNumber": 4,
+    "title": "ACI 4 - Proof of Future Lives ( March 4 - April 8, 2024)",
+    "recordingFolder": "https://drive.google.com/drive/folders/1SzANGR0kvnbPB-KQNrxBBqPMC8kMuSXY?usp=drive_link",
+    "playlistEN": "https://www.youtube.com/playlist?list=PLTqjBtjd9j8ffbiDLRAcISSujnrvzuWSX",
+    "playlistRU": "https://www.youtube.com/playlist?list=PLTqjBtjd9j8ft5rnrDtFVPeREyiXm24ZF",
+    "classes": [
+      {
+        "classNumber": 1,
+        "isReview": false,
+        "videoEN": "https://youtu.be/3B-ftIrZkMQ",
+        "videoRU": "https://youtu.be/3nh7G6StAXY",
+        "status": "ready"
+      },
+      {
+        "classNumber": 2,
+        "isReview": false,
+        "videoEN": "https://youtu.be/1GiPm0acebQ",
+        "videoRU": "https://youtu.be/IjnN6vNJ3z8",
+        "status": "ready"
+      },
+      {
+        "classNumber": 3,
+        "isReview": false,
+        "videoEN": "https://youtu.be/rrh-hFMFoO0",
+        "videoRU": "https://youtu.be/XPopmKUbNwE",
+        "status": "ready"
+      },
+      {
+        "classNumber": 4,
+        "isReview": false,
+        "videoEN": "https://youtu.be/JWDM4sdDD1k",
+        "videoRU": "https://youtu.be/m8ZWWOJsT0k",
+        "status": "ready"
+      },
+      {
+        "classNumber": 5,
+        "isReview": false,
+        "videoEN": "https://youtu.be/_XTd5JQ5pno",
+        "videoRU": "https://youtu.be/ALivHcIjsKg",
+        "status": "ready"
+      },
+      {
+        "classNumber": 6,
+        "isReview": false,
+        "videoEN": "https://youtu.be/U5zt5ohIFWU",
+        "videoRU": "https://youtu.be/bz8jIZTCiMc",
+        "status": "ready"
+      },
+      {
+        "classNumber": 7,
+        "isReview": false,
+        "videoEN": "https://youtu.be/qKpB1Cgvl3U",
+        "videoRU": "https://youtu.be/eVzOD90qBZQ",
+        "status": "ready"
+      },
+      {
+        "classNumber": 8,
+        "isReview": false,
+        "videoEN": "https://youtu.be/C87E3kQyk4Q",
+        "videoRU": "https://youtu.be/0HIUdXuOYJ0",
+        "status": "ready"
+      },
+      {
+        "classNumber": 9,
+        "isReview": false,
+        "videoEN": "https://youtu.be/QYKeD7vxqvg",
+        "videoRU": "https://youtu.be/JEyhxbRUxVk",
+        "status": "ready"
+      },
+      {
+        "classNumber": 10,
+        "isReview": false,
+        "videoEN": "https://youtu.be/kI5DX0muUuA",
+        "videoRU": "https://youtu.be/8EgYrfC2qcc",
+        "status": "ready"
+      },
+      {
+        "classNumber": null,
+        "isReview": true,
+        "videoEN": "https://youtu.be/z7SZMCrba94",
+        "videoRU": "https://youtu.be/n8zOoKSAVUQ",
+        "status": "ready"
+      }
+    ]
+  },
+  {
+    "course": "aci-5",
+    "courseNumber": 5,
+    "title": "ACI 5 - How Karma Works ( June 3 - July 8, 2024)",
+    "recordingFolder": "https://www.google.com/url?q=https://drive.google.com/drive/folders/1-5nlYGWp0aLXoa3Bu51sE_55GI_tOIBH?usp%3Ddrive_link&sa=D&source=editors&ust=1717700942701245&usg=AOvVaw1iHIjC5-nc9MC2ZVOwW6wY",
+    "playlistEN": "https://www.youtube.com/playlist?list=PLTqjBtjd9j8e4OE38hcUwmx3Q0ldJ_6pd",
+    "playlistRU": "https://www.youtube.com/playlist?list=PLTqjBtjd9j8dbj_R-G6xfXclJgXaUoZLa",
+    "classes": [
+      {
+        "classNumber": 1,
+        "isReview": false,
+        "videoEN": "https://youtu.be/GRAc13otXQU",
+        "videoRU": "https://youtu.be/9pfgrfd85Zk",
+        "status": "ready"
+      },
+      {
+        "classNumber": 2,
+        "isReview": false,
+        "videoEN": "https://youtu.be/vn7v8eErmSQ",
+        "videoRU": "https://youtu.be/q27YF_M70VE",
+        "status": "ready"
+      },
+      {
+        "classNumber": 3,
+        "isReview": false,
+        "videoEN": "https://youtu.be/yQpnlzvp5V0",
+        "videoRU": "https://youtu.be/RbQeQa2m2Bk",
+        "status": "ready"
+      },
+      {
+        "classNumber": 4,
+        "isReview": false,
+        "videoEN": "https://youtu.be/pmShJBQWzNw",
+        "videoRU": "https://youtu.be/iK0cO5FioaU",
+        "status": "ready"
+      },
+      {
+        "classNumber": 5,
+        "isReview": false,
+        "videoEN": "https://youtu.be/HEhgW04TQRk",
+        "videoRU": "https://youtu.be/4n4Ow3ppOG8",
+        "status": "ready"
+      },
+      {
+        "classNumber": 6,
+        "isReview": false,
+        "videoEN": "https://youtu.be/czrlSuEVP4M",
+        "videoRU": "https://youtu.be/_B1-pPxnumo",
+        "status": "ready"
+      },
+      {
+        "classNumber": 7,
+        "isReview": false,
+        "videoEN": "https://youtu.be/SBcGNfdy_7c",
+        "videoRU": "https://youtu.be/aNceeuwPYlo",
+        "status": "ready"
+      },
+      {
+        "classNumber": 8,
+        "isReview": false,
+        "videoEN": "https://youtu.be/JpKbN9gE8aQ",
+        "videoRU": "https://youtu.be/LXkVqsjBIhQ",
+        "status": "ready"
+      },
+      {
+        "classNumber": 9,
+        "isReview": false,
+        "videoEN": "https://youtu.be/m8V0gI0TAqc",
+        "videoRU": "https://youtu.be/zXKZMHGgT-U",
+        "status": "ready"
+      },
+      {
+        "classNumber": 10,
+        "isReview": false,
+        "videoEN": "https://youtu.be/_sWR39Bs3t4",
+        "videoRU": "https://youtu.be/f3vMTgASlhw",
+        "status": "ready"
+      },
+      {
+        "classNumber": null,
+        "isReview": true,
+        "videoEN": "https://youtu.be/_sWR39Bs3t4",
+        "videoRU": "https://youtu.be/f3vMTgASlhw",
+        "status": "ready"
+      }
+    ]
+  },
+  {
+    "course": "aci-6",
+    "courseNumber": 6,
+    "title": "ACI 6 - The Diamond Cutter Sutra with Venerable Sumati ( Sept 9 - Oct 14, 2024)",
+    "recordingFolder": "https://drive.google.com/drive/folders/1oAtalLMm60r0F82cvGwX5uYG1HPza5mp?usp=drive_link",
+    "playlistEN": "https://www.youtube.com/playlist?list=PLTqjBtjd9j8f8jPZXOLUTZNvw5EVGvEBu",
+    "playlistRU": "https://www.youtube.com/playlist?list=PLTqjBtjd9j8dFjpaAtL6A30KnnIEM8Fw3",
+    "classes": [
+      {
+        "classNumber": 1,
+        "isReview": false,
+        "videoEN": "https://youtu.be/fHw0hGisrJ8",
+        "videoRU": "https://youtu.be/ye-wTvLCur8",
+        "status": "ready"
+      },
+      {
+        "classNumber": 2,
+        "isReview": false,
+        "videoEN": "https://youtu.be/chsoizXUGtg",
+        "videoRU": "https://youtu.be/gBHijcOvsWU",
+        "status": "ready"
+      },
+      {
+        "classNumber": 3,
+        "isReview": false,
+        "videoEN": "https://youtu.be/HfbUvfD2Nc4",
+        "videoRU": "https://youtu.be/aLEiCaJkqdo",
+        "status": "ready"
+      },
+      {
+        "classNumber": 4,
+        "isReview": false,
+        "videoEN": "https://youtu.be/HlOuVdjnKKk",
+        "videoRU": "https://youtu.be/Dj5Ev0u93EU",
+        "status": "ready"
+      },
+      {
+        "classNumber": 5,
+        "isReview": false,
+        "videoEN": "https://youtu.be/NzuYjGe3APY",
+        "videoRU": "https://youtu.be/ghKaWQ-oSaw",
+        "status": "ready"
+      },
+      {
+        "classNumber": 6,
+        "isReview": false,
+        "videoEN": "https://youtu.be/a8D-0P736pQ",
+        "videoRU": "https://youtu.be/cxTLFCUnWRQ",
+        "status": "ready"
+      },
+      {
+        "classNumber": 7,
+        "isReview": false,
+        "videoEN": "https://youtu.be/-d_WJNY-6OE",
+        "videoRU": "https://youtu.be/_FeYwLDhroI",
+        "status": "ready"
+      },
+      {
+        "classNumber": 8,
+        "isReview": false,
+        "videoEN": "https://youtu.be/-5h6cZ3_puE",
+        "videoRU": "https://youtu.be/LXlIhcnL8j0",
+        "status": "ready"
+      },
+      {
+        "classNumber": 9,
+        "isReview": false,
+        "videoEN": "https://youtu.be/vtwuNvx8qe4",
+        "videoRU": "https://youtu.be/ZuZUBwhhwLk",
+        "status": "ready"
+      },
+      {
+        "classNumber": 10,
+        "isReview": false,
+        "videoEN": "https://youtu.be/Qz9Bpo9UvrE",
+        "videoRU": "https://youtu.be/9fcZaxn9ozk",
+        "status": "ready"
+      },
+      {
+        "classNumber": null,
+        "isReview": true,
+        "videoEN": "https://youtu.be/TWCjZyRYb0c",
+        "videoRU": "https://youtu.be/usvo3H3aPyA",
+        "status": "ready"
+      }
+    ]
+  },
+  {
+    "course": "aci-7",
+    "courseNumber": 7,
+    "title": "ACI 7 - The Bodhisattva Vows with Venerable Sumati ( Jan 20 - Feb 24, 2025)",
+    "recordingFolder": "https://drive.google.com/drive/folders/1Vwek8dSltjzzBr8pLunxJXzeKnGasj6P?usp=sharing",
+    "playlistEN": "https://www.youtube.com/playlist?list=PLTqjBtjd9j8dpl3LQtGihmKcs1kie1X72",
+    "playlistRU": "https://www.youtube.com/playlist?list=PLTqjBtjd9j8fppUxiaPlSzQu7IlB3WcWG",
+    "classes": [
+      {
+        "classNumber": 1,
+        "isReview": false,
+        "videoEN": "https://youtu.be/YFLc_k80f5M",
+        "videoRU": "https://youtu.be/bhwEjsi6CfI",
+        "status": "ready"
+      },
+      {
+        "classNumber": 2,
+        "isReview": false,
+        "videoEN": "https://youtu.be/3eK2tBSDgpY",
+        "videoRU": "https://youtu.be/rlFKt_IJCX4",
+        "status": "ready"
+      },
+      {
+        "classNumber": 3,
+        "isReview": false,
+        "videoEN": "https://youtu.be/o6Zf5iip6y8",
+        "videoRU": "https://youtu.be/FTamffWSveo",
+        "status": "ready"
+      },
+      {
+        "classNumber": 4,
+        "isReview": false,
+        "videoEN": "https://youtu.be/YAz1DmgDNfw",
+        "videoRU": "https://youtu.be/Gz-Jyg8UFfc",
+        "status": "ready"
+      },
+      {
+        "classNumber": 5,
+        "isReview": false,
+        "videoEN": "https://youtu.be/diSqNonmQZ8",
+        "videoRU": null,
+        "status": "ready"
+      },
+      {
+        "classNumber": 6,
+        "isReview": false,
+        "videoEN": "https://youtu.be/vV_H_ePe_cU",
+        "videoRU": "https://youtu.be/N7vHu-i1TuA",
+        "status": "ready"
+      },
+      {
+        "classNumber": 7,
+        "isReview": false,
+        "videoEN": "https://youtu.be/d85jeoxZ56g",
+        "videoRU": "https://youtu.be/H5d8XCm_InY",
+        "status": "ready"
+      },
+      {
+        "classNumber": 8,
+        "isReview": false,
+        "videoEN": "https://youtu.be/UZ_qQv_3jwQ",
+        "videoRU": "https://youtu.be/iDuuuujNdLk",
+        "status": "ready"
+      },
+      {
+        "classNumber": 9,
+        "isReview": false,
+        "videoEN": "https://youtu.be/yrfUHFS9hqc",
+        "videoRU": "https://youtu.be/Mohuxw-oZ2E",
+        "status": "ready"
+      },
+      {
+        "classNumber": 10,
+        "isReview": false,
+        "videoEN": "https://youtu.be/uLbdhMTKoUg",
+        "videoRU": "https://youtu.be/J3bHFBtj8AI",
+        "status": "ready"
+      },
+      {
+        "classNumber": null,
+        "isReview": true,
+        "videoEN": "https://youtu.be/PHTwIebhzJk",
+        "videoRU": "https://youtu.be/hEokrqnFOXc",
+        "status": "ready"
+      }
+    ]
+  },
+  {
+    "course": "aci-8",
+    "courseNumber": 8,
+    "title": "ACI 8 - Death and the Realms of Existence, with Venerable Sumati (May 2 - June 6, 2025)",
+    "recordingFolder": "https://drive.google.com/drive/folders/14tYSztBPtYocGMWLRNTlzUThbQyFkrGP?usp=drive_link",
+    "playlistEN": "https://www.youtube.com/playlist?list=PLTqjBtjd9j8dv0Ag5O_-A4-ecq3RCQXLd",
+    "playlistRU": "https://www.youtube.com/playlist?list=PLTqjBtjd9j8fwkGylqvBFYqgYM5kcLEe0",
+    "classes": [
+      {
+        "classNumber": 1,
+        "isReview": false,
+        "videoEN": "https://youtu.be/H4F-u_kp2xw",
+        "videoRU": "https://youtu.be/tAYXo0SVSRg",
+        "status": "ready"
+      },
+      {
+        "classNumber": 2,
+        "isReview": false,
+        "videoEN": "https://youtu.be/fkQ3yhBWgv4",
+        "videoRU": "https://youtu.be/ZrWwlouivYE",
+        "status": "ready"
+      },
+      {
+        "classNumber": 3,
+        "isReview": false,
+        "videoEN": "https://youtu.be/Ctu8CvdlJjE",
+        "videoRU": "https://youtu.be/DnAeSrzqVgs",
+        "status": "ready"
+      },
+      {
+        "classNumber": 4,
+        "isReview": false,
+        "videoEN": "https://youtu.be/PBLJWqwOpNk",
+        "videoRU": "https://youtu.be/jF8SLIGBrz8",
+        "status": "ready"
+      },
+      {
+        "classNumber": 5,
+        "isReview": false,
+        "videoEN": "https://youtu.be/DBE4yLWQA18",
+        "videoRU": "https://youtu.be/Wl-eN99ypLI",
+        "status": "ready"
+      },
+      {
+        "classNumber": 6,
+        "isReview": false,
+        "videoEN": "https://youtu.be/Q_QjIu-jQ3I",
+        "videoRU": "https://youtu.be/c7xKDG1E2oE",
+        "status": "ready"
+      },
+      {
+        "classNumber": 7,
+        "isReview": false,
+        "videoEN": "https://youtu.be/iDEiQgV9HlI",
+        "videoRU": "https://youtu.be/O6etrOsHT0g",
+        "status": "ready"
+      },
+      {
+        "classNumber": 8,
+        "isReview": false,
+        "videoEN": "https://youtu.be/a-B3dLDkjzc",
+        "videoRU": "https://youtu.be/Fr-w7gWUueA",
+        "status": "ready"
+      },
+      {
+        "classNumber": 9,
+        "isReview": false,
+        "videoEN": "https://youtu.be/lXDsMnK7qvw",
+        "videoRU": "https://youtu.be/z39wAmr7D0c",
+        "status": "ready"
+      },
+      {
+        "classNumber": 10,
+        "isReview": false,
+        "videoEN": "https://youtu.be/V6RxOEVkFgE",
+        "videoRU": "https://youtu.be/86hcscXzx3o",
+        "status": "ready"
+      },
+      {
+        "classNumber": 11,
+        "isReview": false,
+        "videoEN": "https://youtu.be/TJDyrF_0mHY",
+        "videoRU": "https://youtu.be/iglPaM_ff4g",
+        "status": "ready"
+      },
+      {
+        "classNumber": null,
+        "isReview": true,
+        "videoEN": "https://youtu.be/64jk7ibQhpQ",
+        "videoRU": "https://youtu.be/7LpebEnrBJ0",
+        "status": "ready"
+      }
+    ]
+  },
+  {
+    "course": "aci-9",
+    "courseNumber": 9,
+    "title": "ACI 9 - The Ethical Life with Venerable Sumati ( , 2025)",
+    "recordingFolder": "https://drive.google.com/drive/folders/12X0yK_ZuA53W05_I0gaNf5rW-f092rGw?usp=drive_link",
+    "playlistEN": "https://www.youtube.com/playlist?list=PLTqjBtjd9j8c2tX7AukKP0UYAOsLZthnY",
+    "playlistRU": "https://www.youtube.com/playlist?list=PLTqjBtjd9j8evANGPNLtRw865xLQmv_Nq",
+    "classes": [
+      {
+        "classNumber": 1,
+        "isReview": false,
+        "videoEN": "https://youtu.be/BwRzjFzRIJs",
+        "videoRU": "https://youtu.be/9_Cjqs77QJU",
+        "status": "ready"
+      },
+      {
+        "classNumber": 2,
+        "isReview": false,
+        "videoEN": "https://youtu.be/GXN-Y1gzXa8",
+        "videoRU": "https://youtu.be/1PnHRGpENZk",
+        "status": "ready"
+      },
+      {
+        "classNumber": 3,
+        "isReview": false,
+        "videoEN": "https://youtu.be/--4J8xIZNjQ",
+        "videoRU": "https://youtu.be/RWWJfBLUfH0",
+        "status": "ready"
+      },
+      {
+        "classNumber": 4,
+        "isReview": false,
+        "videoEN": "https://youtu.be/-89AwgI1sB8",
+        "videoRU": "https://youtu.be/D1LEsaWRxqU",
+        "status": "ready"
+      },
+      {
+        "classNumber": 5,
+        "isReview": false,
+        "videoEN": "https://youtu.be/01r9EhQ-xWw",
+        "videoRU": "https://youtu.be/qlQZ3yxsT6U",
+        "status": "ready"
+      },
+      {
+        "classNumber": 6,
+        "isReview": false,
+        "videoEN": "https://youtu.be/yo5RCd6UaIk",
+        "videoRU": "https://youtu.be/RVEyrjawc1w",
+        "status": "ready"
+      },
+      {
+        "classNumber": 7,
+        "isReview": false,
+        "videoEN": "https://youtu.be/_kL4Ll28DGI",
+        "videoRU": "https://youtu.be/nmzzUKRESPg",
+        "status": "ready"
+      },
+      {
+        "classNumber": 8,
+        "isReview": false,
+        "videoEN": "https://youtu.be/yMbOmHsIuyo",
+        "videoRU": "https://youtu.be/tOFS5rKTGjI",
+        "status": "ready"
+      },
+      {
+        "classNumber": 9,
+        "isReview": false,
+        "videoEN": "https://youtu.be/Sm5S90cr5BU",
+        "videoRU": "https://youtu.be/xesBZLeK3IA",
+        "status": "ready"
+      },
+      {
+        "classNumber": 10,
+        "isReview": false,
+        "videoEN": "https://youtu.be/T3NcA1vDoQY",
+        "videoRU": "https://youtu.be/J33to29P0mY",
+        "status": "ready"
+      },
+      {
+        "classNumber": null,
+        "isReview": true,
+        "videoEN": "https://youtu.be/kdFoynANOXA",
+        "videoRU": "https://youtu.be/vNWZb9YITZc",
+        "status": "ready"
+      }
+    ]
+  },
+  {
+    "course": "aci-10",
+    "courseNumber": 10,
+    "title": "ACI 10 - Bodhisattva’s Way of Life, Part 1 with Venerable Sumati ( Nov, 2025)",
+    "recordingFolder": "https://drive.google.com/drive/folders/12MInQ-xp5QKBR36BdQ9yZ3eX8tl6GkGp?usp=share_link",
+    "playlistEN": "https://www.youtube.com/playlist?list=PLTqjBtjd9j8dFxYWFAL80ymFznJVNP6fu",
+    "playlistRU": "https://www.youtube.com/playlist?list=PLTqjBtjd9j8cS_e2Z2_mBBGz-g7-xcaKC",
+    "classes": [
+      {
+        "classNumber": 1,
+        "isReview": false,
+        "videoEN": "https://youtu.be/EX_4x7Z8nmw",
+        "videoRU": "https://youtu.be/WnIgN5hVnNY",
+        "status": "ready"
+      },
+      {
+        "classNumber": 2,
+        "isReview": false,
+        "videoEN": "https://youtu.be/WNVZTT4VmXc",
+        "videoRU": "https://youtu.be/qgkA3SKPcIs",
+        "status": "ready"
+      },
+      {
+        "classNumber": 3,
+        "isReview": false,
+        "videoEN": "https://youtu.be/ehAlcFU8DA4",
+        "videoRU": "https://youtu.be/Wso7XLCVNOQ",
+        "status": "ready"
+      },
+      {
+        "classNumber": 4,
+        "isReview": false,
+        "videoEN": "https://youtu.be/uxdW3UCCmvg",
+        "videoRU": "https://youtu.be/umHJl48DImg",
+        "status": "ready"
+      },
+      {
+        "classNumber": 5,
+        "isReview": false,
+        "videoEN": "https://youtu.be/GA4Rt7A1LPw",
+        "videoRU": "https://youtu.be/TeHeqLAYnlk",
+        "status": "ready"
+      },
+      {
+        "classNumber": 6,
+        "isReview": false,
+        "videoEN": "https://youtu.be/qkA_Jj1a9bA",
+        "videoRU": "https://youtu.be/wQoHmT1wQkI",
+        "status": "ready"
+      },
+      {
+        "classNumber": 7,
+        "isReview": false,
+        "videoEN": "https://youtu.be/d0jqsNAQUHg",
+        "videoRU": "https://youtu.be/maNOso4v_Nk",
+        "status": "ready"
+      },
+      {
+        "classNumber": 8,
+        "isReview": false,
+        "videoEN": "https://youtu.be/g2dNyvMJT78",
+        "videoRU": "https://youtu.be/W1kKnMxT69Y",
+        "status": "ready"
+      },
+      {
+        "classNumber": 9,
+        "isReview": false,
+        "videoEN": "https://youtu.be/d4C4wxB-zYQ",
+        "videoRU": "https://youtu.be/1Z8mEyLNELI",
+        "status": "ready"
+      },
+      {
+        "classNumber": 10,
+        "isReview": false,
+        "videoEN": "https://youtu.be/eY_M0uI3Wds",
+        "videoRU": "https://youtu.be/f3I3G-urCpw",
+        "status": "ready"
+      },
+      {
+        "classNumber": null,
+        "isReview": true,
+        "videoEN": null,
+        "videoRU": null,
+        "status": "not_recorded_yet"
+      }
+    ]
+  },
+  {
+    "course": "aci-11",
+    "courseNumber": 11,
+    "title": "ACI 11, Bodhisattva’s Way of Life, Part 2 with Venerable Sumati (Jan 19 - Mar 02, 2026)",
+    "recordingFolder": "https://drive.google.com/drive/folders/1PUxtkferDELJFnbcuJOBB800swjTVOaz?usp=drive_link",
+    "playlistEN": "https://www.youtube.com/playlist?list=PLTqjBtjd9j8d-k6aFSVE6t330iWPDiEDI",
+    "playlistRU": "https://www.youtube.com/playlist?list=PLTqjBtjd9j8cdZErxG7SggLW1X-lCdpFx",
+    "classes": [
+      {
+        "classNumber": 1,
+        "isReview": false,
+        "videoEN": "https://youtu.be/z4P7FGTD9Rk",
+        "videoRU": "https://youtu.be/3dKOgnEIkqU",
+        "status": "ready"
+      },
+      {
+        "classNumber": 2,
+        "isReview": false,
+        "videoEN": "https://youtu.be/xaYLcjI8pm0",
+        "videoRU": "https://youtu.be/lkNC0p9t5ps",
+        "status": "ready"
+      },
+      {
+        "classNumber": 3,
+        "isReview": false,
+        "videoEN": "https://youtu.be/xNnufe0U8vw",
+        "videoRU": "https://youtu.be/PNbv7n2YkNU",
+        "status": "ready"
+      },
+      {
+        "classNumber": 4,
+        "isReview": false,
+        "videoEN": "https://youtu.be/9rpaA9y4i28",
+        "videoRU": "https://youtu.be/N9zL1mz899g",
+        "status": "ready"
+      },
+      {
+        "classNumber": 5,
+        "isReview": false,
+        "videoEN": "https://youtu.be/_t2QxLtanoQ",
+        "videoRU": "https://youtu.be/TUWS3x7ZKsk",
+        "status": "ready"
+      },
+      {
+        "classNumber": 6,
+        "isReview": false,
+        "videoEN": "https://youtu.be/MVV-euHGa0A",
+        "videoRU": "https://youtu.be/_qr3kCJMXuI",
+        "status": "ready"
+      },
+      {
+        "classNumber": 7,
+        "isReview": false,
+        "videoEN": "https://youtu.be/kKnkcIixN2U",
+        "videoRU": "https://youtu.be/7yLClnrKj4c",
+        "status": "ready"
+      },
+      {
+        "classNumber": 8,
+        "isReview": false,
+        "videoEN": "https://youtu.be/OU2Ez4lupBs",
+        "videoRU": "https://youtu.be/j4qd6FyM4C8",
+        "status": "ready"
+      },
+      {
+        "classNumber": 9,
+        "isReview": false,
+        "videoEN": "https://youtu.be/cDXzQbe2HpU",
+        "videoRU": "https://youtu.be/chAvzLs8Rwk",
+        "status": "ready"
+      },
+      {
+        "classNumber": 10,
+        "isReview": false,
+        "videoEN": "https://youtu.be/2P7X1JvmlJ8",
+        "videoRU": "https://youtu.be/875f_Nh1UbY",
+        "status": "ready"
+      },
+      {
+        "classNumber": null,
+        "isReview": true,
+        "videoEN": "https://youtu.be/uCMMCat_g-A",
+        "videoRU": "https://youtu.be/fVuwDoIMXA8",
+        "status": "ready"
+      }
+    ]
+  },
+  {
+    "course": "aci-12",
+    "courseNumber": 12,
+    "title": "ACI 12, Bodhisattva’s Way of Life, Part 3 with Venerable Sumati (Apr 2 - May 11, 2026)",
+    "recordingFolder": "https://drive.google.com/drive/folders/1N-iVxbArUk_UR4ugYeED34Sp917p_UfP?usp=drive_link",
+    "playlistEN": "https://www.youtube.com/playlist?list=PLTqjBtjd9j8f79U35Gcd1ETviMEtcJkSZ",
+    "playlistRU": "https://www.youtube.com/playlist?list=PLTqjBtjd9j8dO7qSUsEqqW00d6eJYTzJz",
+    "classes": [
+      {
+        "classNumber": 1,
+        "isReview": false,
+        "videoEN": "https://youtu.be/VfG_cQVRIc0",
+        "videoRU": "https://youtu.be/Qyexan3WAtA",
+        "status": "ready"
+      },
+      {
+        "classNumber": 2,
+        "isReview": false,
+        "videoEN": "https://youtu.be/PxriYr00TuQ",
+        "videoRU": "https://youtu.be/qKTP9UaAgUM",
+        "status": "ready"
+      },
+      {
+        "classNumber": 3,
+        "isReview": false,
+        "videoEN": "https://youtu.be/vJUGOIesvvM",
+        "videoRU": "https://youtu.be/u9GFaZ5vXvk",
+        "status": "ready"
+      },
+      {
+        "classNumber": 4,
+        "isReview": false,
+        "videoEN": null,
+        "videoRU": null,
+        "status": "not_recorded_yet"
+      },
+      {
+        "classNumber": 5,
+        "isReview": false,
+        "videoEN": null,
+        "videoRU": null,
+        "status": "not_recorded_yet"
+      },
+      {
+        "classNumber": 6,
+        "isReview": false,
+        "videoEN": null,
+        "videoRU": null,
+        "status": "not_recorded_yet"
+      },
+      {
+        "classNumber": 7,
+        "isReview": false,
+        "videoEN": null,
+        "videoRU": null,
+        "status": "not_recorded_yet"
+      },
+      {
+        "classNumber": 8,
+        "isReview": false,
+        "videoEN": null,
+        "videoRU": null,
+        "status": "not_recorded_yet"
+      },
+      {
+        "classNumber": 9,
+        "isReview": false,
+        "videoEN": null,
+        "videoRU": null,
+        "status": "not_recorded_yet"
+      },
+      {
+        "classNumber": 10,
+        "isReview": false,
+        "videoEN": null,
+        "videoRU": null,
+        "status": "not_recorded_yet"
+      },
+      {
+        "classNumber": null,
+        "isReview": true,
+        "videoEN": null,
+        "videoRU": null,
+        "status": "not_recorded_yet"
+      }
+    ]
+  }
+]
