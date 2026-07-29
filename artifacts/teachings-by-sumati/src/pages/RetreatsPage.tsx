@@ -16,26 +16,27 @@ const RETREATS = [
     duration: "14",
     image: "/retreat-armenia.png",
   },
-  {
-    id: 2,
-    titleEn: "Nepal Journey",
-    titleRu: "Путешествие в Непал",
-    year: "2023",
-    descriptionEn: "A pilgrimage and study retreat exploring the historical roots of the Mahayana tradition.",
-    descriptionRu: "Паломничество и учебный ретрит, посвящённый историческим корням традиции Махаяны.",
-    duration: "21",
-    image: null,
-  },
-  {
-    id: 3,
-    titleEn: "Diamond Mountain",
-    titleRu: "Diamond Mountain",
-    year: "2022",
-    descriptionEn: "Foundational practice retreat focusing on meditation and the ethical life.",
-    descriptionRu: "Базовый практический ретрит, посвящённый медитации и этическому образу жизни.",
-    duration: "10",
-    image: null,
-  }
+  // Uncomment when content is ready:
+  // {
+  //   id: 2,
+  //   titleEn: "Nepal Journey",
+  //   titleRu: "Путешествие в Непал",
+  //   year: "2023",
+  //   descriptionEn: "A pilgrimage and study retreat exploring the historical roots of the Mahayana tradition.",
+  //   descriptionRu: "Паломничество и учебный ретрит, посвящённый историческим корням традиции Махаяны.",
+  //   duration: "21",
+  //   image: null,
+  // },
+  // {
+  //   id: 3,
+  //   titleEn: "Diamond Mountain",
+  //   titleRu: "Diamond Mountain",
+  //   year: "2022",
+  //   descriptionEn: "Foundational practice retreat focusing on meditation and the ethical life.",
+  //   descriptionRu: "Базовый практический ретрит, посвящённый медитации и этическому образу жизни.",
+  //   duration: "10",
+  //   image: null,
+  // }
 ];
 
 export default function RetreatsPage() {
