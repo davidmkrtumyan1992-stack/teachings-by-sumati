@@ -1,0 +1,67 @@
+{
+  "retreat": "armenia",
+  "title": {
+    "en": "Armenia Retreat — 1000 Angels of Heaven of Bliss",
+    "ru": "Ретрит в Армении — 1000 Ангелов Небес Блаженства"
+  },
+  "dates": {
+    "en": "August 14–24, 2026",
+    "ru": "14–24 августа 2026"
+  },
+  "location": {
+    "en": "Yerevan, Armenia — with a view of Mount Ararat",
+    "ru": "Армения, Ереван — с видом на Арарат"
+  },
+  "teachers": [
+    {
+      "name": { "en": "Venerable Lama Sumati", "ru": "Достопочтенный Лама Сумати" }
+    },
+    {
+      "name": { "en": "Venerable Lama Sarani", "ru": "Досточтимая Лама Сарани" }
+    }
+  ],
+  "teachersBio": {
+    "en": "Close students of Geshe Michael Roach. Senior ACI teachers with the experience of a 3-year silent retreat at Diamond Mountain.",
+    "ru": "Близкие ученики Геше Майкла Роуча. Старшие преподаватели ACI с опытом 3-летнего молчаливого ретрита в Diamond Mountain."
+  },
+  "description": {
+    "en": "Ten days of deep teachings at the foot of Mount Ararat: immersion in the practice of 1000 Angels of Heaven of Bliss — a Je Tsongkhapa practice taught by Lamas Sarani and Sumati. Daily yoga and meditation practices, walks through scenic places and Armenia's cultural heritage, vegetarian cuisine from the freshest farm produce, a warm atmosphere and new friendships.",
+    "ru": "Десять дней глубоких учений у подножия горы Арарат: погружение в практику 1000 Ангелов Небес Блаженства — это практика Чже Цонкапы от Лам Сарани и Сумати. Ежедневные практики йоги и медитации, прогулки по живописным местам и знакомство с культурным наследием Армении, вегетарианская кухня из самых свежих фермерских продуктов, тёплая атмосфера и новые знакомства."
+  },
+  "highlights": {
+    "en": [
+      "Deep teachings — immersion in the 1000 Angels of Heaven of Bliss practice",
+      "Daily yoga and meditation practices",
+      "Walks through scenic places and Armenia's cultural heritage",
+      "Vegetarian cuisine from the freshest farm produce",
+      "Warm atmosphere and new friendships"
+    ],
+    "ru": [
+      "Глубокие учения — погружение в практику 1000 Ангелов Небес Блаженства",
+      "Ежедневные практики йоги и медитации",
+      "Прогулки по живописным местам и знакомство с культурным наследием Армении",
+      "Вегетарианская кухня из самых свежих фермерских продуктов",
+      "Тёплая атмосфера и новые знакомства"
+    ]
+  },
+  "accommodation": {
+    "en": "Hotel \"Venecia\" 5★ — vegetarian meals, indoor and outdoor pool",
+    "ru": "Отель «Венеция» 5★ — вегетарианское питание, крытый и открытый бассейн"
+  },
+  "pricing": [
+    { "type": { "en": "Triple room", "ru": "Трёхместное размещение" }, "price": 1300 },
+    { "type": { "en": "Double room", "ru": "Двухместное размещение" }, "price": 1400 },
+    { "type": { "en": "Single room", "ru": "Одноместное размещение" }, "price": 1500 }
+  ],
+  "currency": "USD",
+  "contact": {
+    "name": "Svetlana",
+    "telegram": "@parkinen_svet",
+    "telegramUrl": "https://t.me/parkinen_svet"
+  },
+  "coOrganizer": {
+    "name": "David Mkrtumyan",
+    "role": { "en": "Retreat co-organizer", "ru": "Соорганизатор ретрита" }
+  },
+  "posterImage": "armenia-poster.jpg"
+}
