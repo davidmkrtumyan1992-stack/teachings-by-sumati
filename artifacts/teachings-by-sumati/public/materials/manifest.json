@@ -1,0 +1,141 @@
+{
+  "aci-1": {
+    "en": {
+      "notes": "aci-1-en-notes.pdf",
+      "reading": "aci-1-en-reading.pdf",
+      "homework": "aci-1-en-homework.pdf"
+    },
+    "ru": {
+      "notes": "aci-1-ru-notes.pdf",
+      "homework": "aci-1-ru-homework.pdf"
+    }
+  },
+  "aci-2": {
+    "en": {
+      "notes": "aci-2-en-notes.pdf",
+      "reading": "aci-2-en-reading.pdf",
+      "homework": "aci-2-en-homework.pdf"
+    },
+    "ru": {
+      "notes": "aci-2-ru-notes.pdf",
+      "reading": "aci-2-ru-reading.pdf",
+      "homework": "aci-2-ru-homework.pdf"
+    }
+  },
+  "aci-3": {
+    "en": {
+      "notes": "aci-3-en-notes.pdf",
+      "reading": "aci-3-en-reading.pdf",
+      "homework": "aci-3-en-homework.pdf"
+    },
+    "ru": {
+      "notes": "aci-3-ru-notes.pdf",
+      "reading": "aci-3-ru-reading.pdf",
+      "homework": "aci-3-ru-homework.pdf"
+    }
+  },
+  "aci-4": {
+    "en": {
+      "notes": "aci-4-en-notes.pdf",
+      "reading": "aci-4-en-reading.pdf",
+      "homework": "aci-4-en-homework.pdf"
+    },
+    "ru": {
+      "notes": "aci-4-ru-notes.pdf",
+      "reading": "aci-4-ru-reading.pdf",
+      "homework": "aci-4-ru-homework.pdf"
+    }
+  },
+  "aci-5": {
+    "en": {
+      "notes": "aci-5-en-notes.pdf",
+      "reading": "aci-5-en-reading.pdf",
+      "homework": "aci-5-en-homework.pdf"
+    },
+    "ru": {
+      "notes": "aci-5-ru-notes.pdf",
+      "reading": "aci-5-ru-reading.pdf",
+      "homework": "aci-5-ru-homework.pdf"
+    }
+  },
+  "aci-6": {
+    "en": {
+      "notes": "aci-6-en-notes.pdf",
+      "reading": "aci-6-en-reading.pdf",
+      "homework": "aci-6-en-homework.pdf"
+    },
+    "ru": {}
+  },
+  "aci-7": {
+    "en": {
+      "notes": "aci-7-en-notes.pdf",
+      "reading": "aci-7-en-reading.pdf",
+      "homework": "aci-7-en-homework.pdf"
+    },
+    "ru": {
+      "notes": "aci-7-ru-notes.pdf",
+      "reading": "aci-7-ru-reading.pdf",
+      "homework": "aci-7-ru-homework.pdf"
+    }
+  },
+  "aci-8": {
+    "en": {
+      "notes": "aci-8-en-notes.pdf",
+      "reading": "aci-8-en-reading.pdf",
+      "homework": "aci-8-en-homework.pdf"
+    },
+    "ru": {
+      "notes": "aci-8-ru-notes.pdf",
+      "reading": "aci-8-ru-reading.pdf",
+      "homework": "aci-8-ru-homework.pdf"
+    }
+  },
+  "aci-9": {
+    "en": {
+      "notes": "aci-9-en-notes.pdf",
+      "reading": "aci-9-en-reading.pdf",
+      "homework": "aci-9-en-homework.pdf"
+    },
+    "ru": {
+      "notes": "aci-9-ru-notes.pdf",
+      "reading": "aci-9-ru-reading.pdf",
+      "homework": "aci-9-ru-homework.pdf"
+    }
+  },
+  "aci-10": {
+    "en": {
+      "notes": "aci-10-en-notes.pdf",
+      "reading": "aci-10-en-reading.pdf",
+      "homework": "aci-10-en-homework.pdf"
+    },
+    "ru": {
+      "notes": "aci-10-ru-notes.pdf",
+      "reading": "aci-10-ru-reading.pdf",
+      "homework": "aci-10-ru-homework.pdf"
+    }
+  },
+  "aci-11": {
+    "en": {
+      "notes": "aci-11-en-notes.pdf",
+      "reading": "aci-11-en-reading.pdf",
+      "homework": "aci-11-en-homework.pdf"
+    },
+    "ru": {
+      "notes": "aci-11-ru-notes.pdf",
+      "reading": "aci-11-ru-reading.pdf",
+      "homework": "aci-11-ru-homework.pdf"
+    }
+  },
+  "aci-12": {
+    "en": {
+      "notes": "aci-12-en-notes.pdf",
+      "reading": "aci-12-en-reading.pdf",
+      "homework": "aci-12-en-homework.pdf"
+    },
+    "ru": {
+      "notes": "aci-12-ru-notes.pdf",
+      "reading": "aci-12-ru-reading.pdf",
+      "homework": "aci-12-ru-homework.pdf"
+    }
+  }
+}
