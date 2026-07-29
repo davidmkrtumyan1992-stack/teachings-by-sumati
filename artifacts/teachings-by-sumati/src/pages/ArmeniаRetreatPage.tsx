@@ -28,14 +28,11 @@ export default function ArmeniaRetreatPage() {
   return (
     <div className="min-h-screen bg-white pb-24">
       {/* Hero Image */}
-      <div className="w-full bg-[#1A1A1A] overflow-hidden" style={{ maxHeight: "70vh" }}>
-        <img
-          src={`${BASE}/retreats/armenia-poster.jpg`}
-          alt={t(retreatData.title as { en: string; ru: string }, l)}
-          className="w-full h-full object-contain object-top"
-          style={{ maxHeight: "70vh" }}
-        />
-      </div>
+      <img
+        src={`${BASE}/retreats/armenia-poster.jpg`}
+        alt={t(retreatData.title as { en: string; ru: string }, l)}
+        className="w-full h-auto block"
+      />
 
       {/* Header section */}
       <div className="bg-[#F8F6F4] pt-8 pb-12 px-6 rounded-b-[24px] mb-12">
