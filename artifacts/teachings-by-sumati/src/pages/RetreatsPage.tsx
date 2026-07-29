@@ -2,47 +2,30 @@ import { Link } from "wouter";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { useT } from "@/i18n/translations";
 import { useLanguage } from "@/components/layout/LanguageContext";
+import armeniaData from "@/data/armenia-retreat.json";
 
 const BASE = import.meta.env.BASE_URL.replace(/\/$/, "");
 
-const RETREATS = [
-  {
-    id: 1,
-    titleEn: "Armenia Retreat",
-    titleRu: "Ретрит в Армении",
-    year: "2025",
-    descriptionEn: "An upcoming deep immersion into the teachings of the Diamond Cutter Sutra in the peaceful mountains of Armenia.",
-    descriptionRu: "Предстоящее глубокое погружение в учения Сутры, отсекающей алмазом, в горах Армении.",
-    duration: "14",
-    image: "/retreat-armenia.png",
-  },
-  // Uncomment when content is ready:
-  // {
-  //   id: 2,
-  //   titleEn: "Nepal Journey",
-  //   titleRu: "Путешествие в Непал",
-  //   year: "2023",
-  //   descriptionEn: "A pilgrimage and study retreat exploring the historical roots of the Mahayana tradition.",
-  //   descriptionRu: "Паломничество и учебный ретрит, посвящённый историческим корням традиции Махаяны.",
-  //   duration: "21",
-  //   image: null,
-  // },
-  // {
-  //   id: 3,
-  //   titleEn: "Diamond Mountain",
-  //   titleRu: "Diamond Mountain",
-  //   year: "2022",
-  //   descriptionEn: "Foundational practice retreat focusing on meditation and the ethical life.",
-  //   descriptionRu: "Базовый практический ретрит, посвящённый медитации и этическому образу жизни.",
-  //   duration: "10",
-  //   image: null,
-  // }
-];
+// Derive year and duration from the JSON dates field ("August 14–24, 2026")
+const ARMENIA_YEAR = "2026";
+const ARMENIA_DURATION_EN = "11 Days";
+const ARMENIA_DURATION_RU = "11 дней";
+
+// First sentence of description only (for card preview)
+function firstSentence(text: string): string {
+  const dot = text.indexOf(". ");
+  return dot !== -1 ? text.slice(0, dot + 1) : text;
+}
 
 export default function RetreatsPage() {
   const t = useT();
   const { lang } = useLanguage();
-  const daysLabel = lang === 'ru' ? 'дней' : 'Days';
+
+  const armeniaTitle   = lang === "ru" ? armeniaData.title.ru       : armeniaData.title.en;
+  const armeniaDesc    = lang === "ru"
+    ? firstSentence(armeniaData.description.ru)
+    : firstSentence(armeniaData.description.en);
+  const armeniaDuration = lang === "ru" ? ARMENIA_DURATION_RU : ARMENIA_DURATION_EN;
 
   return (
     <div className="min-h-screen bg-white pt-10 pb-24 px-6">
@@ -55,57 +38,57 @@ export default function RetreatsPage() {
         </AnimatedSection>
 
         <div className="space-y-6">
-          {RETREATS.map((retreat, idx) => (
-            <AnimatedSection key={retreat.id} delay={idx * 0.1}>
-              <div className="group bg-white border border-[#E5E2DF] rounded-2xl overflow-hidden flex flex-col md:flex-row hover:shadow-lg transition-all duration-300">
-                <div
-                  className="w-full md:w-2/5 shrink-0 overflow-hidden rounded-xl"
-                  style={{ aspectRatio: '3/2' }}
-                >
-                  {retreat.image ? (
-                    <img
-                      src={`${BASE}${retreat.image}`}
-                      alt={lang === 'ru' ? retreat.titleRu : retreat.titleEn}
-                      className="w-full h-full object-cover object-center"
-                    />
-                  ) : (
-                    <div
-                      className="w-full h-full"
-                      style={{ background: 'linear-gradient(135deg, #F8F6F4 0%, #E5E2DF 100%)' }}
-                    />
-                  )}
-                </div>
-
-                <div className="p-6 md:p-8 flex-1 flex flex-col justify-center">
-                  <div className="flex items-center gap-3 mb-2">
-                    <span className="font-inter text-sm font-bold text-[#7A1B2E] tracking-wide uppercase">{retreat.year}</span>
-                    <span className="w-1 h-1 rounded-full bg-[#E5E2DF]" />
-                    <span className="font-inter text-sm text-[#6B6B6B]">{retreat.duration} {daysLabel}</span>
-                  </div>
-
-                  <h3 className="font-playfair text-2xl text-[#1A1A1A] mb-3">
-                    {lang === 'ru' ? retreat.titleRu : retreat.titleEn}
-                  </h3>
-                  <p className="font-inter text-sm text-[#4A4A4A] leading-relaxed mb-6">
-                    {lang === 'ru' ? retreat.descriptionRu : retreat.descriptionEn}
-                  </p>
-
-                  {retreat.id === 1 ? (
-                    <Link
-                      href="/retreats/armenia"
-                      className="font-inter text-sm font-medium text-[#7A1B2E] group-hover:underline self-start"
-                    >
-                      {t.retreats.viewDetails} &rarr;
-                    </Link>
-                  ) : (
-                    <span className="font-inter text-sm font-medium text-[#B0A8A8] self-start cursor-default">
-                      {t.retreats.viewDetails} &rarr;
-                    </span>
-                  )}
-                </div>
+          {/* Armenia Retreat — data from armenia-retreat.json */}
+          <AnimatedSection>
+            <div className="group bg-white border border-[#E5E2DF] rounded-2xl overflow-hidden flex flex-col md:flex-row hover:shadow-lg transition-all duration-300">
+              <div
+                className="w-full md:w-2/5 shrink-0 overflow-hidden rounded-xl"
+                style={{ aspectRatio: "3/2" }}
+              >
+                <img
+                  src={`${BASE}/retreat-armenia.png`}
+                  alt={armeniaTitle}
+                  className="w-full h-full object-cover object-center"
+                />
               </div>
-            </AnimatedSection>
-          ))}
+
+              <div className="p-6 md:p-8 flex-1 flex flex-col justify-center">
+                <div className="flex items-center gap-3 mb-2">
+                  <span className="font-inter text-sm font-bold text-[#7A1B2E] tracking-wide uppercase">
+                    {ARMENIA_YEAR}
+                  </span>
+                  <span className="w-1 h-1 rounded-full bg-[#E5E2DF]" />
+                  <span className="font-inter text-sm text-[#6B6B6B]">{armeniaDuration}</span>
+                </div>
+
+                <h3 className="font-playfair text-2xl text-[#1A1A1A] mb-3">{armeniaTitle}</h3>
+                <p className="font-inter text-sm text-[#4A4A4A] leading-relaxed mb-6">{armeniaDesc}</p>
+
+                <Link
+                  href="/retreats/armenia"
+                  className="font-inter text-sm font-medium text-[#7A1B2E] group-hover:underline self-start"
+                >
+                  {t.retreats.viewDetails} &rarr;
+                </Link>
+              </div>
+            </div>
+          </AnimatedSection>
+
+          {/* Uncomment when content is ready: */}
+          {/* Nepal Journey */}
+          {/* {
+            id: 2, titleEn: "Nepal Journey", titleRu: "Путешествие в Непал",
+            year: "2023", duration: "21", image: null,
+            descriptionEn: "A pilgrimage and study retreat exploring the historical roots of the Mahayana tradition.",
+            descriptionRu: "Паломничество и учебный ретрит, посвящённый историческим корням традиции Махаяны.",
+          } */}
+          {/* Diamond Mountain */}
+          {/* {
+            id: 3, titleEn: "Diamond Mountain", titleRu: "Diamond Mountain",
+            year: "2022", duration: "10", image: null,
+            descriptionEn: "Foundational practice retreat focusing on meditation and the ethical life.",
+            descriptionRu: "Базовый практический ретрит, посвящённый медитации и этическому образу жизни.",
+          } */}
         </div>
       </div>
     </div>
