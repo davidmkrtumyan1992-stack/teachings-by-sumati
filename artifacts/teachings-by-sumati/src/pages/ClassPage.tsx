@@ -6,8 +6,14 @@ import { useLanguage } from "@/components/layout/LanguageContext";
 import { useT } from "@/i18n/translations";
 import type { CoursesData } from "@/data/types";
 import coursesRaw from "@/data/courses.json";
+import materialsManifestRaw from "@/data/materials-manifest.json";
 
 const coursesData = coursesRaw as CoursesData;
+
+type MaterialKey = 'notes' | 'reading' | 'homework';
+type CourseMaterials = Partial<Record<MaterialKey, string>>;
+type ManifestEntry = { en?: CourseMaterials; ru?: CourseMaterials };
+const materialsManifest = materialsManifestRaw as Record<string, ManifestEntry>;
 
 export default function ClassPage() {
   const { courseId, classId } = useParams();
@@ -79,6 +85,46 @@ export default function ClassPage() {
 
   const videoUrl = effectiveLang === 'en' ? classData.video_en : classData.video_ru;
   const videoEmbedUrl = videoUrl ? videoUrl.replace('youtu.be/', 'youtube.com/embed/') : null;
+
+  // PDF materials — course-level (same set for all classes within a course)
+  const courseManifest = materialsManifest[course.id];
+  const hasMaterials = !!courseManifest;
+  const enMaterials: CourseMaterials = courseManifest?.en ?? {};
+  const ruMaterials: CourseMaterials = courseManifest?.ru ?? {};
+  const noRuAtAll = hasMaterials && Object.keys(ruMaterials).length === 0;
+
+  const getMaterial = (type: MaterialKey): { url: string | null; fallbackToEn: boolean; unavailable: boolean } => {
+    const base = import.meta.env.BASE_URL;
+    if (!courseManifest) return { url: null, fallbackToEn: false, unavailable: true };
+
+    if (effectiveLang === 'en') {
+      const file = enMaterials[type];
+      return file
+        ? { url: `${base}materials/${file}`, fallbackToEn: false, unavailable: false }
+        : { url: null, fallbackToEn: false, unavailable: true };
+    }
+
+    // RU selected
+    if (noRuAtAll) {
+      // ACI-6: no RU materials at all — fall back to EN with badge
+      const file = enMaterials[type];
+      return file
+        ? { url: `${base}materials/${file}`, fallbackToEn: true, unavailable: false }
+        : { url: null, fallbackToEn: false, unavailable: true };
+    }
+
+    // RU has some materials but this specific type may be missing (e.g. ACI-1 reading)
+    const file = ruMaterials[type];
+    return file
+      ? { url: `${base}materials/${file}`, fallbackToEn: false, unavailable: false }
+      : { url: null, fallbackToEn: false, unavailable: true };
+  };
+
+  const materialItems: Array<{ type: MaterialKey; label: string }> = [
+    { type: 'notes', label: t.classPage.studentNotes },
+    { type: 'reading', label: t.classPage.reading },
+    { type: 'homework', label: t.classPage.homework },
+  ];
 
   return (
     <div
@@ -188,27 +234,57 @@ export default function ClassPage() {
           )}
         </AnimatedSection>
 
-        {/* Materials */}
-        <AnimatedSection delay={0.2} className="space-y-6">
-          <h2 className="font-inter text-xl font-medium text-[#1A1A1A]">{t.classPage.classMaterials}</h2>
+        {/* Materials — hidden for courses without PDFs (ACI 0, ACI 13–18) */}
+        {hasMaterials && (
+          <AnimatedSection delay={0.2} className="space-y-6">
+            <h2 className="font-inter text-xl font-medium text-[#1A1A1A]">{t.classPage.classMaterials}</h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {[t.classPage.studentNotes, t.classPage.reading, t.classPage.homework].map((label) => (
-              <div key={label} className="bg-white border border-[#E5E2DF] rounded-xl p-4 flex gap-4 items-center">
-                <div className="w-11 h-[52px] bg-[#F8F6F4] rounded-md flex flex-col items-center justify-center text-[#7A1B2E] font-bold text-[10px] shrink-0 border border-[#E5E2DF]">
-                  PDF
-                </div>
-                <div className="flex-1 min-w-0">
-                  <div className="font-inter text-sm font-medium text-[#1A1A1A] truncate">{label}</div>
-                  <div className="font-inter text-[11px] text-[#9A9A9A]">200 KB</div>
-                </div>
-                <button className="shrink-0 p-2 text-[#7A1B2E] hover:bg-[#F8F6F4] rounded-lg transition-colors">
-                  <ExternalLink className="w-4 h-4" />
-                </button>
-              </div>
-            ))}
-          </div>
-        </AnimatedSection>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {materialItems.map(({ type, label }) => {
+                const mat = getMaterial(type);
+
+                if (mat.unavailable) {
+                  return (
+                    <div key={type} className="bg-[#F8F6F4] border border-[#E5E2DF] rounded-xl p-4 flex gap-4 items-center opacity-60">
+                      <div className="w-11 h-[52px] bg-white rounded-md flex flex-col items-center justify-center text-[#9A9A9A] font-bold text-[10px] shrink-0 border border-[#E5E2DF]">
+                        PDF
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="font-inter text-sm font-medium text-[#6B6B6B] truncate">{label}</div>
+                        <div className="font-inter text-[11px] text-[#9A9A9A]">{t.classPage.materialNotAvailableRu}</div>
+                      </div>
+                    </div>
+                  );
+                }
+
+                return (
+                  <a
+                    key={type}
+                    href={mat.url!}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-white border border-[#E5E2DF] rounded-xl p-4 flex gap-4 items-center hover:border-[#7A1B2E]/40 hover:shadow-sm transition-all cursor-pointer group"
+                  >
+                    <div className="w-11 h-[52px] bg-[#F8F6F4] rounded-md flex flex-col items-center justify-center text-[#7A1B2E] font-bold text-[10px] shrink-0 border border-[#E5E2DF]">
+                      PDF
+                    </div>
+                    <div className="flex-1 min-w-0 flex items-center gap-1.5">
+                      <div className="font-inter text-sm font-medium text-[#1A1A1A] truncate">{label}</div>
+                      {mat.fallbackToEn && (
+                        <span className="shrink-0 text-[10px] font-semibold bg-[#F0EDEA] text-[#7A1B2E] px-1.5 py-0.5 rounded">
+                          {t.classPage.materialEnglishBadge}
+                        </span>
+                      )}
+                    </div>
+                    <div className="shrink-0 p-2 text-[#7A1B2E] group-hover:bg-[#F8F6F4] rounded-lg transition-colors">
+                      <ExternalLink className="w-4 h-4" />
+                    </div>
+                  </a>
+                );
+              })}
+            </div>
+          </AnimatedSection>
+        )}
       </div>
     </div>
   );

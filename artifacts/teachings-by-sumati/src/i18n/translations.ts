@@ -43,6 +43,8 @@ const translations = {
       transcript: 'Transcript',
       noVideo: 'No video available for this language.',
       backTo: (title: string) => `Back to ${title}`,
+      materialNotAvailableRu: 'Not available in Russian',
+      materialEnglishBadge: 'EN',
     },
     home: {
       heroSubtitle: 'Buddhist Teachings in the Mahayana Tradition',
@@ -146,6 +148,8 @@ const translations = {
       transcript: 'Транскрипт',
       noVideo: 'Видео на этом языке недоступно.',
       backTo: (title: string) => `Назад: ${title}`,
+      materialNotAvailableRu: 'Недоступно на русском',
+      materialEnglishBadge: 'EN',
     },
     home: {
       heroSubtitle: 'Буддийские учения в традиции Махаяны',
