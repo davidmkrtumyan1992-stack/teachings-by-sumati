@@ -1,0 +1,25 @@
+Раздел /practice-modules сейчас пустой (только заголовок "Practice Modules", контента нет). Нужно реализовать его по той же схеме, что уже работает для /aci-courses: страница со списком карточек → у каждой карточки страница со списком классов → у каждого класса страница с видео (переиспользуй компонент страницы класса, который уже используется для ACI-курсов — он одинаково хорошо подходит и здесь: заголовок, переключатель EN/RU, встроенное видео, заглушка "Recording coming soon" для ещё не записанных классов).
+
+Я приложил файл data/practice-modules.json — массив из 9 модулей:
+
+
+{
+  "module": "death-meditation-1",
+  "title": "Death Meditation Course — August 2023",
+  "dateLabel": "Death Meditation Course - Date 1 (Aug 25 - 27, 2023)",
+  "classes": [
+    { "classNumber": 1, "isReview": false, "videoEN": "...", "videoRU": "...", "status": "ready" },
+    ...
+  ]
+}
+Список модулей: death-meditation-1, death-meditation-2, lam-rim-1, lam-rim-2, lam-rim-3, lam-rim-4, source-of-all-my-good-1, source-of-all-my-good-2, wheel-of-life. Это отдельные предложенные занятия/сессии (например, Death Meditation Course проводился дважды — в августе и сентябре 2023, это две разные карточки, не один модуль с двумя вкладками), у каждого модуля нет разбивки на Review Class — только пронумерованные классы.
+
+Правила подключения:
+
+/practice-modules — сетка из 9 карточек, каждая с title в заголовке и dateLabel как подпись (даты проведения), ведёт на /practice-modules/{module}.
+/practice-modules/{module} — список классов этого модуля, ведёт на /practice-modules/{module}/class-{classNumber}, по образцу того, как сейчас устроен список классов на странице ACI-курса.
+/practice-modules/{module}/class-{classNumber} — страница класса с видео EN/RU, тот же компонент, что и у ACI-классов. Класс без isReview — обычный класс, полей Review Class в этих модулях нет вообще, не добавляй лишнюю кнопку "Review".
+"status": "not_recorded_yet" — есть у lam-rim-1 (класс 10) и у lam-rim-4 (классы 7–10): используй ту же заглушку "Recording coming soon" / "Запись появится позже", что уже реализована для ACI 12. Не выдумывай видео для них.
+Секция "Class Materials" (Notes/Reading/Homework) для этих модулей не нужна — у Practice Modules нет таких PDF-материалов, только видео. Не копируй эту секцию с ACI-классов.
+На главной странице сайта карточка "Practice Modules" в навигации уже ведёт на /practice-modules — просто убедись, что теперь там реальный контент вместо пустой страницы.
+После того как сделаешь — не забудь задеплоить изменения (на предыдущих двух этапах у нас несколько раз были расхождения между dev-превью и опубликованным сайтом buddhist-teachings-platform.replit.app из-за забытой публикации). Покажи, на каких урлах проверить, я зайду и перепроверю.
