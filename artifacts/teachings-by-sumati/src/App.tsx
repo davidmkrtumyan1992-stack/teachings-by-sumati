@@ -11,6 +11,7 @@ import PracticeModulesPage from "@/pages/PracticeModulesPage";
 import PracticeModuleDetailPage from "@/pages/PracticeModuleDetailPage";
 import PracticeModuleClassPage from "@/pages/PracticeModuleClassPage";
 import RetreatsPage from "@/pages/RetreatsPage";
+import ArmeniaRetreatPage from "@/pages/ArmeniаRetreatPage";
 import EventsPage from "@/pages/EventsPage";
 import ProjectsPage from "@/pages/ProjectsPage";
 
@@ -25,6 +26,7 @@ function Router() {
       <Route path="/practice-modules/:moduleId" component={PracticeModuleDetailPage} />
       <Route path="/practice-modules/:moduleId/:classId" component={PracticeModuleClassPage} />
       <Route path="/retreats" component={RetreatsPage} />
+      <Route path="/retreats/armenia" component={ArmeniaRetreatPage} />
       <Route path="/events" component={EventsPage} />
       <Route path="/projects" component={ProjectsPage} />
       <Route component={NotFound} />

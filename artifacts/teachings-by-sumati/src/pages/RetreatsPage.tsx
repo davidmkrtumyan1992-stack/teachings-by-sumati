@@ -1,3 +1,4 @@
+import { Link } from "wouter";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { useT } from "@/i18n/translations";
 import { useLanguage } from "@/components/layout/LanguageContext";
@@ -88,9 +89,18 @@ export default function RetreatsPage() {
                     {lang === 'ru' ? retreat.descriptionRu : retreat.descriptionEn}
                   </p>
 
-                  <button className="font-inter text-sm font-medium text-[#7A1B2E] group-hover:underline self-start">
-                    {t.retreats.viewDetails} &rarr;
-                  </button>
+                  {retreat.id === 1 ? (
+                    <Link
+                      href="/retreats/armenia"
+                      className="font-inter text-sm font-medium text-[#7A1B2E] group-hover:underline self-start"
+                    >
+                      {t.retreats.viewDetails} &rarr;
+                    </Link>
+                  ) : (
+                    <span className="font-inter text-sm font-medium text-[#B0A8A8] self-start cursor-default">
+                      {t.retreats.viewDetails} &rarr;
+                    </span>
+                  )}
                 </div>
               </div>
             </AnimatedSection>
