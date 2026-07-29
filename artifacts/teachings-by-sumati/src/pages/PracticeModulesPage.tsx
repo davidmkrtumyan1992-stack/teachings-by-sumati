@@ -1,5 +1,10 @@
+import { Link } from "wouter";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { useT } from "@/i18n/translations";
+import type { PracticeModulesData } from "@/data/types";
+import modulesRaw from "@/data/practice-modules.json";
+
+const modulesData = modulesRaw as PracticeModulesData;
 
 export default function PracticeModulesPage() {
   const t = useT();
@@ -15,23 +20,28 @@ export default function PracticeModulesPage() {
         </AnimatedSection>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {[1, 2, 3].map((idx) => (
-            <AnimatedSection key={idx} delay={idx * 0.1}>
-              <div className="bg-white border border-[#E5E2DF] rounded-2xl overflow-hidden opacity-70">
-                <div 
-                  className="w-full aspect-[16/10] relative flex items-center justify-center p-6" 
-                  style={{ background: 'linear-gradient(135deg, #5C0E1F 0%, #7A1B2E 100%)' }}
-                >
-                  <div className="font-playfair text-2xl text-white/50 tracking-wider">
-                    {t.practiceModules.comingSoon}
+          {modulesData.map((mod, idx) => (
+            <AnimatedSection key={mod.module} delay={idx * 0.07}>
+              <Link href={`/practice-modules/${mod.module}`}>
+                <div className="group bg-white border border-[#E5E2DF] rounded-2xl overflow-hidden hover:shadow-lg hover:border-[#7A1B2E]/20 transition-all duration-300 cursor-pointer h-full flex flex-col">
+                  <div
+                    className="w-full aspect-[16/10] flex items-center justify-center px-6 py-8 shrink-0"
+                    style={{ background: 'linear-gradient(135deg, #5C0E1F 0%, #7A1B2E 100%)' }}
+                  >
+                    <div className="font-playfair text-xl md:text-2xl text-white/90 text-center tracking-wide leading-snug">
+                      {mod.title}
+                    </div>
+                  </div>
+                  <div className="p-5 flex flex-col flex-1">
+                    <p className="font-inter text-[13px] text-[#9A9A9A] mb-4 leading-relaxed flex-1">
+                      {mod.dateLabel}
+                    </p>
+                    <div className="font-inter text-sm font-medium text-[#7A1B2E] group-hover:translate-x-1 transition-transform">
+                      {t.common.start} →
+                    </div>
                   </div>
                 </div>
-                <div className="p-6">
-                  <div className="h-4 bg-[#F8F6F4] rounded w-1/3 mb-3"></div>
-                  <div className="h-6 bg-[#F8F6F4] rounded w-3/4 mb-6"></div>
-                  <div className="h-10 bg-[#F8F6F4] rounded-lg w-full"></div>
-                </div>
-              </div>
+              </Link>
             </AnimatedSection>
           ))}
         </div>

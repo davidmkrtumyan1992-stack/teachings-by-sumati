@@ -68,6 +68,8 @@ const translations = {
       heading: 'Practice Modules',
       subheading: 'Deepen your practice with structured modules',
       comingSoon: 'Coming Soon',
+      backToModules: 'Back to Practice Modules',
+      moduleNotFound: 'Module not found',
     },
     projects: {
       heading: 'Projects',
@@ -173,6 +175,8 @@ const translations = {
       heading: 'Практические модули',
       subheading: 'Углубите свою практику с помощью структурированных модулей',
       comingSoon: 'Скоро',
+      backToModules: 'Назад к модулям',
+      moduleNotFound: 'Модуль не найден',
     },
     projects: {
       heading: 'Проекты',

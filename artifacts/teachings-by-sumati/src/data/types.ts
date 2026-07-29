@@ -43,3 +43,20 @@ export interface CoursesData {
   biography?: Biography;
   projects?: Project[];
 }
+
+export interface PracticeModuleClass {
+  classNumber: number;
+  isReview: boolean;
+  videoEN: string | null;
+  videoRU: string | null;
+  status?: 'ready' | 'not_recorded_yet' | null;
+}
+
+export interface PracticeModule {
+  module: string;
+  title: string;
+  dateLabel: string;
+  classes: PracticeModuleClass[];
+}
+
+export type PracticeModulesData = PracticeModule[];

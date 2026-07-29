@@ -8,6 +8,8 @@ import CoursesPage from "@/pages/CoursesPage";
 import CourseDetailPage from "@/pages/CourseDetailPage";
 import ClassPage from "@/pages/ClassPage";
 import PracticeModulesPage from "@/pages/PracticeModulesPage";
+import PracticeModuleDetailPage from "@/pages/PracticeModuleDetailPage";
+import PracticeModuleClassPage from "@/pages/PracticeModuleClassPage";
 import RetreatsPage from "@/pages/RetreatsPage";
 import EventsPage from "@/pages/EventsPage";
 import ProjectsPage from "@/pages/ProjectsPage";
@@ -20,6 +22,8 @@ function Router() {
       <Route path="/aci-courses/:courseId" component={CourseDetailPage} />
       <Route path="/aci-courses/:courseId/:classId" component={ClassPage} />
       <Route path="/practice-modules" component={PracticeModulesPage} />
+      <Route path="/practice-modules/:moduleId" component={PracticeModuleDetailPage} />
+      <Route path="/practice-modules/:moduleId/:classId" component={PracticeModuleClassPage} />
       <Route path="/retreats" component={RetreatsPage} />
       <Route path="/events" component={EventsPage} />
       <Route path="/projects" component={ProjectsPage} />

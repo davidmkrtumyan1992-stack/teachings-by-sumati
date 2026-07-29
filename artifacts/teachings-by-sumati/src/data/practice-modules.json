@@ -1,0 +1,492 @@
+[
+  {
+    "module": "death-meditation-1",
+    "title": "Death Meditation Course — August 2023",
+    "dateLabel": "Death Meditation Course - Date 1 (Aug 25 - 27, 2023)",
+    "classes": [
+      {
+        "classNumber": 1,
+        "isReview": false,
+        "videoEN": "https://youtu.be/7CSZ3Agenkk",
+        "videoRU": "https://youtu.be/WjSbX6i8QBA",
+        "status": "ready"
+      },
+      {
+        "classNumber": 2,
+        "isReview": false,
+        "videoEN": "https://youtu.be/9RWPpdItDnk",
+        "videoRU": "https://youtu.be/2HXpr6bLghs",
+        "status": "ready"
+      },
+      {
+        "classNumber": 3,
+        "isReview": false,
+        "videoEN": "https://youtu.be/cvwozDU0Fr0",
+        "videoRU": "https://youtu.be/C4RhZrFqAEY",
+        "status": "ready"
+      },
+      {
+        "classNumber": 4,
+        "isReview": false,
+        "videoEN": "https://youtu.be/Alz7KOuISL0",
+        "videoRU": "https://youtu.be/hlwWvL6yZw8",
+        "status": "ready"
+      },
+      {
+        "classNumber": 5,
+        "isReview": false,
+        "videoEN": "https://youtu.be/EBMp4JCTCME?si=quL2BdnRVxC5ZppC",
+        "videoRU": "https://youtu.be/In70htS49DY",
+        "status": "ready"
+      },
+      {
+        "classNumber": 6,
+        "isReview": false,
+        "videoEN": "https://youtu.be/zNpMq48usNU",
+        "videoRU": "https://youtu.be/nCVCUrQw12w",
+        "status": "ready"
+      }
+    ]
+  },
+  {
+    "module": "death-meditation-2",
+    "title": "Death Meditation Course — September 2023",
+    "dateLabel": "Death Meditation Course - Date 2 (Sep 1 - 3, 2023)",
+    "classes": [
+      {
+        "classNumber": 1,
+        "isReview": false,
+        "videoEN": "https://youtu.be/43cnTojVLKs",
+        "videoRU": "https://youtu.be/eGDMkcnk0uY",
+        "status": "ready"
+      },
+      {
+        "classNumber": 2,
+        "isReview": false,
+        "videoEN": "https://youtu.be/y7QCNIUg9ao",
+        "videoRU": "https://youtu.be/VktEqYSXqHA",
+        "status": "ready"
+      },
+      {
+        "classNumber": 3,
+        "isReview": false,
+        "videoEN": "https://youtu.be/HyO-bUh5GWY",
+        "videoRU": "https://youtu.be/_1LNDRzlXJM",
+        "status": "ready"
+      },
+      {
+        "classNumber": 4,
+        "isReview": false,
+        "videoEN": "https://youtu.be/a5Apbs4Bh48",
+        "videoRU": "https://youtu.be/8hByj6cHb-Q",
+        "status": "ready"
+      },
+      {
+        "classNumber": 5,
+        "isReview": false,
+        "videoEN": "https://youtu.be/mBv4JBmR1vM",
+        "videoRU": "https://youtu.be/04choBmxlEs",
+        "status": "ready"
+      }
+    ]
+  },
+  {
+    "module": "lam-rim-1",
+    "title": "Lam Rim 1",
+    "dateLabel": "LAM RIM 1 ( JANUARY 23 - FEBRUARY 23, 2024) by Ven Sumati",
+    "classes": [
+      {
+        "classNumber": 1,
+        "isReview": false,
+        "videoEN": "https://youtu.be/uwAOx-Ad4m8",
+        "videoRU": "https://youtu.be/64_to4Vx3Kc",
+        "status": "ready"
+      },
+      {
+        "classNumber": 2,
+        "isReview": false,
+        "videoEN": "https://youtu.be/VjeflLNtwoU",
+        "videoRU": "https://youtu.be/1sYvap2UaxQ",
+        "status": "ready"
+      },
+      {
+        "classNumber": 3,
+        "isReview": false,
+        "videoEN": "https://youtu.be/JmMwFxkgmjY",
+        "videoRU": "https://youtu.be/gxE_nUTssAE",
+        "status": "ready"
+      },
+      {
+        "classNumber": 4,
+        "isReview": false,
+        "videoEN": "https://youtu.be/ZpU_V9APOvI",
+        "videoRU": "https://youtu.be/n0g8DgK2few",
+        "status": "ready"
+      },
+      {
+        "classNumber": 5,
+        "isReview": false,
+        "videoEN": "https://youtu.be/xZ8P0zb0deQ",
+        "videoRU": "https://youtu.be/d_HRLwCfFUU",
+        "status": "ready"
+      },
+      {
+        "classNumber": 6,
+        "isReview": false,
+        "videoEN": "https://youtu.be/wl8xtSNwkyA?si=4lLFbwrk0dBbX_T3",
+        "videoRU": "https://youtu.be/EoQAg0t59BA",
+        "status": "ready"
+      },
+      {
+        "classNumber": 7,
+        "isReview": false,
+        "videoEN": "https://youtu.be/-p17obI1LYM",
+        "videoRU": "https://youtu.be/pyZnPwiUVow",
+        "status": "ready"
+      },
+      {
+        "classNumber": 8,
+        "isReview": false,
+        "videoEN": "https://youtu.be/EuMjmCqsHs4",
+        "videoRU": "https://youtu.be/4N5pR-_yaCI",
+        "status": "ready"
+      },
+      {
+        "classNumber": 9,
+        "isReview": false,
+        "videoEN": "https://youtu.be/olqVCRsHSe4",
+        "videoRU": "https://youtu.be/6TC4p-UeXd4",
+        "status": "ready"
+      },
+      {
+        "classNumber": 10,
+        "isReview": false,
+        "videoEN": null,
+        "videoRU": null,
+        "status": "not_recorded_yet"
+      }
+    ]
+  },
+  {
+    "module": "source-of-all-my-good-1",
+    "title": "The Source of All My Good — March 2024",
+    "dateLabel": "The Source of All My Good - (March 1 - 3, 2024)",
+    "classes": [
+      {
+        "classNumber": 1,
+        "isReview": false,
+        "videoEN": "https://youtu.be/zIC1t3RagwE",
+        "videoRU": "https://youtu.be/BHz3CuCdxkE",
+        "status": "ready"
+      },
+      {
+        "classNumber": 2,
+        "isReview": false,
+        "videoEN": "https://youtu.be/hjZo20m2lCM",
+        "videoRU": "https://youtu.be/1BMAas_HOtU",
+        "status": "ready"
+      },
+      {
+        "classNumber": 3,
+        "isReview": false,
+        "videoEN": "https://youtu.be/S4c7TbK1Bck",
+        "videoRU": "https://youtu.be/-fDrzPc9Dog",
+        "status": "ready"
+      },
+      {
+        "classNumber": 4,
+        "isReview": false,
+        "videoEN": "https://youtu.be/kvG3U2e-y_s",
+        "videoRU": "https://youtu.be/zoq1aF68Ng8",
+        "status": "ready"
+      },
+      {
+        "classNumber": 5,
+        "isReview": false,
+        "videoEN": "https://youtu.be/-t8jtLWGJc0",
+        "videoRU": "https://youtu.be/g9y6Gadgyug",
+        "status": "ready"
+      }
+    ]
+  },
+  {
+    "module": "lam-rim-2",
+    "title": "Lam Rim 2",
+    "dateLabel": "LAM RIM 2 - ( MARCH 12 - APRIL 12, 2024) by Ven Sumati",
+    "classes": [
+      {
+        "classNumber": 1,
+        "isReview": false,
+        "videoEN": "https://youtu.be/k9ArEsE_ZCA",
+        "videoRU": "https://youtu.be/uajIujAFz8k",
+        "status": "ready"
+      },
+      {
+        "classNumber": 2,
+        "isReview": false,
+        "videoEN": "https://youtu.be/gQTrLbHYWTM",
+        "videoRU": "https://youtu.be/CAs5zRr_Ry0",
+        "status": "ready"
+      },
+      {
+        "classNumber": 3,
+        "isReview": false,
+        "videoEN": "https://youtu.be/wLMwD9k4QmM",
+        "videoRU": "https://youtu.be/zBYkbFAo9LY",
+        "status": "ready"
+      },
+      {
+        "classNumber": 4,
+        "isReview": false,
+        "videoEN": "https://youtu.be/upgi5oqEiDA",
+        "videoRU": "https://youtu.be/iGc8-QfEuw4",
+        "status": "ready"
+      },
+      {
+        "classNumber": 5,
+        "isReview": false,
+        "videoEN": "https://youtu.be/O2m5PkCiDl8",
+        "videoRU": "https://youtu.be/G9XnMN2kXIQ",
+        "status": "ready"
+      },
+      {
+        "classNumber": 6,
+        "isReview": false,
+        "videoEN": "https://youtu.be/YGWkVynaV64",
+        "videoRU": "https://youtu.be/Qj2nD9cSl0s",
+        "status": "ready"
+      },
+      {
+        "classNumber": 7,
+        "isReview": false,
+        "videoEN": "https://youtu.be/ciOAE-wtk9I",
+        "videoRU": "https://youtu.be/Z7d-HPpznic",
+        "status": "ready"
+      },
+      {
+        "classNumber": 8,
+        "isReview": false,
+        "videoEN": "https://youtu.be/kG6JcO07pc0",
+        "videoRU": "https://youtu.be/YoRoS0Tijk4",
+        "status": "ready"
+      }
+    ]
+  },
+  {
+    "module": "wheel-of-life",
+    "title": "The Wheel of Life",
+    "dateLabel": "The Wheel of Life - (May 11 - 12, 2024)",
+    "classes": [
+      {
+        "classNumber": 1,
+        "isReview": false,
+        "videoEN": "https://youtu.be/yEJOPiCFywU",
+        "videoRU": "https://youtu.be/JCsgPXj5KYA",
+        "status": "ready"
+      },
+      {
+        "classNumber": 2,
+        "isReview": false,
+        "videoEN": "https://youtu.be/GWO07-_FZuM",
+        "videoRU": "https://youtu.be/zAVh_8XVHpg",
+        "status": "ready"
+      }
+    ]
+  },
+  {
+    "module": "lam-rim-3",
+    "title": "Lam Rim 3",
+    "dateLabel": "LAM RIM 3 - ( MAY 21 - JUNE 21, 2024) by Ven Sumati",
+    "classes": [
+      {
+        "classNumber": 1,
+        "isReview": false,
+        "videoEN": "https://youtu.be/1A_OZulVVd0",
+        "videoRU": "https://youtu.be/EMOE2wq8ziU",
+        "status": "ready"
+      },
+      {
+        "classNumber": 2,
+        "isReview": false,
+        "videoEN": "https://youtu.be/N_1EWJzWcCI",
+        "videoRU": "https://youtu.be/O11dnWHnSKg",
+        "status": "ready"
+      },
+      {
+        "classNumber": 3,
+        "isReview": false,
+        "videoEN": "https://youtu.be/wqcCGpO6pto?si=toyiHm1RFcQzFM6t",
+        "videoRU": "https://youtu.be/ftLjhHYiYK0",
+        "status": "ready"
+      },
+      {
+        "classNumber": 4,
+        "isReview": false,
+        "videoEN": "https://youtu.be/pxCSP30z5ZA",
+        "videoRU": "https://youtu.be/UolQgeY3h0U",
+        "status": "ready"
+      },
+      {
+        "classNumber": 5,
+        "isReview": false,
+        "videoEN": "https://youtu.be/R0ZN4Q18Yt8",
+        "videoRU": "https://youtu.be/8G3_wY2iIWM",
+        "status": "ready"
+      },
+      {
+        "classNumber": 6,
+        "isReview": false,
+        "videoEN": "https://youtu.be/L7l6KMH-R00",
+        "videoRU": "https://youtu.be/un_MyJZ3pPc",
+        "status": "ready"
+      },
+      {
+        "classNumber": 7,
+        "isReview": false,
+        "videoEN": "https://youtu.be/DTEQ16pLk8k",
+        "videoRU": "https://youtu.be/p1NZD71FyJ4",
+        "status": "ready"
+      },
+      {
+        "classNumber": 8,
+        "isReview": false,
+        "videoEN": "https://youtu.be/liLfd7bR-W0?si",
+        "videoRU": "https://youtu.be/sq7aE3bnSbk",
+        "status": "ready"
+      },
+      {
+        "classNumber": 9,
+        "isReview": false,
+        "videoEN": "https://youtu.be/5A_MPsiNIQ0",
+        "videoRU": "https://youtu.be/tV2wmI5dDNc",
+        "status": "ready"
+      },
+      {
+        "classNumber": 10,
+        "isReview": false,
+        "videoEN": "https://youtu.be/YW6j1nrzsFY",
+        "videoRU": "https://youtu.be/rKwQ7U6ad44",
+        "status": "ready"
+      }
+    ]
+  },
+  {
+    "module": "source-of-all-my-good-2",
+    "title": "The Source of All My Good — September 2024",
+    "dateLabel": "The Source of All My Good - (Sep 6 - 8, 2024)",
+    "classes": [
+      {
+        "classNumber": 1,
+        "isReview": false,
+        "videoEN": "https://youtu.be/wIIr2N33tH0",
+        "videoRU": "https://youtu.be/fzZwtbD5twI",
+        "status": "ready"
+      },
+      {
+        "classNumber": 2,
+        "isReview": false,
+        "videoEN": "https://youtu.be/lSbQyAtyYJg",
+        "videoRU": "https://youtu.be/mttjItYvcY0",
+        "status": "ready"
+      },
+      {
+        "classNumber": 3,
+        "isReview": false,
+        "videoEN": "https://youtu.be/qjkeObuOezM",
+        "videoRU": "https://youtu.be/8eOqUXk8TIM",
+        "status": "ready"
+      },
+      {
+        "classNumber": 4,
+        "isReview": false,
+        "videoEN": "https://youtu.be/hRq8LjZpNIA",
+        "videoRU": "https://youtu.be/anmZdFYOULI",
+        "status": "ready"
+      },
+      {
+        "classNumber": 5,
+        "isReview": false,
+        "videoEN": "https://youtu.be/uBqh0pibtfw",
+        "videoRU": "https://youtu.be/nS1tUuff_OI",
+        "status": "ready"
+      }
+    ]
+  },
+  {
+    "module": "lam-rim-4",
+    "title": "Lam Rim 4",
+    "dateLabel": "LAM RIM 4 - ( SEP 09 - 2024) by Ven Sumati",
+    "classes": [
+      {
+        "classNumber": 1,
+        "isReview": false,
+        "videoEN": "https://youtu.be/MXHgbMDrBHw",
+        "videoRU": "https://youtu.be/Ve1OP33elMs",
+        "status": "ready"
+      },
+      {
+        "classNumber": 2,
+        "isReview": false,
+        "videoEN": "https://youtu.be/m8liY7ACwNw",
+        "videoRU": "https://youtu.be/PUrt18ZGjWA",
+        "status": "ready"
+      },
+      {
+        "classNumber": 3,
+        "isReview": false,
+        "videoEN": "https://youtu.be/tj3cj4dQZlw",
+        "videoRU": "https://youtu.be/SJYBo-JsEI4",
+        "status": "ready"
+      },
+      {
+        "classNumber": 4,
+        "isReview": false,
+        "videoEN": "https://youtu.be/mT5EYYTtIJU",
+        "videoRU": "https://youtu.be/TTbNEEK2XBc",
+        "status": "ready"
+      },
+      {
+        "classNumber": 5,
+        "isReview": false,
+        "videoEN": "https://youtu.be/Vr9cKDTOlJI",
+        "videoRU": "https://youtu.be/ZZimCQ4AsO4",
+        "status": "ready"
+      },
+      {
+        "classNumber": 6,
+        "isReview": false,
+        "videoEN": "https://www.youtube.com/watch?v=CiNoDIzhZtU",
+        "videoRU": "https://youtu.be/GFjQEayozp4?si=o8QosNVcofvj00pd",
+        "status": "ready"
+      },
+      {
+        "classNumber": 7,
+        "isReview": false,
+        "videoEN": null,
+        "videoRU": null,
+        "status": "not_recorded_yet"
+      },
+      {
+        "classNumber": 8,
+        "isReview": false,
+        "videoEN": null,
+        "videoRU": null,
+        "status": "not_recorded_yet"
+      },
+      {
+        "classNumber": 9,
+        "isReview": false,
+        "videoEN": null,
+        "videoRU": null,
+        "status": "not_recorded_yet"
+      },
+      {
+        "classNumber": 10,
+        "isReview": false,
+        "videoEN": null,
+        "videoRU": null,
+        "status": "not_recorded_yet"
+      }
+    ]
+  }
+]
