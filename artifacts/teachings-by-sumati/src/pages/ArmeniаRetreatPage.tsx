@@ -28,11 +28,13 @@ export default function ArmeniaRetreatPage() {
   return (
     <div className="min-h-screen bg-white pb-24">
       {/* Hero Image */}
-      <img
-        src={`${BASE}/retreats/armenia-poster.jpg`}
-        alt={t(retreatData.title as { en: string; ru: string }, l)}
-        className="w-full h-auto block"
-      />
+      <div className="max-w-md mx-auto px-4 pt-6 pb-2">
+        <img
+          src={`${BASE}/retreats/armenia-poster.jpg`}
+          alt={t(retreatData.title as { en: string; ru: string }, l)}
+          className="w-full h-auto"
+        />
+      </div>
 
       {/* Header section */}
       <div className="bg-[#F8F6F4] pt-8 pb-12 px-6 rounded-b-[24px] mb-12">
