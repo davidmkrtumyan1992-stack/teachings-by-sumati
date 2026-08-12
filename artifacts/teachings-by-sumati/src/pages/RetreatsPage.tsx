@@ -1,4 +1,5 @@
 import { Link } from "wouter";
+import { Mountain } from "lucide-react";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { useT } from "@/i18n/translations";
 import { useLanguage } from "@/components/layout/LanguageContext";
@@ -71,6 +72,15 @@ export default function RetreatsPage() {
                   {t.retreats.viewDetails} &rarr;
                 </Link>
               </div>
+            </div>
+          </AnimatedSection>
+
+          <AnimatedSection delay={0.08}>
+            <div className="rounded-2xl border border-dashed border-[#E5E2DF] p-6 flex items-center gap-4 text-center sm:text-left sm:flex-row flex-col">
+              <div className="w-10 h-10 rounded-full bg-[#7A1B2E]/10 flex items-center justify-center shrink-0">
+                <Mountain className="w-5 h-5 text-[#7A1B2E]" strokeWidth={1.5} />
+              </div>
+              <p className="font-inter text-sm text-[#9A9A9A]">{t.retreats.moreComingSoon}</p>
             </div>
           </AnimatedSection>
         </div>

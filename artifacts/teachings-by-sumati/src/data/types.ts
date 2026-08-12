@@ -78,7 +78,7 @@ export interface ArmeniaRetreat {
   description: LocalizedText;
   highlights: { en: string[]; ru: string[] };
   accommodation: LocalizedText;
-  pricing: { type: LocalizedText; price: number }[];
+  pricing: { type: LocalizedText; price: number; occupancy?: number }[];
   currency: string;
   contact: {
     name: string;

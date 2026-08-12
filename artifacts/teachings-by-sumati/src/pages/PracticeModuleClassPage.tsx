@@ -1,12 +1,13 @@
 import { useRef } from "react";
 import { useParams, Link, useLocation } from "wouter";
-import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowLeft, ChevronLeft, ChevronRight, CheckCircle2, Circle } from "lucide-react";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { useLanguage } from "@/components/layout/LanguageContext";
 import { useT } from "@/i18n/translations";
 import type { PracticeModulesData } from "@/data/types";
 import modulesRaw from "@/data/practice-modules.json";
 import { toEmbedUrl } from "@/lib/youtube";
+import { useProgress } from "@/hooks/useProgress";
 
 const modulesData = modulesRaw as PracticeModulesData;
 
@@ -15,6 +16,7 @@ export default function PracticeModuleClassPage() {
   const { lang, setLang } = useLanguage();
   const t = useT();
   const [, setLocation] = useLocation();
+  const { isWatched, toggleWatched } = useProgress(moduleId ?? '');
 
   const classNumber = classId?.startsWith('class-')
     ? Number(classId.slice(6))
@@ -187,6 +189,25 @@ export default function PracticeModuleClassPage() {
             </>
           )}
         </AnimatedSection>
+
+        {!isNotRecorded && (
+          <AnimatedSection delay={0.15} className="flex justify-center">
+            <button
+              onClick={() => toggleWatched(classNumber)}
+              className={`inline-flex items-center gap-2 px-6 py-3 rounded-xl font-inter text-sm font-medium transition-all ease-premium border ${
+                isWatched(classNumber)
+                  ? 'bg-[#7A1B2E] text-white border-[#7A1B2E] hover:bg-[#5C0E1F] hover:border-[#5C0E1F]'
+                  : 'bg-white text-[#6B6B6B] border-[#E5E2DF] hover:border-[#7A1B2E]/40 hover:text-[#7A1B2E]'
+              }`}
+            >
+              {isWatched(classNumber)
+                ? <CheckCircle2 className="w-4 h-4" />
+                : <Circle className="w-4 h-4" />
+              }
+              {isWatched(classNumber) ? t.classPage.watched : t.classPage.markWatched}
+            </button>
+          </AnimatedSection>
+        )}
       </div>
     </div>
   );

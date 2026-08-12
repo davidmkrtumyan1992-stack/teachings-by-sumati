@@ -49,9 +49,9 @@
     "ru": "Отель «Венеция» 5★ — вегетарианское питание, крытый и открытый бассейн"
   },
   "pricing": [
-    { "type": { "en": "Triple room", "ru": "Трёхместное размещение" }, "price": 1300 },
-    { "type": { "en": "Double room", "ru": "Двухместное размещение" }, "price": 1400 },
-    { "type": { "en": "Single room", "ru": "Одноместное размещение" }, "price": 1500 }
+    { "type": { "en": "Triple room", "ru": "Трёхместное размещение" }, "price": 1300, "occupancy": 3 },
+    { "type": { "en": "Double room", "ru": "Двухместное размещение" }, "price": 1400, "occupancy": 2 },
+    { "type": { "en": "Single room", "ru": "Одноместное размещение" }, "price": 1500, "occupancy": 1 }
   ],
   "currency": "USD",
   "contact": {

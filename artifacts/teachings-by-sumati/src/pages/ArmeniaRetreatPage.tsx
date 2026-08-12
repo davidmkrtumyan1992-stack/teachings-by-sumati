@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { ArrowLeft, MapPin, Calendar, Users, Building2, Phone } from "lucide-react";
+import { ArrowLeft, MapPin, Calendar, Users, Building2, Phone, User } from "lucide-react";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { useLanguage } from "@/components/layout/LanguageContext";
 import { useT } from "@/i18n/translations";
@@ -132,8 +132,15 @@ export default function ArmeniaRetreatPage() {
               {(retreatData.pricing ?? []).map((tier, i) => (
                 <div
                   key={i}
-                  className="bg-[#F8F6F4] border border-[#E5E2DF] rounded-xl p-5 text-center"
+                  className="bg-[#F8F6F4] border border-[#E5E2DF] rounded-xl p-6 text-center hover:border-[#7A1B2E]/25 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 ease-premium"
                 >
+                  {tier.occupancy && (
+                    <div className="flex items-center justify-center gap-1 mb-3">
+                      {Array.from({ length: tier.occupancy }).map((_, j) => (
+                        <User key={j} className="w-3.5 h-3.5 text-[#C4973B]" />
+                      ))}
+                    </div>
+                  )}
                   <div className="font-inter text-sm text-[#6B6B6B] mb-3">
                     {localize(tier.type, l)}
                   </div>

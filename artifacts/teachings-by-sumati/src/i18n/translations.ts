@@ -77,6 +77,7 @@ const translations = {
       heading: 'Retreats',
       subheading: 'Immersive study and practice environments',
       viewDetails: 'View Details',
+      moreComingSoon: 'More retreats will be announced here as they are scheduled.',
     },
     events: {
       heading: 'Upcoming Events',
@@ -207,6 +208,7 @@ const translations = {
       heading: 'Ретриты',
       subheading: 'Среды глубокого изучения и практики',
       viewDetails: 'Подробнее',
+      moreComingSoon: 'Здесь появятся другие ретриты по мере назначения дат.',
     },
     events: {
       heading: 'Предстоящие события',
