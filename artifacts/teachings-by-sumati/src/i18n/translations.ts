@@ -83,6 +83,7 @@ const translations = {
       subheading: 'Live teachings, Q&A sessions, and study groups',
       noEvents: 'No upcoming events',
       noEventsDesc: 'There are no live events scheduled at this moment. Stay tuned for future announcements.',
+      exploreCta: 'While you wait, explore the ACI Courses',
     },
     practiceModules: {
       heading: 'Practice Modules',
@@ -212,6 +213,7 @@ const translations = {
       subheading: 'Живые учения, сессии вопросов и ответов, учебные группы',
       noEvents: 'Нет предстоящих событий',
       noEventsDesc: 'В данный момент не запланировано живых событий. Следите за обновлениями.',
+      exploreCta: 'А пока — посмотрите курсы ACI',
     },
     practiceModules: {
       heading: 'Практические модули',

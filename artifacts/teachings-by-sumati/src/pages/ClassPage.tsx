@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { useParams, Link, useLocation } from "wouter";
-import { ArrowLeft, ChevronLeft, ChevronRight, ExternalLink, CheckCircle2, Circle } from "lucide-react";
+import { ArrowLeft, ChevronLeft, ChevronRight, ExternalLink, CheckCircle2, Circle, FileText } from "lucide-react";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { useLanguage } from "@/components/layout/LanguageContext";
 import { useT } from "@/i18n/translations";
@@ -267,8 +267,9 @@ export default function ClassPage() {
                 if (mat.unavailable) {
                   return (
                     <div key={type} className="bg-[#F8F6F4] border border-[#E5E2DF] rounded-xl p-4 flex gap-4 items-center opacity-60">
-                      <div className="w-11 h-[52px] bg-white rounded-md flex flex-col items-center justify-center text-[#9A9A9A] font-bold text-[10px] shrink-0 border border-[#E5E2DF]">
-                        PDF
+                      <div className="w-11 h-[52px] bg-white rounded-md flex flex-col items-center justify-center gap-1 text-[#9A9A9A] shrink-0 border border-[#E5E2DF]">
+                        <FileText className="w-5 h-5" strokeWidth={1.5} />
+                        <span className="font-bold text-[8px] tracking-wide">PDF</span>
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className="font-inter text-sm font-medium text-[#6B6B6B] truncate">{label}</div>
@@ -286,8 +287,9 @@ export default function ClassPage() {
                     rel="noopener noreferrer"
                     className="bg-white border border-[#E5E2DF] rounded-xl p-4 flex gap-4 items-center hover:border-[#7A1B2E]/40 hover:shadow-sm transition-all cursor-pointer group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7A1B2E] focus-visible:ring-offset-2"
                   >
-                    <div className="w-11 h-[52px] bg-[#F8F6F4] rounded-md flex flex-col items-center justify-center text-[#7A1B2E] font-bold text-[10px] shrink-0 border border-[#E5E2DF]">
-                      PDF
+                    <div className="w-11 h-[52px] bg-[#F8F6F4] rounded-md flex flex-col items-center justify-center gap-1 text-[#7A1B2E] shrink-0 border border-[#E5E2DF] group-hover:bg-white group-hover:border-[#7A1B2E]/30 transition-colors">
+                      <FileText className="w-5 h-5" strokeWidth={1.5} />
+                      <span className="font-bold text-[8px] tracking-wide">PDF</span>
                     </div>
                     <div className="flex-1 min-w-0 flex items-center gap-1.5">
                       <div className="font-inter text-sm font-medium text-[#1A1A1A] truncate">{label}</div>

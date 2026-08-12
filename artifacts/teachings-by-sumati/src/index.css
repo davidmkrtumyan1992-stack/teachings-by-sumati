@@ -65,6 +65,15 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+
+  --shadow-2xs: var(--shadow-2xs);
+  --shadow-xs: var(--shadow-xs);
+  --shadow-sm: var(--shadow-sm);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+  --shadow-xl: var(--shadow-xl);
+  --shadow-2xl: var(--shadow-2xl);
+  --shadow: var(--shadow);
 }
 
 /* LIGHT MODE */
@@ -119,14 +128,14 @@
   --app-font-serif: 'Playfair Display', Georgia, serif;
   --app-font-mono: Menlo, monospace;
   --radius: .5rem; /* 8px */
-  --shadow-2xs: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00); 
-  --shadow-xs: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00);
-  --shadow-sm: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00), 0px 1px 2px -1px hsl(202.8169 89.1213% 53.1373% / 0.00);
-  --shadow: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00), 0px 1px 2px -1px hsl(202.8169 89.1213% 53.1373% / 0.00);
-  --shadow-md: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00), 0px 2px 4px -1px hsl(202.8169 89.1213% 53.1373% / 0.00);
-  --shadow-lg: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00), 0px 4px 6px -1px hsl(202.8169 89.1213% 53.1373% / 0.00);
-  --shadow-xl: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00), 0px 8px 10px -1px hsl(202.8169 89.1213% 53.1373% / 0.00);
-  --shadow-2xl: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow-2xs: 0px 1px 2px 0px rgba(26, 26, 26, 0.04);
+  --shadow-xs: 0px 1px 3px 0px rgba(26, 26, 26, 0.05);
+  --shadow-sm: 0px 2px 4px -1px rgba(26, 26, 26, 0.06), 0px 1px 2px -1px rgba(26, 26, 26, 0.04);
+  --shadow: 0px 4px 8px -2px rgba(26, 26, 26, 0.07), 0px 2px 4px -2px rgba(26, 26, 26, 0.05);
+  --shadow-md: 0px 8px 16px -4px rgba(26, 26, 26, 0.08), 0px 4px 6px -4px rgba(26, 26, 26, 0.05);
+  --shadow-lg: 0px 16px 28px -8px rgba(26, 26, 26, 0.10), 0px 6px 12px -6px rgba(26, 26, 26, 0.06);
+  --shadow-xl: 0px 24px 40px -12px rgba(26, 26, 26, 0.12), 0px 10px 16px -10px rgba(26, 26, 26, 0.07);
+  --shadow-2xl: 0px 32px 64px -16px rgba(26, 26, 26, 0.16);
   --tracking-normal: 0em;
   --spacing: 0.25rem;
 
@@ -191,14 +200,14 @@
   --chart-4: 38 55% 49%;
   --chart-5: 0 0% 42%;
 
-  --shadow-2xs: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00);
-  --shadow-xs: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00);
-  --shadow-sm: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00), 0px 1px 2px -1px hsl(202.8169 89.1213% 53.1373% / 0.00);
-  --shadow: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00), 0px 1px 2px -1px hsl(202.8169 89.1213% 53.1373% / 0.00);
-  --shadow-md: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00), 0px 2px 4px -1px hsl(202.8169 89.1213% 53.1373% / 0.00);
-  --shadow-lg: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00), 0px 4px 6px -1px hsl(202.8169 89.1213% 53.1373% / 0.00);
-  --shadow-xl: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00), 0px 8px 10px -1px hsl(202.8169 89.1213% 53.1373% / 0.00);
-  --shadow-2xl: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow-2xs: 0px 1px 2px 0px rgba(26, 26, 26, 0.04);
+  --shadow-xs: 0px 1px 3px 0px rgba(26, 26, 26, 0.05);
+  --shadow-sm: 0px 2px 4px -1px rgba(26, 26, 26, 0.06), 0px 1px 2px -1px rgba(26, 26, 26, 0.04);
+  --shadow: 0px 4px 8px -2px rgba(26, 26, 26, 0.07), 0px 2px 4px -2px rgba(26, 26, 26, 0.05);
+  --shadow-md: 0px 8px 16px -4px rgba(26, 26, 26, 0.08), 0px 4px 6px -4px rgba(26, 26, 26, 0.05);
+  --shadow-lg: 0px 16px 28px -8px rgba(26, 26, 26, 0.10), 0px 6px 12px -6px rgba(26, 26, 26, 0.06);
+  --shadow-xl: 0px 24px 40px -12px rgba(26, 26, 26, 0.12), 0px 10px 16px -10px rgba(26, 26, 26, 0.07);
+  --shadow-2xl: 0px 32px 64px -16px rgba(26, 26, 26, 0.16);
 }
 
 @layer base {
@@ -245,6 +254,12 @@
 }
 .animate-fade-in { animation: fade-in 0.8s ease forwards; }
 
+@keyframes breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+.animate-breathe { animation: breathe 3.5s ease-in-out infinite; }
+
 /* Scroll animations via IntersectionObserver */
 .scroll-animate { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
 .scroll-animate.visible { opacity: 1; transform: translateY(0); }
@@ -252,6 +267,7 @@
 @media (prefers-reduced-motion: reduce) {
   .scroll-animate { opacity: 1 !important; transform: none !important; transition: none !important; }
   .animate-bounce-scroll { animation: none; }
+  .animate-breathe { animation: none; }
 }
 
 /* Container */
