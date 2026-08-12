@@ -36,7 +36,7 @@ export function DesktopDock() {
     <motion.div
       onMouseMove={(e: MouseEvent<HTMLDivElement>) => mouseX.set(e.pageX)}
       onMouseLeave={() => mouseX.set(Infinity)}
-      className="hidden md:flex fixed bottom-6 left-1/2 -translate-x-1/2 z-40 items-end gap-3 h-16 px-4 pb-2.5 rounded-2xl bg-white/95 backdrop-blur-md border border-[#E5E2DF] shadow-xl"
+      className="hidden md:flex fixed bottom-6 left-1/2 -translate-x-1/2 z-40 items-end gap-3 h-16 px-4 pb-2.5 rounded-2xl glass-panel"
       aria-label={t.aria.quickAccess}
     >
       {items.map((item) => {
@@ -71,10 +71,16 @@ function DockIcon({ mouseX, item, isActive }: { mouseX: MotionValue<number>; ite
     >
       <motion.div
         ref={ref}
-        style={{ width: size, height: size }}
+        style={{
+          width: size,
+          height: size,
+          ...(isActive
+            ? { background: "rgba(122, 27, 46, 0.07)", boxShadow: "inset 0 0 0 1px rgba(122, 27, 46, 0.20)" }
+            : {}),
+        }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        className={`relative flex items-center justify-center rounded-full transition-colors ${isActive ? "bg-[#7A1B2E]/10" : "hover:bg-[#F8F6F4]"}`}
+        className={`relative flex items-center justify-center rounded-full transition-colors ${isActive ? "" : "hover:bg-white/50"}`}
       >
         <AnimatePresence>
           {hovered && (
@@ -92,6 +98,9 @@ function DockIcon({ mouseX, item, isActive }: { mouseX: MotionValue<number>; ite
         <motion.div style={{ width: iconSize, height: iconSize }} className="flex items-center justify-center">
           <Icon className={`w-full h-full ${isActive ? "text-[#7A1B2E]" : "text-[#6B6B6B]"}`} strokeWidth={1.75} />
         </motion.div>
+        {isActive && (
+          <span className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-[#7A1B2E]" />
+        )}
         <span className="sr-only">{item.label}</span>
       </motion.div>
     </Link>
