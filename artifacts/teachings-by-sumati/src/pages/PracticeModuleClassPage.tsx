@@ -39,9 +39,12 @@ export default function PracticeModuleClassPage() {
   }
 
   const sortedClasses = [...mod.classes].sort((a, b) => a.classNumber - b.classNumber);
-  const currentIndex = sortedClasses.findIndex(c => c.classNumber === classNumber);
-  const prevClass = currentIndex > 0 ? sortedClasses[currentIndex - 1] : null;
-  const nextClass = currentIndex < sortedClasses.length - 1 ? sortedClasses[currentIndex + 1] : null;
+  // Only recorded classes are listed/navigable — "not_recorded_yet" ones are permanently
+  // hidden, not just "coming soon", so prev/next must skip over them entirely.
+  const recordedClasses = sortedClasses.filter(c => c.status !== 'not_recorded_yet');
+  const recordedIndex = recordedClasses.findIndex(c => c.classNumber === classNumber);
+  const prevClass = [...recordedClasses].reverse().find(c => c.classNumber < classNumber) ?? null;
+  const nextClass = recordedClasses.find(c => c.classNumber > classNumber) ?? null;
 
   const navigateToClass = (num: number) => {
     setLocation(`/practice-modules/${mod.module}/class-${num}`);
@@ -104,7 +107,7 @@ export default function PracticeModuleClassPage() {
               <ChevronLeft className="w-5 h-5" />
             </button>
             <div className="font-inter text-sm text-[#6B6B6B] px-2 whitespace-nowrap">
-              {currentIndex + 1} / {sortedClasses.length}
+              {recordedIndex >= 0 ? recordedIndex + 1 : '–'} / {recordedClasses.length}
             </div>
             <button
               onClick={() => nextClass && navigateToClass(nextClass.classNumber)}

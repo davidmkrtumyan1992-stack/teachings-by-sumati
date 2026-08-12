@@ -21,6 +21,8 @@ export interface Course {
   description_en?: string | null;
   description_ru?: string | null;
   classes?: ClassEntry[];
+  /** Taught live only — no recordings will ever be published for this course. */
+  liveOnly?: boolean;
 }
 
 export interface Project {

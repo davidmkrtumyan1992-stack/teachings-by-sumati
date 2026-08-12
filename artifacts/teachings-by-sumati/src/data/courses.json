@@ -389,19 +389,8 @@
       "has_review": true,
       "platform_en": null,
       "platform_ru": null,
-      "classes": [
-        { "class_number": 1, "video_en": null, "video_ru": null, "status": "not_recorded_yet" },
-        { "class_number": 2, "video_en": null, "video_ru": null, "status": "not_recorded_yet" },
-        { "class_number": 3, "video_en": null, "video_ru": null, "status": "not_recorded_yet" },
-        { "class_number": 4, "video_en": null, "video_ru": null, "status": "not_recorded_yet" },
-        { "class_number": 5, "video_en": null, "video_ru": null, "status": "not_recorded_yet" },
-        { "class_number": 6, "video_en": null, "video_ru": null, "status": "not_recorded_yet" },
-        { "class_number": 7, "video_en": null, "video_ru": null, "status": "not_recorded_yet" },
-        { "class_number": 8, "video_en": null, "video_ru": null, "status": "not_recorded_yet" },
-        { "class_number": 9, "video_en": null, "video_ru": null, "status": "not_recorded_yet" },
-        { "class_number": 10, "video_en": null, "video_ru": null, "status": "not_recorded_yet" },
-        { "class_number": "review", "video_en": null, "video_ru": null, "status": "not_recorded_yet" }
-      ]
+      "liveOnly": true,
+      "classes": []
     },
     {
       "id": "aci-17",
@@ -413,19 +402,8 @@
       "has_review": true,
       "platform_en": null,
       "platform_ru": null,
-      "classes": [
-        { "class_number": 1, "video_en": null, "video_ru": null, "status": "not_recorded_yet" },
-        { "class_number": 2, "video_en": null, "video_ru": null, "status": "not_recorded_yet" },
-        { "class_number": 3, "video_en": null, "video_ru": null, "status": "not_recorded_yet" },
-        { "class_number": 4, "video_en": null, "video_ru": null, "status": "not_recorded_yet" },
-        { "class_number": 5, "video_en": null, "video_ru": null, "status": "not_recorded_yet" },
-        { "class_number": 6, "video_en": null, "video_ru": null, "status": "not_recorded_yet" },
-        { "class_number": 7, "video_en": null, "video_ru": null, "status": "not_recorded_yet" },
-        { "class_number": 8, "video_en": null, "video_ru": null, "status": "not_recorded_yet" },
-        { "class_number": 9, "video_en": null, "video_ru": null, "status": "not_recorded_yet" },
-        { "class_number": 10, "video_en": null, "video_ru": null, "status": "not_recorded_yet" },
-        { "class_number": "review", "video_en": null, "video_ru": null, "status": "not_recorded_yet" }
-      ]
+      "liveOnly": true,
+      "classes": []
     },
     {
       "id": "aci-18",
@@ -437,19 +415,8 @@
       "has_review": true,
       "platform_en": null,
       "platform_ru": null,
-      "classes": [
-        { "class_number": 1, "video_en": null, "video_ru": null, "status": "not_recorded_yet" },
-        { "class_number": 2, "video_en": null, "video_ru": null, "status": "not_recorded_yet" },
-        { "class_number": 3, "video_en": null, "video_ru": null, "status": "not_recorded_yet" },
-        { "class_number": 4, "video_en": null, "video_ru": null, "status": "not_recorded_yet" },
-        { "class_number": 5, "video_en": null, "video_ru": null, "status": "not_recorded_yet" },
-        { "class_number": 6, "video_en": null, "video_ru": null, "status": "not_recorded_yet" },
-        { "class_number": 7, "video_en": null, "video_ru": null, "status": "not_recorded_yet" },
-        { "class_number": 8, "video_en": null, "video_ru": null, "status": "not_recorded_yet" },
-        { "class_number": 9, "video_en": null, "video_ru": null, "status": "not_recorded_yet" },
-        { "class_number": 10, "video_en": null, "video_ru": null, "status": "not_recorded_yet" },
-        { "class_number": "review", "video_en": null, "video_ru": null, "status": "not_recorded_yet" }
-      ]
+      "liveOnly": true,
+      "classes": []
     }
   ],
 

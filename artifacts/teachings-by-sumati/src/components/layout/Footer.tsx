@@ -46,7 +46,7 @@ export function Footer() {
           <p className="text-white/70 font-inter text-sm mb-4">
             {t.footer.contactDesc}
           </p>
-          <a href="mailto:info@teachingsbysumati.org" className="inline-block border border-white/30 rounded-full px-6 py-2 text-sm font-inter hover:bg-white/10 transition-colors" data-testid="footer-link-contact">
+          <a href="mailto:dkarlstumpf@gmail.com" className="inline-block border border-white/30 rounded-full px-6 py-2 text-sm font-inter hover:bg-white/10 transition-colors" data-testid="footer-link-contact">
             {t.common.contactUs}
           </a>
         </div>

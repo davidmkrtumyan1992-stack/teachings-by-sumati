@@ -34,6 +34,8 @@ const translations = {
       courseNotFound: 'Course not found',
       classesCount: (n: number, hasReview: boolean) => `${n} classes${hasReview ? ' + review' : ''}`,
       noClasses: 'No classes',
+      liveOnlyTitle: 'This course is taught live',
+      liveOnlyDesc: 'Classes are not recorded — stay tuned for updates.',
     },
     classPage: {
       classMaterials: 'Class Materials',
@@ -161,6 +163,8 @@ const translations = {
       courseNotFound: 'Курс не найден',
       classesCount: (n: number, hasReview: boolean) => `${n} уроков${hasReview ? ' + обзор' : ''}`,
       noClasses: 'Нет уроков',
+      liveOnlyTitle: 'Курс проводится вживую',
+      liveOnlyDesc: 'Занятия не записываются — следите за информацией.',
     },
     classPage: {
       classMaterials: 'Материалы урока',

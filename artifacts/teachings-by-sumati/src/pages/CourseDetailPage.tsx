@@ -1,5 +1,5 @@
 import { useParams, Link } from "wouter";
-import { ArrowLeft, ExternalLink, CheckCircle2 } from "lucide-react";
+import { ArrowLeft, ExternalLink, CheckCircle2, Radio } from "lucide-react";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { useLanguage } from "@/components/layout/LanguageContext";
 import { useT } from "@/i18n/translations";
@@ -118,7 +118,15 @@ export default function CourseDetailPage() {
 
       {/* Classes List */}
       <div className="max-w-[800px] mx-auto px-6">
-        {sortedClasses.length > 0 ? (
+        {course.liveOnly ? (
+          <div className="text-center py-20 bg-[#F8F6F4] rounded-2xl border border-[#E5E2DF] border-dashed">
+            <div className="w-12 h-12 rounded-full bg-[#7A1B2E]/10 flex items-center justify-center mx-auto mb-4">
+              <Radio className="w-6 h-6 text-[#7A1B2E]" />
+            </div>
+            <div className="font-playfair text-xl text-[#1A1A1A] mb-2">{t.courses.liveOnlyTitle}</div>
+            <p className="font-inter text-sm text-[#9A9A9A]">{t.courses.liveOnlyDesc}</p>
+          </div>
+        ) : sortedClasses.length > 0 ? (
           <div className="space-y-3">
             {sortedClasses.map((cls, idx) => {
               const isReview = cls.class_number === 'review';
