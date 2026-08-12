@@ -29,9 +29,11 @@ export function BottomTabBar({ onMenuClick }: BottomTabBarProps) {
   return (
     <nav
       aria-label={t.nav.more}
-      className="tabbar-notched fixed bottom-0 left-0 right-0 h-[calc(64px+env(safe-area-inset-bottom))] bg-white border-t border-[#E5E2DF] shadow-[0_-4px_20px_rgba(0,0,0,0.05)] z-40 md:hidden pb-[env(safe-area-inset-bottom)] flex items-stretch"
+      className="fixed bottom-0 left-0 right-0 h-[calc(64px+env(safe-area-inset-bottom))] z-40 md:hidden pb-[env(safe-area-inset-bottom)] flex items-stretch"
       style={{ '--notch-x': notchX } as CSSProperties}
     >
+      <div className="tabbar-notched absolute inset-0 bg-white border-t border-[#E5E2DF] shadow-[0_-4px_20px_rgba(0,0,0,0.05)]" aria-hidden="true" />
+
       {tabs.map((tab, idx) => {
         const isActive = idx === activeIndex;
 
