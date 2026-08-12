@@ -105,7 +105,7 @@ export function Sidebar({ isOpen, onClose, currentLanguage, onLanguageChange }: 
           </nav>
         </div>
 
-        <div className="p-6 border-t border-border mt-auto flex items-center justify-between">
+        <div className="px-6 pt-6 pb-[calc(24px+env(safe-area-inset-bottom))] border-t border-border mt-auto flex items-center justify-between">
           <div className="flex items-center gap-2 text-gray-500 text-sm font-medium">
             <Globe className="w-5 h-5" />
             <span>{t.nav.language}</span>

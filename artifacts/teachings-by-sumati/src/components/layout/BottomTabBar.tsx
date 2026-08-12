@@ -32,12 +32,12 @@ export function BottomTabBar({ onMenuClick }: BottomTabBarProps) {
             className="rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7A1B2E] focus-visible:ring-offset-2"
           >
             <div
-              className={`flex flex-col items-center justify-center w-16 h-full gap-1 cursor-pointer ${isActive ? 'text-[#7A1B2E]' : 'text-[#9A9A9A]'}`}
+              className={`flex flex-col items-center w-16 h-full pt-2.5 gap-1 cursor-pointer ${isActive ? 'text-[#7A1B2E]' : 'text-[#9A9A9A]'}`}
               aria-current={isActive ? 'page' : undefined}
               data-testid={`tabbar-link-${tab.href.replace('/', '') || 'home'}`}
             >
-              <tab.icon className="w-6 h-6" />
-              <span className="text-[11px] font-medium font-inter">{tab.label}</span>
+              <tab.icon className="w-6 h-6 shrink-0" />
+              <span className="text-[11px] font-medium font-inter text-center leading-tight">{tab.label}</span>
             </div>
           </Link>
         );
@@ -45,13 +45,13 @@ export function BottomTabBar({ onMenuClick }: BottomTabBarProps) {
 
       <button
         type="button"
-        className="flex flex-col items-center justify-center w-16 h-full gap-1 text-[#9A9A9A]"
+        className="flex flex-col items-center w-16 h-full pt-2.5 gap-1 text-[#9A9A9A]"
         onClick={onMenuClick}
         data-testid="tabbar-link-more"
         aria-label={t.aria.openMenu}
       >
-        <Menu className="w-6 h-6" />
-        <span className="text-[11px] font-medium font-inter">{t.nav.more}</span>
+        <Menu className="w-6 h-6 shrink-0" />
+        <span className="text-[11px] font-medium font-inter text-center leading-tight">{t.nav.more}</span>
       </button>
     </nav>
   );

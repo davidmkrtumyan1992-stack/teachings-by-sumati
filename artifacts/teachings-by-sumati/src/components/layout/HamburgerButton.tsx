@@ -14,7 +14,7 @@ export function HamburgerButton({ isOpen, onClick, isOnHero = false }: Hamburger
   return (
     <button
       onClick={onClick}
-      className={`fixed top-6 left-6 z-60 w-11 h-11 flex flex-col items-center justify-center gap-1.5 rounded-full transition-all duration-300 ${bgColor}`}
+      className={`fixed top-6 left-6 z-60 w-11 h-11 flex flex-col items-center justify-center gap-1.5 rounded-full transition-all duration-300 ${bgColor} ${isOpen ? "opacity-0 pointer-events-none" : "opacity-100"}`}
       data-testid="button-hamburger"
       aria-label={t.aria.menu}
     >
