@@ -1,37 +1,82 @@
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
-function MandalaMotif({ size = 260 }: { size?: number }) {
+/** Dharma wheel — ring, 8 spokes, hub. Foundational/path-oriented courses. */
+function WheelMotif({ size }: { size: number }) {
   const cx = size / 2;
   const cy = size / 2;
-  const ringRadii = [size * 0.46, size * 0.36, size * 0.27];
-  const petalCount = 16;
-  const petals = Array.from({ length: petalCount }, (_, i) => {
-    const angle = (i / petalCount) * Math.PI * 2;
-    const r = size * 0.4;
-    return { x: cx + Math.cos(angle) * r, y: cy + Math.sin(angle) * r };
-  });
   const spokes = Array.from({ length: 8 }, (_, i) => {
     const angle = (i / 8) * Math.PI * 2;
-    const r = size * 0.3;
+    const r = size * 0.34;
     return { x2: cx + Math.cos(angle) * r, y2: cy + Math.sin(angle) * r };
   });
 
   return (
     <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} fill="none" aria-hidden="true">
-      {ringRadii.map((r, i) => (
-        <circle key={r} cx={cx} cy={cy} r={r} stroke="white" strokeWidth={i === 0 ? 1.5 : 1} />
-      ))}
+      <circle cx={cx} cy={cy} r={size * 0.42} stroke="white" strokeWidth={1.5} />
       {spokes.map((s, i) => (
         <line key={i} x1={cx} y1={cy} x2={s.x2} y2={s.y2} stroke="white" strokeWidth={1} />
       ))}
-      {petals.map((p, i) => (
-        <circle key={i} cx={p.x} cy={p.y} r={size * 0.018} fill="white" />
-      ))}
-      <circle cx={cx} cy={cy} r={size * 0.045} stroke="white" strokeWidth={1.5} />
+      <circle cx={cx} cy={cy} r={size * 0.07} stroke="white" strokeWidth={1.5} />
     </svg>
   );
 }
+
+/** Lotus — radial elongated petals, no spokes. Refuge/devotional courses. */
+function LotusMotif({ size }: { size: number }) {
+  const cx = size / 2;
+  const cy = size / 2;
+  const petalCount = 10;
+  const petalLen = size * 0.38;
+  const petalWidth = size * 0.1;
+
+  return (
+    <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} fill="none" aria-hidden="true">
+      {Array.from({ length: petalCount }, (_, i) => {
+        const angle = (i / petalCount) * 360;
+        return (
+          <ellipse
+            key={i}
+            cx={cx}
+            cy={cy - petalLen * 0.55}
+            rx={petalWidth}
+            ry={petalLen}
+            stroke="white"
+            strokeWidth={1}
+            transform={`rotate(${angle} ${cx} ${cy})`}
+          />
+        );
+      })}
+      <circle cx={cx} cy={cy} r={size * 0.06} fill="white" />
+    </svg>
+  );
+}
+
+/** Interlocking rings — three offset overlapping circles. Karma/interdependence themes. */
+function RingsMotif({ size }: { size: number }) {
+  const r = size * 0.26;
+  const centers = [
+    { x: size * 0.42, y: size * 0.42 },
+    { x: size * 0.62, y: size * 0.42 },
+    { x: size * 0.52, y: size * 0.6 },
+  ];
+
+  return (
+    <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} fill="none" aria-hidden="true">
+      {centers.map((c, i) => (
+        <circle key={i} cx={c.x} cy={c.y} r={r} stroke="white" strokeWidth={1.25} />
+      ))}
+    </svg>
+  );
+}
+
+const MOTIFS = [WheelMotif, LotusMotif, RingsMotif];
+const CORNERS = [
+  "-bottom-12 -right-12",
+  "-top-12 -left-12",
+  "-bottom-12 -left-12",
+  "-top-12 -right-12",
+];
 
 interface ContentCardProps {
   gradient: string;
@@ -54,7 +99,10 @@ export function ContentCard({
   children,
   ...rest
 }: ContentCardProps) {
-  const rotation = (motifSeed * 47) % 360;
+  const Motif = MOTIFS[motifSeed % MOTIFS.length];
+  const corner = CORNERS[motifSeed % CORNERS.length];
+  const rotation = (motifSeed * 23) % 360;
+  const motifSize = 220 + (motifSeed % 3) * 30;
 
   return (
     <div
@@ -73,8 +121,8 @@ export function ContentCard({
           }}
         />
         <div className="absolute inset-0 texture-grain" />
-        <div className="absolute -bottom-12 -right-12" style={{ opacity: 0.16, transform: `rotate(${rotation}deg)` }}>
-          <MandalaMotif size={260} />
+        <div className={cn("absolute", corner)} style={{ opacity: 0.18, transform: `rotate(${rotation}deg)` }}>
+          <Motif size={motifSize} />
         </div>
         {badge && (
           <div className="absolute top-4 left-4 font-inter text-[11px] font-semibold tracking-wide text-white/95 bg-black/20 backdrop-blur-sm px-2.5 py-1 rounded-full">
