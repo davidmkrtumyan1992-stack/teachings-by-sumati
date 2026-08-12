@@ -62,7 +62,7 @@ export default function CourseDetailPage() {
               </p>
             )}
             
-            <div className="flex flex-wrap gap-4 pt-4 border-t border-[#E5E2DF] mt-6">
+            <div className="flex flex-col sm:flex-row sm:flex-wrap gap-4 pt-4 border-t border-[#E5E2DF] mt-6">
               <div className="flex-1 min-w-0 space-y-2">
                 <div className="font-inter text-sm text-[#1A1A1A] font-medium">
                   {t.courses.classesCount(course.total_classes ?? 0, !!course.has_review)}
@@ -89,7 +89,7 @@ export default function CourseDetailPage() {
                 )}
               </div>
               
-              <div className="flex gap-3 ml-auto">
+              <div className="flex gap-3 sm:ml-auto">
                 {course.platform_en && (
                   <a 
                     href={course.platform_en} 
@@ -138,7 +138,7 @@ export default function CourseDetailPage() {
                     href={`/aci-courses/${course.id}/class-${cls.class_number}`}
                     className="block rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7A1B2E] focus-visible:ring-offset-2"
                   >
-                    <div className={`group rounded-xl p-5 md:p-6 flex items-center justify-between cursor-pointer hover:shadow-md transition-all duration-300 border ${isWatched(cls.class_number) ? 'bg-[#F8F6F4] border-[#E5E2DF]' : 'bg-white border-[#E5E2DF]'}`} style={{ borderLeft: `4px solid ${isReview ? '#C4973B' : '#7A1B2E'}` }}>
+                    <div className={`group rounded-xl p-5 md:p-6 flex items-center justify-between cursor-pointer hover:shadow-md transition-all duration-300 ease-premium border ${isWatched(cls.class_number) ? 'bg-[#F8F6F4] border-[#E5E2DF]' : 'bg-white border-[#E5E2DF]'}`} style={{ borderLeft: `4px solid ${isReview ? '#C4973B' : '#7A1B2E'}` }}>
                       <div className="flex items-center gap-3 min-w-0">
                         {isWatched(cls.class_number) ? (
                           <CheckCircle2 className="w-4 h-4 text-[#7A1B2E] shrink-0" />

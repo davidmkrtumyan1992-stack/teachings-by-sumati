@@ -31,7 +31,7 @@ export default function EventsPage() {
             </p>
             <Link
               href="/aci-courses"
-              className="relative inline-flex items-center gap-2 font-inter text-sm font-medium text-[#7A1B2E] hover:gap-3 transition-all group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7A1B2E] focus-visible:ring-offset-2 rounded"
+              className="relative inline-flex items-center gap-2 font-inter text-sm font-medium text-[#7A1B2E] hover:gap-3 transition-all duration-300 ease-premium group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7A1B2E] focus-visible:ring-offset-2 rounded"
             >
               {t.events.exploreCta}
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />

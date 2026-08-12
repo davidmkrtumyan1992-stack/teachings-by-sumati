@@ -108,7 +108,7 @@ export function ContentCard({
     <div
       className={cn(
         "bg-white border border-[#E5E2DF] rounded-2xl overflow-hidden h-full flex flex-col",
-        disabled ? "opacity-60" : "group cursor-pointer hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
+        disabled ? "opacity-60" : "group cursor-pointer hover:-translate-y-1 hover:shadow-xl transition-all duration-300 ease-premium"
       )}
       {...rest}
     >

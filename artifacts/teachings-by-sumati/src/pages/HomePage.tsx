@@ -159,7 +159,7 @@ export default function HomePage() {
               <button 
                 onClick={findRandomTeaching}
                 disabled={isFinding}
-                className="bg-[#7A1B2E] hover:bg-[#8F2540] text-white px-10 h-14 rounded-full font-inter text-base font-medium transition-all duration-300 hover:scale-105 hover:shadow-[0_4px_20px_rgba(122,27,46,0.3)] flex items-center justify-center mx-auto"
+                className="bg-[#7A1B2E] hover:bg-[#8F2540] text-white px-10 h-14 rounded-full font-inter text-base font-medium transition-all duration-300 ease-premium hover:scale-105 active:scale-[0.98] hover:shadow-[0_4px_20px_rgba(122,27,46,0.3)] flex items-center justify-center mx-auto"
                 data-testid="btn-find-teaching"
               >
                 {isFinding ? (
@@ -184,7 +184,7 @@ export default function HomePage() {
                 <button 
                   onClick={findRandomTeaching}
                   disabled={isFinding}
-                  className="bg-white border border-[#E5E2DF] hover:bg-[#F8F6F4] text-[#1A1A1A] px-8 h-12 rounded-full font-inter text-sm font-medium transition-colors inline-flex items-center justify-center"
+                  className="bg-white border border-[#E5E2DF] hover:bg-[#F8F6F4] text-[#1A1A1A] px-8 h-12 rounded-full font-inter text-sm font-medium transition-all duration-300 ease-premium active:scale-[0.98] inline-flex items-center justify-center"
                   data-testid="btn-find-another"
                 >
                   {isFinding ? (
