@@ -54,7 +54,7 @@ export function Sidebar({ isOpen, onClose, currentLanguage, onLanguageChange }: 
         data-testid="sidebar-container"
       >
         <div className="flex items-center justify-between px-6 h-20 shrink-0 border-b border-border">
-          <div className="font-playfair text-[17px] font-semibold tracking-widest text-[#1A1A1A]">
+          <div className="font-playfair text-[17px] font-semibold tracking-widest" style={{ color: '#7A1B2E' }}>
             TEACHINGS BY SUMATI
           </div>
           <button 
@@ -77,6 +77,7 @@ export function Sidebar({ isOpen, onClose, currentLanguage, onLanguageChange }: 
                 <Link
                   key={link.href}
                   href={link.href}
+                  onClick={onClose}
                   className="block rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7A1B2E] focus-visible:ring-offset-2"
                 >
                   <div
