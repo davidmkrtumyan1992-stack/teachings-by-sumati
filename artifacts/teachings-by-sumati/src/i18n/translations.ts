@@ -114,6 +114,7 @@ const translations = {
       prevClass: 'Previous class',
       nextClass: 'Next class',
       switchLang: () => 'Click to switch language.',
+      quickAccess: 'Quick access',
     },
     notFound: {
       title: '404 Page Not Found',
@@ -245,6 +246,7 @@ const translations = {
       prevClass: 'Предыдущий урок',
       nextClass: 'Следующий урок',
       switchLang: () => 'Нажмите для переключения языка.',
+      quickAccess: 'Быстрый доступ',
     },
     notFound: {
       title: '404 Страница не найдена',
