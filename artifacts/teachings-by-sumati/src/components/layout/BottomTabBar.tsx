@@ -32,7 +32,7 @@ export function BottomTabBar({ onMenuClick }: BottomTabBarProps) {
       className="fixed bottom-0 left-0 right-0 h-[calc(64px+env(safe-area-inset-bottom))] z-40 md:hidden pb-[env(safe-area-inset-bottom)] flex items-stretch"
       style={{ '--notch-x': notchX } as CSSProperties}
     >
-      <div className="tabbar-notched absolute inset-0 bg-white border-t border-[#E5E2DF] shadow-[0_-4px_20px_rgba(0,0,0,0.05)]" aria-hidden="true" />
+      <div className="tabbar-notched absolute inset-0 -z-10 bg-white border-t border-[#E5E2DF] shadow-[0_-4px_20px_rgba(0,0,0,0.05)]" aria-hidden="true" />
 
       {tabs.map((tab, idx) => {
         const isActive = idx === activeIndex;
@@ -70,7 +70,7 @@ export function BottomTabBar({ onMenuClick }: BottomTabBarProps) {
 
       {hasActiveTab && (
         <div
-          className="tabbar-notch-bubble absolute -top-6 w-14 h-14 rounded-full bg-[#7A1B2E] shadow-[0_4px_20px_rgba(122,27,46,0.3)] flex items-center justify-center transition-[left] duration-300 ease-out"
+          className="tabbar-notch-bubble absolute -top-6 z-10 w-14 h-14 rounded-full bg-[#7A1B2E] shadow-[0_4px_20px_rgba(122,27,46,0.3)] flex items-center justify-center transition-[left] duration-300 ease-out"
           style={{ left: notchX }}
           aria-hidden="true"
         >
