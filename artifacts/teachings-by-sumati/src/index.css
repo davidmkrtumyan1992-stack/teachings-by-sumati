@@ -291,8 +291,8 @@
    colors bound to this theme's own tokens instead of that project's palette) */
 .glass-panel {
   background-color: hsl(var(--card) / 0.8);
-  backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
   border: 1px solid hsl(var(--accent) / 0.25);
   box-shadow: 0 8px 30px hsl(var(--primary) / 0.12);
 }
