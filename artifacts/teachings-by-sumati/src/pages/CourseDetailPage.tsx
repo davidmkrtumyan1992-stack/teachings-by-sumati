@@ -1,10 +1,11 @@
 import { useParams, Link } from "wouter";
-import { ArrowLeft, ExternalLink } from "lucide-react";
+import { ArrowLeft, ExternalLink, CheckCircle2 } from "lucide-react";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { useLanguage } from "@/components/layout/LanguageContext";
 import { useT } from "@/i18n/translations";
 import type { CoursesData } from "@/data/types";
 import coursesRaw from "@/data/courses.json";
+import { useProgress } from "@/hooks/useProgress";
 
 const coursesData = coursesRaw as CoursesData;
 
@@ -14,6 +15,7 @@ export default function CourseDetailPage() {
   const t = useT();
   
   const course = coursesData.courses.find(c => c.id === courseId);
+  const { isWatched, watchedCount } = useProgress(courseId ?? '');
 
   if (!course) {
     return (
@@ -61,8 +63,30 @@ export default function CourseDetailPage() {
             )}
             
             <div className="flex flex-wrap gap-4 pt-4 border-t border-[#E5E2DF] mt-6">
-              <div className="font-inter text-sm text-[#1A1A1A] font-medium py-2">
-                {t.courses.classesCount(course.total_classes ?? 0, !!course.has_review)}
+              <div className="flex-1 min-w-0 space-y-2">
+                <div className="font-inter text-sm text-[#1A1A1A] font-medium">
+                  {t.courses.classesCount(course.total_classes ?? 0, !!course.has_review)}
+                </div>
+                {sortedClasses.length > 0 && (
+                  <div className="space-y-1.5">
+                    <div className="flex items-center justify-between">
+                      <span className="font-inter text-xs text-[#6B6B6B]">
+                        {watchedCount === sortedClasses.length
+                          ? t.progress.allDone
+                          : t.progress.watched(watchedCount, sortedClasses.length)}
+                      </span>
+                      {watchedCount === sortedClasses.length && (
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#7A1B2E]" />
+                      )}
+                    </div>
+                    <div className="w-full bg-[#E5E2DF] rounded-full h-1.5 overflow-hidden">
+                      <div
+                        className="bg-[#7A1B2E] h-1.5 rounded-full transition-all duration-500"
+                        style={{ width: `${sortedClasses.length > 0 ? (watchedCount / sortedClasses.length) * 100 : 0}%` }}
+                      />
+                    </div>
+                  </div>
+                )}
               </div>
               
               <div className="flex gap-3 ml-auto">
@@ -103,16 +127,23 @@ export default function CourseDetailPage() {
               return (
                 <AnimatedSection key={cls.class_number} delay={idx * 0.05}>
                   <Link href={`/aci-courses/${course.id}/class-${cls.class_number}`}>
-                    <div className="group bg-white border border-[#E5E2DF] rounded-xl p-5 md:p-6 flex items-center justify-between cursor-pointer hover:shadow-md hover:border-[#E5E2DF] transition-all duration-300" style={{ borderLeft: `4px solid ${isReview ? '#C4973B' : '#7A1B2E'}` }}>
-                      <div>
-                        <div className="font-inter text-[13px] font-bold text-[#7A1B2E] tracking-wide uppercase mb-1">
-                          {classLabel}
-                        </div>
-                        <div className="font-inter text-base text-[#1A1A1A] font-medium">
-                          {classLabel}
+                    <div className={`group rounded-xl p-5 md:p-6 flex items-center justify-between cursor-pointer hover:shadow-md transition-all duration-300 border ${isWatched(cls.class_number) ? 'bg-[#F8F6F4] border-[#E5E2DF]' : 'bg-white border-[#E5E2DF]'}`} style={{ borderLeft: `4px solid ${isReview ? '#C4973B' : '#7A1B2E'}` }}>
+                      <div className="flex items-center gap-3 min-w-0">
+                        {isWatched(cls.class_number) ? (
+                          <CheckCircle2 className="w-4 h-4 text-[#7A1B2E] shrink-0" />
+                        ) : (
+                          <div className="w-4 h-4 rounded-full border-2 border-[#D4D0CC] shrink-0" />
+                        )}
+                        <div>
+                          <div className="font-inter text-[13px] font-bold text-[#7A1B2E] tracking-wide uppercase mb-1">
+                            {classLabel}
+                          </div>
+                          <div className={`font-inter text-base font-medium ${isWatched(cls.class_number) ? 'text-[#6B6B6B]' : 'text-[#1A1A1A]'}`}>
+                            {classLabel}
+                          </div>
                         </div>
                       </div>
-                      <div className="font-inter text-sm font-medium text-[#7A1B2E] group-hover:translate-x-1 transition-transform">
+                      <div className="font-inter text-sm font-medium text-[#7A1B2E] group-hover:translate-x-1 transition-transform shrink-0 ml-4">
                         {t.common.start} &rarr;
                       </div>
                     </div>

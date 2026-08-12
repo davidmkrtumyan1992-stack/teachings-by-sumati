@@ -45,6 +45,13 @@ const translations = {
       backTo: (title: string) => `Back to ${title}`,
       materialNotAvailableRu: 'Not available in Russian',
       materialEnglishBadge: 'EN',
+      markWatched: 'Mark as watched',
+      markUnwatched: 'Mark as unwatched',
+      watched: 'Watched',
+    },
+    progress: {
+      watched: (n: number, total: number) => `${n} / ${total} watched`,
+      allDone: 'All classes watched',
     },
     home: {
       heroSubtitle: 'Buddhist Teachings in the Mahayana Tradition',
@@ -152,6 +159,13 @@ const translations = {
       backTo: (title: string) => `Назад: ${title}`,
       materialNotAvailableRu: 'Недоступно на русском',
       materialEnglishBadge: 'EN',
+      markWatched: 'Отметить как просмотренный',
+      markUnwatched: 'Снять отметку',
+      watched: 'Просмотрено',
+    },
+    progress: {
+      watched: (n: number, total: number) => `${n} / ${total} просмотрено`,
+      allDone: 'Все уроки просмотрены',
     },
     home: {
       heroSubtitle: 'Буддийские учения в традиции Махаяны',

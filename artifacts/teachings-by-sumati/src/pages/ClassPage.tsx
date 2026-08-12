@@ -1,12 +1,13 @@
 import { useRef } from "react";
 import { useParams, Link, useLocation } from "wouter";
-import { ArrowLeft, ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
+import { ArrowLeft, ChevronLeft, ChevronRight, ExternalLink, CheckCircle2, Circle } from "lucide-react";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { useLanguage } from "@/components/layout/LanguageContext";
 import { useT } from "@/i18n/translations";
 import type { CoursesData } from "@/data/types";
 import coursesRaw from "@/data/courses.json";
 import materialsManifestRaw from "@/data/materials-manifest.json";
+import { useProgress } from "@/hooks/useProgress";
 
 const coursesData = coursesRaw as CoursesData;
 
@@ -27,6 +28,7 @@ export default function ClassPage() {
   const classData = course?.classes?.find(c => String(c.class_number) === classNumber);
 
   const touchStartX = useRef<number | null>(null);
+  const { isWatched, toggleWatched } = useProgress(courseId ?? '');
 
   if (!course || !classData) {
     return (
@@ -232,6 +234,24 @@ export default function ClassPage() {
               </div>
             </>
           )}
+        </AnimatedSection>
+
+        {/* Watched toggle */}
+        <AnimatedSection delay={0.15} className="flex justify-center">
+          <button
+            onClick={() => toggleWatched(classNumber ?? '')}
+            className={`inline-flex items-center gap-2 px-6 py-3 rounded-xl font-inter text-sm font-medium transition-all border ${
+              isWatched(classNumber ?? '')
+                ? 'bg-[#7A1B2E] text-white border-[#7A1B2E] hover:bg-[#5C0E1F] hover:border-[#5C0E1F]'
+                : 'bg-white text-[#6B6B6B] border-[#E5E2DF] hover:border-[#7A1B2E]/40 hover:text-[#7A1B2E]'
+            }`}
+          >
+            {isWatched(classNumber ?? '')
+              ? <CheckCircle2 className="w-4 h-4" />
+              : <Circle className="w-4 h-4" />
+            }
+            {isWatched(classNumber ?? '') ? t.classPage.watched : t.classPage.markWatched}
+          </button>
         </AnimatedSection>
 
         {/* Materials — hidden for courses without PDFs (ACI 0, ACI 13–18) */}
