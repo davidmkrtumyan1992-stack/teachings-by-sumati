@@ -60,3 +60,32 @@ export interface PracticeModule {
 }
 
 export type PracticeModulesData = PracticeModule[];
+
+export interface LocalizedText {
+  en: string;
+  ru: string;
+}
+
+export interface ArmeniaRetreat {
+  retreat: string;
+  title: LocalizedText;
+  dates: LocalizedText;
+  location: LocalizedText;
+  teachers: { name: LocalizedText }[];
+  teachersBio: LocalizedText;
+  description: LocalizedText;
+  highlights: { en: string[]; ru: string[] };
+  accommodation: LocalizedText;
+  pricing: { type: LocalizedText; price: number }[];
+  currency: string;
+  contact: {
+    name: string;
+    telegram: string;
+    telegramUrl: string;
+  };
+  coOrganizer: {
+    name: string;
+    role: LocalizedText;
+  };
+  posterImage: string;
+}

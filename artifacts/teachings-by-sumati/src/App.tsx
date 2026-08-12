@@ -11,7 +11,7 @@ import PracticeModulesPage from "@/pages/PracticeModulesPage";
 import PracticeModuleDetailPage from "@/pages/PracticeModuleDetailPage";
 import PracticeModuleClassPage from "@/pages/PracticeModuleClassPage";
 import RetreatsPage from "@/pages/RetreatsPage";
-import ArmeniaRetreatPage from "@/pages/ArmeniаRetreatPage";
+import ArmeniaRetreatPage from "@/pages/ArmeniaRetreatPage";
 import EventsPage from "@/pages/EventsPage";
 import ProjectsPage from "@/pages/ProjectsPage";
 

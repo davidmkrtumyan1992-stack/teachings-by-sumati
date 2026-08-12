@@ -48,6 +48,17 @@ const translations = {
       markWatched: 'Mark as watched',
       markUnwatched: 'Mark as unwatched',
       watched: 'Watched',
+      recordingComingSoon: 'Recording coming soon',
+      recordingNotPublished: 'This recording has not been published yet',
+    },
+    armeniaRetreat: {
+      backToRetreats: 'Back to Retreats',
+      highlights: 'Highlights',
+      teachers: 'Teachers',
+      accommodation: 'Accommodation',
+      pricing: 'Pricing',
+      contact: 'Contact',
+      contactOnTelegram: 'Contact on Telegram',
     },
     progress: {
       watched: (n: number, total: number) => `${n} / ${total} watched`,
@@ -82,6 +93,7 @@ const translations = {
       heading: 'Projects',
       subheading: 'Tools and resources supporting the study of the Dharma',
       visitSite: 'Visit Site',
+      comingSoon: 'Coming Soon',
     },
     footer: {
       description: 'Buddhist teachings in the Mahayana tradition. Dedicated to the study and practice of the Dharma.',
@@ -102,6 +114,7 @@ const translations = {
     notFound: {
       title: '404 Page Not Found',
       desc: 'Did you forget to add the page to the router?',
+      backHome: 'Back to Home',
     },
     langLabels: {
       en: 'English',
@@ -162,6 +175,17 @@ const translations = {
       markWatched: 'Отметить как просмотренный',
       markUnwatched: 'Снять отметку',
       watched: 'Просмотрено',
+      recordingComingSoon: 'Запись появится позже',
+      recordingNotPublished: 'Эта запись ещё не опубликована',
+    },
+    armeniaRetreat: {
+      backToRetreats: 'Назад к ретритам',
+      highlights: 'Программа',
+      teachers: 'Учителя',
+      accommodation: 'Размещение',
+      pricing: 'Стоимость участия',
+      contact: 'Контакты',
+      contactOnTelegram: 'Написать в Telegram',
     },
     progress: {
       watched: (n: number, total: number) => `${n} / ${total} просмотрено`,
@@ -196,6 +220,7 @@ const translations = {
       heading: 'Проекты',
       subheading: 'Инструменты и ресурсы для изучения Дхармы',
       visitSite: 'Перейти',
+      comingSoon: 'Скоро',
     },
     footer: {
       description: 'Буддийские учения в традиции Махаяны. Посвящено изучению и практике Дхармы.',
@@ -216,6 +241,7 @@ const translations = {
     notFound: {
       title: '404 Страница не найдена',
       desc: 'Возможно, страница была удалена или вы перешли по неверной ссылке.',
+      backHome: 'На главную',
     },
     langLabels: {
       en: 'Английский',

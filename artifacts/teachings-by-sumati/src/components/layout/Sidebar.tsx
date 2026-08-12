@@ -47,8 +47,10 @@ export function Sidebar({ isOpen, onClose, currentLanguage, onLanguageChange }: 
       )}
 
       {/* Sidebar */}
-      <div 
+      <div
         className={`fixed top-0 bottom-0 left-0 z-50 w-full md:w-[320px] bg-white shadow-2xl transition-transform duration-300 ease-in-out flex flex-col ${isOpen ? "translate-x-0" : "-translate-x-full"}`}
+        aria-hidden={!isOpen}
+        inert={!isOpen}
         data-testid="sidebar-container"
       >
         <div className="flex items-center justify-between px-6 h-20 shrink-0 border-b border-border">
@@ -72,7 +74,11 @@ export function Sidebar({ isOpen, onClose, currentLanguage, onLanguageChange }: 
               const isActive = location === link.href || (link.href !== '/' && location.startsWith(link.href));
               
               return (
-                <Link key={link.href} href={link.href}>
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="block rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7A1B2E] focus-visible:ring-offset-2"
+                >
                   <div
                     className={`flex items-center gap-4 px-4 h-[52px] rounded-xl cursor-pointer transition-all duration-200 font-inter text-[16px]
                       ${isActive
@@ -84,6 +90,7 @@ export function Sidebar({ isOpen, onClose, currentLanguage, onLanguageChange }: 
                       background: 'rgba(122, 27, 46, 0.07)',
                       boxShadow: '0 2px 8px rgba(122, 27, 46, 0.10), inset 0 0 0 1px rgba(122, 27, 46, 0.20)',
                     } : undefined}
+                    aria-current={isActive ? 'page' : undefined}
                     data-testid={`link-sidebar-${link.href.replace('/', '') || 'home'}`}
                   >
                     <link.icon className={`w-5 h-5 shrink-0 ${isActive ? 'text-[#7A1B2E]' : 'text-gray-400'}`} />

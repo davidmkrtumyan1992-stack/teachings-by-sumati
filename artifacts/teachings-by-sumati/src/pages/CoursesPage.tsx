@@ -22,14 +22,19 @@ export default function CoursesPage() {
         </AnimatedSection>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* number 0 ("source-of-all-my-good") is intentionally excluded — it's not
+              yet ready to be featured and has no discoverable entry point on the site */}
           {coursesData.courses.filter(c => c.number > 0).map((course, idx) => {
             const title = lang === 'en' ? course.title_en : (course.title_ru || course.title_en);
             const badgeText = course.number > 0 ? `ACI ${course.number}` : t.badge.special;
-            
+
             return (
               <AnimatedSection key={course.id} delay={(idx % 6) * 0.05}>
-                <Link href={`/aci-courses/${course.id}`}>
-                  <div 
+                <Link
+                  href={`/aci-courses/${course.id}`}
+                  className="block rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7A1B2E] focus-visible:ring-offset-2"
+                >
+                  <div
                     className="bg-white border border-[#E5E2DF] rounded-2xl overflow-hidden group cursor-pointer hover:-translate-y-1 hover:shadow-lg transition-all duration-300 h-full flex flex-col"
                     data-testid={`course-card-${course.id}`}
                   >

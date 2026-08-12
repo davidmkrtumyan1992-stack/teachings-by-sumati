@@ -6,20 +6,9 @@ import { useLanguage } from "@/components/layout/LanguageContext";
 import { useT } from "@/i18n/translations";
 import type { PracticeModulesData } from "@/data/types";
 import modulesRaw from "@/data/practice-modules.json";
+import { toEmbedUrl } from "@/lib/youtube";
 
 const modulesData = modulesRaw as PracticeModulesData;
-
-/** Converts any YouTube URL form to an embed URL, stripping tracking params. */
-function toEmbedUrl(url: string | null | undefined): string | null {
-  if (!url) return null;
-  // youtu.be/{id}[?params]
-  const shortMatch = url.match(/youtu\.be\/([^?&]+)/);
-  if (shortMatch) return `https://www.youtube.com/embed/${shortMatch[1]}`;
-  // youtube.com/watch?v={id}[&params]
-  const watchMatch = url.match(/[?&]v=([^&]+)/);
-  if (watchMatch) return `https://www.youtube.com/embed/${watchMatch[1]}`;
-  return null;
-}
 
 export default function PracticeModuleClassPage() {
   const { moduleId, classId } = useParams();
@@ -80,7 +69,7 @@ export default function PracticeModuleClassPage() {
     lang;
 
   const videoUrl = effectiveLang === 'en' ? classData.videoEN : classData.videoRU;
-  const videoEmbedUrl = toEmbedUrl(videoUrl);
+  const videoEmbedUrl = toEmbedUrl(videoUrl, lang);
   const classLabel = t.courses.classLabel(classNumber);
 
   return (
@@ -109,7 +98,7 @@ export default function PracticeModuleClassPage() {
             <button
               onClick={() => prevClass && navigateToClass(prevClass.classNumber)}
               disabled={!prevClass}
-              className={`p-2 rounded-lg border border-[#E5E2DF] transition-colors ${prevClass ? 'hover:bg-[#F0EDEA] text-[#1A1A1A]' : 'opacity-50 cursor-not-allowed text-[#9A9A9A]'}`}
+              className={`p-2 rounded-lg border border-[#E5E2DF] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7A1B2E] focus-visible:ring-offset-2 ${prevClass ? 'hover:bg-[#F0EDEA] text-[#1A1A1A]' : 'opacity-50 cursor-not-allowed text-[#9A9A9A]'}`}
               aria-label={t.aria.prevClass}
             >
               <ChevronLeft className="w-5 h-5" />
@@ -120,7 +109,7 @@ export default function PracticeModuleClassPage() {
             <button
               onClick={() => nextClass && navigateToClass(nextClass.classNumber)}
               disabled={!nextClass}
-              className={`p-2 rounded-lg border border-[#E5E2DF] transition-colors ${nextClass ? 'hover:bg-[#F0EDEA] text-[#1A1A1A]' : 'opacity-50 cursor-not-allowed text-[#9A9A9A]'}`}
+              className={`p-2 rounded-lg border border-[#E5E2DF] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7A1B2E] focus-visible:ring-offset-2 ${nextClass ? 'hover:bg-[#F0EDEA] text-[#1A1A1A]' : 'opacity-50 cursor-not-allowed text-[#9A9A9A]'}`}
               aria-label={t.aria.nextClass}
             >
               <ChevronRight className="w-5 h-5" />
@@ -146,10 +135,10 @@ export default function PracticeModuleClassPage() {
                 </svg>
               </div>
               <p className="font-inter text-base font-medium text-[#1A1A1A]">
-                {lang === 'ru' ? 'Запись появится позже' : 'Recording coming soon'}
+                {t.classPage.recordingComingSoon}
               </p>
               <p className="font-inter text-sm text-[#9A9A9A]">
-                {lang === 'ru' ? 'Эта запись ещё не опубликована' : 'This recording has not been published yet'}
+                {t.classPage.recordingNotPublished}
               </p>
             </div>
           ) : (

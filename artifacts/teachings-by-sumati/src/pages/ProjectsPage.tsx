@@ -34,17 +34,23 @@ export default function ProjectsPage() {
             const desc = lang === 'en' ? project.description_en : (project.description_ru || project.description_en);
 
             const CardContent = (
-              <div className="bg-white border border-[#E5E2DF] rounded-2xl overflow-hidden group cursor-pointer hover:-translate-y-1 hover:shadow-lg transition-all duration-300 h-full flex flex-col">
-                <div className="w-full aspect-[16/9] relative p-6 flex flex-col justify-end" style={{ background: bgGradient }}>
+              <div className={`bg-white border border-[#E5E2DF] rounded-2xl overflow-hidden h-full flex flex-col ${project.url ? 'group cursor-pointer hover:-translate-y-1 hover:shadow-lg transition-all duration-300' : ''}`}>
+                <div className={`w-full aspect-[16/9] relative p-6 flex flex-col justify-end ${project.url ? '' : 'opacity-60'}`} style={{ background: bgGradient }}>
                   <h3 className="font-playfair text-2xl text-white drop-shadow-md">{title}</h3>
                 </div>
                 <div className="p-6 flex flex-col flex-1">
                   <p className="font-inter text-sm text-[#6B6B6B] leading-relaxed mb-6 flex-1">
                     {desc}
                   </p>
-                  <div className="font-inter text-sm font-medium text-[#7A1B2E] flex items-center gap-1 group-hover:gap-2 transition-all">
-                    {t.projects.visitSite} <ArrowRight className="w-4 h-4" />
-                  </div>
+                  {project.url ? (
+                    <div className="font-inter text-sm font-medium text-[#7A1B2E] flex items-center gap-1 group-hover:gap-2 transition-all">
+                      {t.projects.visitSite} <ArrowRight className="w-4 h-4" />
+                    </div>
+                  ) : (
+                    <div className="font-inter text-sm font-medium text-[#9A9A9A]">
+                      {t.projects.comingSoon}
+                    </div>
+                  )}
                 </div>
               </div>
             );
@@ -52,7 +58,7 @@ export default function ProjectsPage() {
             return (
               <AnimatedSection key={project.id} delay={idx * 0.1}>
                 {project.url ? (
-                  <a href={project.url} target="_blank" rel="noopener noreferrer" className="block h-full" data-testid={`project-page-link-${project.id}`}>
+                  <a href={project.url} target="_blank" rel="noopener noreferrer" className="block h-full rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7A1B2E] focus-visible:ring-offset-2" data-testid={`project-page-link-${project.id}`}>
                     {CardContent}
                   </a>
                 ) : (

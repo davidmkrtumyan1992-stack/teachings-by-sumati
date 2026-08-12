@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import { Link } from "wouter";
 import { ChevronDown, ArrowRight } from "lucide-react";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { useLanguage } from "@/components/layout/LanguageContext";
 import { useT } from "@/i18n/translations";
 import type { Course, Project, CoursesData } from "@/data/types";
 import coursesRaw from "@/data/courses.json";
+import { toEmbedUrl } from "@/lib/youtube";
 
 const coursesData = coursesRaw as CoursesData;
 const BASE = import.meta.env.BASE_URL.replace(/\/$/, "");
@@ -20,12 +20,21 @@ export default function HomePage() {
   const [windowHeight, setWindowHeight] = useState(1000);
   const [randomVideo, setRandomVideo] = useState<{ url: string, courseTitle: string } | null>(null);
   const [isFinding, setIsFinding] = useState(false);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setPrefersReducedMotion(mediaQuery.matches);
+    const handleChange = (e: MediaQueryListEvent) => setPrefersReducedMotion(e.matches);
+    mediaQuery.addEventListener("change", handleChange);
+    return () => mediaQuery.removeEventListener("change", handleChange);
+  }, []);
 
   useEffect(() => {
     setWindowHeight(window.innerHeight);
     const handleScroll = () => setScrollY(window.scrollY);
     const handleResize = () => setWindowHeight(window.innerHeight);
-    
+
     window.addEventListener("scroll", handleScroll, { passive: true });
     window.addEventListener("resize", handleResize);
     return () => {
@@ -49,11 +58,12 @@ export default function HomePage() {
       const randomCourse = validCourses[Math.floor(Math.random() * validCourses.length)];
       const validClasses = (randomCourse.classes ?? []).filter(cl => cl.video_en);
       const randomClass = validClasses[Math.floor(Math.random() * validClasses.length)];
-      
-      // Convert youtube short link to embed
-      const videoId = randomClass.video_en?.split('/').pop();
-      const embedUrl = `https://www.youtube.com/embed/${videoId}`;
-      
+      const embedUrl = toEmbedUrl(randomClass.video_en, lang);
+      if (!embedUrl) {
+        setIsFinding(false);
+        return;
+      }
+
       setRandomVideo({
         url: embedUrl,
         courseTitle: lang === 'en' ? randomCourse.title_en : (randomCourse.title_ru || randomCourse.title_en)
@@ -70,17 +80,25 @@ export default function HomePage() {
           className="absolute inset-0 w-full h-full"
           style={{ transform: `translateY(${heroTranslate}px)` }}
         >
-          <video 
-            autoPlay 
-            loop 
-            muted 
-            playsInline 
-            poster={videoPoster}
-            className="absolute inset-0 w-full h-full object-cover opacity-80"
-          >
-            <source src={video1080p} type="video/mp4" media="(min-width: 1024px)" />
-            <source src={video720p} type="video/mp4" />
-          </video>
+          {prefersReducedMotion ? (
+            <img
+              src={videoPoster}
+              alt=""
+              className="absolute inset-0 w-full h-full object-cover opacity-80"
+            />
+          ) : (
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              poster={videoPoster}
+              className="absolute inset-0 w-full h-full object-cover opacity-80"
+            >
+              <source src={video1080p} type="video/mp4" media="(min-width: 1024px)" />
+              <source src={video720p} type="video/mp4" />
+            </video>
+          )}
           <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.5) 100%)' }} />
         </div>
 
@@ -200,17 +218,23 @@ export default function HomePage() {
               const desc = lang === 'en' ? project.description_en : (project.description_ru || project.description_en);
 
               const CardContent = (
-                <div className="bg-white border border-[#E5E2DF] rounded-2xl overflow-hidden group cursor-pointer hover:-translate-y-1 hover:shadow-lg transition-all duration-300 h-full flex flex-col">
-                  <div className="w-full aspect-[16/9] relative p-6 flex flex-col justify-end" style={{ background: bgGradient }}>
+                <div className={`bg-white border border-[#E5E2DF] rounded-2xl overflow-hidden h-full flex flex-col ${project.url ? 'group cursor-pointer hover:-translate-y-1 hover:shadow-lg transition-all duration-300' : ''}`}>
+                  <div className={`w-full aspect-[16/9] relative p-6 flex flex-col justify-end ${project.url ? '' : 'opacity-60'}`} style={{ background: bgGradient }}>
                     <h3 className="font-playfair text-2xl text-white drop-shadow-md">{title}</h3>
                   </div>
                   <div className="p-6 flex flex-col flex-1">
                     <p className="font-inter text-sm text-[#6B6B6B] leading-relaxed mb-6 flex-1">
                       {desc}
                     </p>
-                    <div className="font-inter text-sm font-medium text-[#7A1B2E] flex items-center gap-1 group-hover:gap-2 transition-all">
-                      {t.common.go} <ArrowRight className="w-4 h-4" />
-                    </div>
+                    {project.url ? (
+                      <div className="font-inter text-sm font-medium text-[#7A1B2E] flex items-center gap-1 group-hover:gap-2 transition-all">
+                        {t.common.go} <ArrowRight className="w-4 h-4" />
+                      </div>
+                    ) : (
+                      <div className="font-inter text-sm font-medium text-[#9A9A9A]">
+                        {t.projects.comingSoon}
+                      </div>
+                    )}
                   </div>
                 </div>
               );
@@ -218,13 +242,13 @@ export default function HomePage() {
               return (
                 <AnimatedSection key={project.id} delay={idx * 0.1}>
                   {project.url ? (
-                    <a href={project.url} target="_blank" rel="noopener noreferrer" className="block h-full" data-testid={`project-link-${project.id}`}>
+                    <a href={project.url} target="_blank" rel="noopener noreferrer" className="block h-full rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7A1B2E] focus-visible:ring-offset-2" data-testid={`project-link-${project.id}`}>
                       {CardContent}
                     </a>
                   ) : (
-                    <Link href={`/projects`} className="block h-full" data-testid={`project-link-${project.id}`}>
+                    <div className="block h-full" data-testid={`project-link-${project.id}`}>
                       {CardContent}
-                    </Link>
+                    </div>
                   )}
                 </AnimatedSection>
               );

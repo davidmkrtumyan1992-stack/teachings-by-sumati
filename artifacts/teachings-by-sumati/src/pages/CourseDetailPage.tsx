@@ -126,7 +126,10 @@ export default function CourseDetailPage() {
               
               return (
                 <AnimatedSection key={cls.class_number} delay={idx * 0.05}>
-                  <Link href={`/aci-courses/${course.id}/class-${cls.class_number}`}>
+                  <Link
+                    href={`/aci-courses/${course.id}/class-${cls.class_number}`}
+                    className="block rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7A1B2E] focus-visible:ring-offset-2"
+                  >
                     <div className={`group rounded-xl p-5 md:p-6 flex items-center justify-between cursor-pointer hover:shadow-md transition-all duration-300 border ${isWatched(cls.class_number) ? 'bg-[#F8F6F4] border-[#E5E2DF]' : 'bg-white border-[#E5E2DF]'}`} style={{ borderLeft: `4px solid ${isReview ? '#C4973B' : '#7A1B2E'}` }}>
                       <div className="flex items-center gap-3 min-w-0">
                         {isWatched(cls.class_number) ? (
@@ -134,13 +137,8 @@ export default function CourseDetailPage() {
                         ) : (
                           <div className="w-4 h-4 rounded-full border-2 border-[#D4D0CC] shrink-0" />
                         )}
-                        <div>
-                          <div className="font-inter text-[13px] font-bold text-[#7A1B2E] tracking-wide uppercase mb-1">
-                            {classLabel}
-                          </div>
-                          <div className={`font-inter text-base font-medium ${isWatched(cls.class_number) ? 'text-[#6B6B6B]' : 'text-[#1A1A1A]'}`}>
-                            {classLabel}
-                          </div>
+                        <div className={`font-inter text-base font-medium ${isWatched(cls.class_number) ? 'text-[#6B6B6B]' : 'text-[#1A1A1A]'}`}>
+                          {classLabel}
                         </div>
                       </div>
                       <div className="font-inter text-sm font-medium text-[#7A1B2E] group-hover:translate-x-1 transition-transform shrink-0 ml-4">

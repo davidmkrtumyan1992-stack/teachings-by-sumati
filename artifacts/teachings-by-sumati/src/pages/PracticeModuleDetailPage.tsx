@@ -1,7 +1,6 @@
 import { useParams, Link } from "wouter";
 import { ArrowLeft } from "lucide-react";
 import { AnimatedSection } from "@/components/AnimatedSection";
-import { useLanguage } from "@/components/layout/LanguageContext";
 import { useT } from "@/i18n/translations";
 import type { PracticeModulesData } from "@/data/types";
 import modulesRaw from "@/data/practice-modules.json";
@@ -10,7 +9,6 @@ const modulesData = modulesRaw as PracticeModulesData;
 
 export default function PracticeModuleDetailPage() {
   const { moduleId } = useParams();
-  const { lang } = useLanguage();
   const t = useT();
 
   const mod = modulesData.find(m => m.module === moduleId);
@@ -65,7 +63,10 @@ export default function PracticeModuleDetailPage() {
 
             return (
               <AnimatedSection key={cls.classNumber} delay={idx * 0.05}>
-                <Link href={`/practice-modules/${mod.module}/class-${cls.classNumber}`}>
+                <Link
+                  href={`/practice-modules/${mod.module}/class-${cls.classNumber}`}
+                  className="block rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7A1B2E] focus-visible:ring-offset-2"
+                >
                   <div
                     className={`group bg-white border border-[#E5E2DF] rounded-xl p-5 md:p-6 flex items-center justify-between transition-all duration-300 ${isNotRecorded ? 'opacity-60 cursor-default' : 'cursor-pointer hover:shadow-md'}`}
                     style={{ borderLeft: '4px solid #7A1B2E' }}
@@ -76,7 +77,7 @@ export default function PracticeModuleDetailPage() {
                       </div>
                       {isNotRecorded && (
                         <div className="font-inter text-[12px] text-[#9A9A9A]">
-                          {lang === 'ru' ? 'Запись появится позже' : 'Recording coming soon'}
+                          {t.classPage.recordingComingSoon}
                         </div>
                       )}
                     </div>

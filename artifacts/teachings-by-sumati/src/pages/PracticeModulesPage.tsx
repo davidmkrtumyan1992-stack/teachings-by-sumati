@@ -22,7 +22,10 @@ export default function PracticeModulesPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {modulesData.map((mod, idx) => (
             <AnimatedSection key={mod.module} delay={idx * 0.07}>
-              <Link href={`/practice-modules/${mod.module}`}>
+              <Link
+                href={`/practice-modules/${mod.module}`}
+                className="block rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7A1B2E] focus-visible:ring-offset-2"
+              >
                 <div className="group bg-white border border-[#E5E2DF] rounded-2xl overflow-hidden hover:shadow-lg hover:border-[#7A1B2E]/20 transition-all duration-300 cursor-pointer h-full flex flex-col">
                   <div
                     className="w-full aspect-[16/10] flex items-center justify-center px-6 py-8 shrink-0"

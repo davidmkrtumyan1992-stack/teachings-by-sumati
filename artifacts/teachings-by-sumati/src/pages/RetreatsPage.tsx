@@ -6,10 +6,9 @@ import armeniaData from "@/data/armenia-retreat.json";
 
 const BASE = import.meta.env.BASE_URL.replace(/\/$/, "");
 
-// Derive year and duration from the JSON dates field ("August 14–24, 2026")
 const ARMENIA_YEAR = "2026";
-const ARMENIA_DURATION_EN = "11 Days";
-const ARMENIA_DURATION_RU = "11 дней";
+const ARMENIA_DURATION_EN = "10 Days";
+const ARMENIA_DURATION_RU = "10 дней";
 
 // First sentence of description only (for card preview)
 function firstSentence(text: string): string {
@@ -48,6 +47,7 @@ export default function RetreatsPage() {
                 <img
                   src={`${BASE}/retreat-armenia.png`}
                   alt={armeniaTitle}
+                  loading="lazy"
                   className="w-full h-full object-cover object-center"
                 />
               </div>
@@ -66,29 +66,13 @@ export default function RetreatsPage() {
 
                 <Link
                   href="/retreats/armenia"
-                  className="font-inter text-sm font-medium text-[#7A1B2E] group-hover:underline self-start"
+                  className="font-inter text-sm font-medium text-[#7A1B2E] group-hover:underline self-start rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7A1B2E] focus-visible:ring-offset-2"
                 >
                   {t.retreats.viewDetails} &rarr;
                 </Link>
               </div>
             </div>
           </AnimatedSection>
-
-          {/* Uncomment when content is ready: */}
-          {/* Nepal Journey */}
-          {/* {
-            id: 2, titleEn: "Nepal Journey", titleRu: "Путешествие в Непал",
-            year: "2023", duration: "21", image: null,
-            descriptionEn: "A pilgrimage and study retreat exploring the historical roots of the Mahayana tradition.",
-            descriptionRu: "Паломничество и учебный ретрит, посвящённый историческим корням традиции Махаяны.",
-          } */}
-          {/* Diamond Mountain */}
-          {/* {
-            id: 3, titleEn: "Diamond Mountain", titleRu: "Diamond Mountain",
-            year: "2022", duration: "10", image: null,
-            descriptionEn: "Foundational practice retreat focusing on meditation and the ethical life.",
-            descriptionRu: "Базовый практический ретрит, посвящённый медитации и этическому образу жизни.",
-          } */}
         </div>
       </div>
     </div>

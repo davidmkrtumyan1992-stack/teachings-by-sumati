@@ -8,6 +8,7 @@ import type { CoursesData } from "@/data/types";
 import coursesRaw from "@/data/courses.json";
 import materialsManifestRaw from "@/data/materials-manifest.json";
 import { useProgress } from "@/hooks/useProgress";
+import { toEmbedUrl } from "@/lib/youtube";
 
 const coursesData = coursesRaw as CoursesData;
 
@@ -86,7 +87,7 @@ export default function ClassPage() {
     lang;
 
   const videoUrl = effectiveLang === 'en' ? classData.video_en : classData.video_ru;
-  const videoEmbedUrl = videoUrl ? videoUrl.replace('youtu.be/', 'youtube.com/embed/') : null;
+  const videoEmbedUrl = toEmbedUrl(videoUrl, effectiveLang);
 
   // PDF materials — course-level (same set for all classes within a course)
   const courseManifest = materialsManifest[course.id];
@@ -148,7 +149,7 @@ export default function ClassPage() {
             <button
               onClick={() => prevClass && navigateToClass(prevClass.class_number)}
               disabled={!prevClass}
-              className={`p-2 rounded-lg border border-[#E5E2DF] transition-colors ${prevClass ? 'hover:bg-[#F0EDEA] text-[#1A1A1A]' : 'opacity-50 cursor-not-allowed text-[#9A9A9A]'}`}
+              className={`p-2 rounded-lg border border-[#E5E2DF] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7A1B2E] focus-visible:ring-offset-2 ${prevClass ? 'hover:bg-[#F0EDEA] text-[#1A1A1A]' : 'opacity-50 cursor-not-allowed text-[#9A9A9A]'}`}
               aria-label={t.aria.prevClass}
             >
               <ChevronLeft className="w-5 h-5" />
@@ -159,7 +160,7 @@ export default function ClassPage() {
             <button
               onClick={() => nextClass && navigateToClass(nextClass.class_number)}
               disabled={!nextClass}
-              className={`p-2 rounded-lg border border-[#E5E2DF] transition-colors ${nextClass ? 'hover:bg-[#F0EDEA] text-[#1A1A1A]' : 'opacity-50 cursor-not-allowed text-[#9A9A9A]'}`}
+              className={`p-2 rounded-lg border border-[#E5E2DF] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7A1B2E] focus-visible:ring-offset-2 ${nextClass ? 'hover:bg-[#F0EDEA] text-[#1A1A1A]' : 'opacity-50 cursor-not-allowed text-[#9A9A9A]'}`}
               aria-label={t.aria.nextClass}
             >
               <ChevronRight className="w-5 h-5" />
@@ -186,10 +187,10 @@ export default function ClassPage() {
                 </svg>
               </div>
               <p className="font-inter text-base font-medium text-[#1A1A1A]">
-                {lang === 'ru' ? 'Запись появится позже' : 'Recording coming soon'}
+                {t.classPage.recordingComingSoon}
               </p>
               <p className="font-inter text-sm text-[#9A9A9A]">
-                {lang === 'ru' ? 'Эта запись ещё не опубликована' : 'This recording has not been published yet'}
+                {t.classPage.recordingNotPublished}
               </p>
             </div>
           ) : (
@@ -283,7 +284,7 @@ export default function ClassPage() {
                     href={mat.url!}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-white border border-[#E5E2DF] rounded-xl p-4 flex gap-4 items-center hover:border-[#7A1B2E]/40 hover:shadow-sm transition-all cursor-pointer group"
+                    className="bg-white border border-[#E5E2DF] rounded-xl p-4 flex gap-4 items-center hover:border-[#7A1B2E]/40 hover:shadow-sm transition-all cursor-pointer group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7A1B2E] focus-visible:ring-offset-2"
                   >
                     <div className="w-11 h-[52px] bg-[#F8F6F4] rounded-md flex flex-col items-center justify-center text-[#7A1B2E] font-bold text-[10px] shrink-0 border border-[#E5E2DF]">
                       PDF
