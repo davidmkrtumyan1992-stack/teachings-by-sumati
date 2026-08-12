@@ -49,16 +49,17 @@ export default function HomePage() {
   const findRandomTeaching = () => {
     setIsFinding(true);
     setTimeout(() => {
-      const validCourses = coursesData.courses.filter(c => c.classes && c.classes.some(cl => cl.video_en));
+      const videoField = lang === 'ru' ? 'video_ru' : 'video_en';
+      const validCourses = coursesData.courses.filter(c => c.classes && c.classes.some(cl => cl[videoField]));
       if (validCourses.length === 0) {
         setIsFinding(false);
         return;
       }
-      
+
       const randomCourse = validCourses[Math.floor(Math.random() * validCourses.length)];
-      const validClasses = (randomCourse.classes ?? []).filter(cl => cl.video_en);
+      const validClasses = (randomCourse.classes ?? []).filter(cl => cl[videoField]);
       const randomClass = validClasses[Math.floor(Math.random() * validClasses.length)];
-      const embedUrl = toEmbedUrl(randomClass.video_en, lang);
+      const embedUrl = toEmbedUrl(randomClass[videoField], lang);
       if (!embedUrl) {
         setIsFinding(false);
         return;

@@ -121,8 +121,8 @@ export function Sidebar({ isOpen, onClose, currentLanguage, onLanguageChange }: 
             data-testid="toggle-language-sidebar"
           >
             <div className="absolute top-1 bottom-1 w-[32px] bg-[#7A1B2E] rounded-full transition-transform duration-300" style={{ transform: currentLanguage === 'en' ? 'translateX(0)' : 'translateX(32px)' }} />
-            <span className={`flex-1 flex items-center justify-center z-10 text-[11px] font-bold transition-colors ${currentLanguage === 'en' ? 'text-white' : 'text-gray-500'}`}>EN</span>
-            <span className={`flex-1 flex items-center justify-center z-10 text-[11px] font-bold transition-colors ${currentLanguage === 'ru' ? 'text-white' : 'text-gray-500'}`}>RU</span>
+            <span className={`flex-1 flex items-center justify-center z-10 text-[11px] font-bold leading-none transition-colors ${currentLanguage === 'en' ? 'text-white' : 'text-gray-500'}`}>EN</span>
+            <span className={`flex-1 flex items-center justify-center z-10 text-[11px] font-bold leading-none transition-colors ${currentLanguage === 'ru' ? 'text-white' : 'text-gray-500'}`}>RU</span>
           </button>
         </div>
       </div>
