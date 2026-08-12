@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import { AnimatedSection } from "@/components/AnimatedSection";
+import { ContentCard } from "@/components/ui/ContentCard";
 import { useT } from "@/i18n/translations";
 import type { PracticeModulesData } from "@/data/types";
 import modulesRaw from "@/data/practice-modules.json";
@@ -26,24 +27,19 @@ export default function PracticeModulesPage() {
                 href={`/practice-modules/${mod.module}`}
                 className="block rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7A1B2E] focus-visible:ring-offset-2"
               >
-                <div className="group bg-white border border-[#E5E2DF] rounded-2xl overflow-hidden hover:shadow-lg hover:border-[#7A1B2E]/20 transition-all duration-300 cursor-pointer h-full flex flex-col">
-                  <div
-                    className="w-full aspect-[16/10] flex items-center justify-center px-6 py-8 shrink-0"
-                    style={{ background: 'linear-gradient(135deg, #5C0E1F 0%, #7A1B2E 100%)' }}
-                  >
-                    <div className="font-playfair text-xl md:text-2xl text-white/90 text-center tracking-wide leading-snug">
-                      {mod.title}
-                    </div>
+                <ContentCard
+                  gradient="linear-gradient(135deg, #5C0E1F 0%, #7A1B2E 100%)"
+                  overlayTitle={<div className="text-xl md:text-2xl text-white/90 text-center tracking-wide">{mod.title}</div>}
+                  motifSeed={idx}
+                  data-testid={`module-card-${mod.module}`}
+                >
+                  <p className="font-inter text-[13px] text-[#9A9A9A] mb-4 leading-relaxed flex-1">
+                    {mod.dateLabel}
+                  </p>
+                  <div className="font-inter text-sm font-medium text-[#7A1B2E] group-hover:translate-x-1 transition-transform">
+                    {t.common.start} →
                   </div>
-                  <div className="p-5 flex flex-col flex-1">
-                    <p className="font-inter text-[13px] text-[#9A9A9A] mb-4 leading-relaxed flex-1">
-                      {mod.dateLabel}
-                    </p>
-                    <div className="font-inter text-sm font-medium text-[#7A1B2E] group-hover:translate-x-1 transition-transform">
-                      {t.common.start} →
-                    </div>
-                  </div>
-                </div>
+                </ContentCard>
               </Link>
             </AnimatedSection>
           ))}

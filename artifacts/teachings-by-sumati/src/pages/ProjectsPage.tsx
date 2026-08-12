@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { AnimatedSection } from "@/components/AnimatedSection";
+import { ContentCard } from "@/components/ui/ContentCard";
 import { useLanguage } from "@/components/layout/LanguageContext";
 import { useT } from "@/i18n/translations";
 import type { CoursesData } from "@/data/types";
@@ -34,25 +35,27 @@ export default function ProjectsPage() {
             const desc = lang === 'en' ? project.description_en : (project.description_ru || project.description_en);
 
             const CardContent = (
-              <div className={`bg-white border border-[#E5E2DF] rounded-2xl overflow-hidden h-full flex flex-col ${project.url ? 'group cursor-pointer hover:-translate-y-1 hover:shadow-lg transition-all duration-300' : ''}`}>
-                <div className={`w-full aspect-[16/9] relative p-6 flex flex-col justify-end ${project.url ? '' : 'opacity-60'}`} style={{ background: bgGradient }}>
-                  <h3 className="font-playfair text-2xl text-white drop-shadow-md">{title}</h3>
-                </div>
-                <div className="p-6 flex flex-col flex-1">
-                  <p className="font-inter text-sm text-[#6B6B6B] leading-relaxed mb-6 flex-1">
-                    {desc}
-                  </p>
-                  {project.url ? (
-                    <div className="font-inter text-sm font-medium text-[#7A1B2E] flex items-center gap-1 group-hover:gap-2 transition-all">
-                      {t.projects.visitSite} <ArrowRight className="w-4 h-4" />
-                    </div>
-                  ) : (
-                    <div className="font-inter text-sm font-medium text-[#9A9A9A]">
-                      {t.projects.comingSoon}
-                    </div>
-                  )}
-                </div>
-              </div>
+              <ContentCard
+                gradient={bgGradient}
+                overlayTitle={<h3 className="text-2xl">{title}</h3>}
+                motifSeed={idx}
+                disabled={!project.url}
+                aspectClassName="aspect-[16/9]"
+                data-testid={`project-card-${project.id}`}
+              >
+                <p className="font-inter text-sm text-[#6B6B6B] leading-relaxed mb-6 flex-1">
+                  {desc}
+                </p>
+                {project.url ? (
+                  <div className="font-inter text-sm font-medium text-[#7A1B2E] flex items-center gap-1 group-hover:gap-2 transition-all">
+                    {t.projects.visitSite} <ArrowRight className="w-4 h-4" />
+                  </div>
+                ) : (
+                  <div className="font-inter text-sm font-medium text-[#9A9A9A]">
+                    {t.projects.comingSoon}
+                  </div>
+                )}
+              </ContentCard>
             );
 
             return (

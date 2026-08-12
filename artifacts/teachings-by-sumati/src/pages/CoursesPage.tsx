@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import { AnimatedSection } from "@/components/AnimatedSection";
+import { ContentCard } from "@/components/ui/ContentCard";
 import { useLanguage } from "@/components/layout/LanguageContext";
 import { useT } from "@/i18n/translations";
 import type { CoursesData } from "@/data/types";
@@ -34,39 +35,31 @@ export default function CoursesPage() {
                   href={`/aci-courses/${course.id}`}
                   className="block rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7A1B2E] focus-visible:ring-offset-2"
                 >
-                  <div
-                    className="bg-white border border-[#E5E2DF] rounded-2xl overflow-hidden group cursor-pointer hover:-translate-y-1 hover:shadow-lg transition-all duration-300 h-full flex flex-col"
+                  <ContentCard
+                    gradient="linear-gradient(135deg, #7A1B2E 0%, #C4973B 100%)"
+                    overlayTitle={<div className="text-4xl md:text-5xl opacity-90 tracking-wider">{badgeText}</div>}
+                    motifSeed={idx}
                     data-testid={`course-card-${course.id}`}
                   >
-                    <div 
-                      className="w-full aspect-[16/10] relative flex items-center justify-center p-6" 
-                      style={{ background: 'linear-gradient(135deg, #7A1B2E 0%, #C4973B 100%)' }}
-                    >
-                      <div className="font-playfair text-4xl md:text-5xl text-white opacity-90 tracking-wider">
-                        {badgeText}
+                    <div className="font-inter text-sm font-semibold text-[#7A1B2E] mb-2">{badgeText}</div>
+                    <h3 className="font-inter text-base font-medium text-[#1A1A1A] leading-snug mb-6 flex-1">
+                      {title}
+                    </h3>
+
+                    <div className="space-y-4">
+                      <div className="flex gap-[2px]">
+                        {Array.from({ length: 10 }).map((_, i) => (
+                          <div
+                            key={i}
+                            className={`h-1.5 flex-1 rounded-sm ${i < (course.total_classes ?? 0) ? 'bg-[#7A1B2E]' : 'bg-[#E5E2DF]'}`}
+                          />
+                        ))}
+                      </div>
+                      <div className="font-inter text-sm text-[#7A1B2E] font-medium group-hover:underline">
+                        {t.common.learnMore} &rarr;
                       </div>
                     </div>
-                    <div className="p-6 flex flex-col flex-1">
-                      <div className="font-inter text-sm font-semibold text-[#7A1B2E] mb-2">{badgeText}</div>
-                      <h3 className="font-inter text-base font-medium text-[#1A1A1A] leading-snug mb-6 flex-1">
-                        {title}
-                      </h3>
-                      
-                      <div className="space-y-4">
-                        <div className="flex gap-[2px]">
-                          {Array.from({ length: 10 }).map((_, i) => (
-                            <div 
-                              key={i} 
-                              className={`h-1.5 flex-1 rounded-sm ${i < (course.total_classes ?? 0) ? 'bg-[#7A1B2E]' : 'bg-[#E5E2DF]'}`} 
-                            />
-                          ))}
-                        </div>
-                        <div className="font-inter text-sm text-[#7A1B2E] font-medium group-hover:underline">
-                          {t.common.learnMore} &rarr;
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  </ContentCard>
                 </Link>
               </AnimatedSection>
             );
