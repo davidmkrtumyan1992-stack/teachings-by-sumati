@@ -24,7 +24,8 @@ export function BottomTabBar({ onMenuClick }: BottomTabBarProps) {
     (tab) => location === tab.href || (tab.href !== '/' && location.startsWith(tab.href))
   );
   const hasActiveTab = activeIndex !== -1;
-  const notchX = `${((activeIndex === -1 ? 0 : activeIndex) + 0.5) / TAB_COUNT * 100}%`;
+  const notchXPercent = `${((activeIndex === -1 ? 0 : activeIndex) + 0.5) / TAB_COUNT * 100}%`;
+  const notchX = `clamp(36px, ${notchXPercent}, calc(100% - 36px))`;
 
   return (
     <nav
@@ -70,7 +71,7 @@ export function BottomTabBar({ onMenuClick }: BottomTabBarProps) {
 
       {hasActiveTab && (
         <div
-          className="tabbar-notch-bubble absolute -top-6 z-10 w-14 h-14 rounded-full bg-[#7A1B2E] shadow-[0_4px_20px_rgba(122,27,46,0.3)] flex items-center justify-center transition-[left] duration-300 ease-out"
+          className="tabbar-notch-bubble absolute -top-7 z-10 w-14 h-14 rounded-full bg-[#7A1B2E] shadow-[0_4px_20px_rgba(122,27,46,0.3)] flex items-center justify-center transition-[left] duration-300 ease-out"
           style={{ left: notchX }}
           aria-hidden="true"
         >
@@ -83,13 +84,13 @@ export function BottomTabBar({ onMenuClick }: BottomTabBarProps) {
 
       <style>{`
         @property --notch-x {
-          syntax: '<percentage>';
+          syntax: '<length-percentage>';
           inherits: true;
-          initial-value: 10%;
+          initial-value: 36px;
         }
         .tabbar-notched {
-          -webkit-mask-image: radial-gradient(circle 32px at var(--notch-x) 0px, transparent 32px, black 33px);
-          mask-image: radial-gradient(circle 32px at var(--notch-x) 0px, transparent 32px, black 33px);
+          -webkit-mask-image: radial-gradient(circle 27px at var(--notch-x) 0px, transparent 27px, black 28px);
+          mask-image: radial-gradient(circle 27px at var(--notch-x) 0px, transparent 27px, black 28px);
           transition: --notch-x 300ms ease-out;
         }
         .tabbar-notch-bubble {
