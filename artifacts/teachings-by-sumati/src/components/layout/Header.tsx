@@ -21,7 +21,7 @@ export function Header({ currentLanguage, onLanguageChange }: HeaderProps) {
         role="switch"
         aria-checked={currentLanguage === 'ru'}
         aria-label={t.aria.switchLang()}
-        className="flex bg-gray-100 p-1 rounded-full w-[72px] h-[32px] relative cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7A1B2E] focus-visible:ring-offset-2"
+        className="appearance-none flex items-center bg-gray-100 p-1 rounded-full w-[72px] h-[32px] relative cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7A1B2E] focus-visible:ring-offset-2"
         onClick={() => onLanguageChange(currentLanguage === 'en' ? 'ru' : 'en')}
         data-testid="toggle-language-header"
       >
